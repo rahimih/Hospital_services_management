@@ -1,0 +1,4041 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B7185C93-590D-407D-83F9-305834C353C7}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PIHO_DAYCLINIC_SOFTWARE</RootNamespace>
+    <AssemblyName>PIHO DAYCLINIC SOFTWARE</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <AutorunEnabled>true</AutorunEnabled>
+    <ApplicationRevision>1</ApplicationRevision>
+    <ApplicationVersion>1.6.2.1</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <BootstrapperComponentsLocation>Relative</BootstrapperComponentsLocation>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <DocumentationFile>
+    </DocumentationFile>
+    <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Franksouza183-Fs-Apps-scan-monitor.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>PIHO_DAYCLINIC_SOFTWARE.Program</StartupObject>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>9FCD1196F87B59A5100DFA558569E4B87862AB52</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>PIHO DAYCLINIC SOFTWARE_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
+  </PropertyGroup>
+  <PropertyGroup />
+  <PropertyGroup>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Dashboard.v13.2.Core, Version=13.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Dashboard.v13.2.Win, Version=13.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Data.v13.2, Version=13.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\DevExpress 13.2\Components\Bin\Framework\DevExpress.Data.v13.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.DataAccess.v13.2, Version=13.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.DataAccess.v13.2.UI, Version=13.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Office.v13.2.Core, Version=13.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.PivotGrid.v13.2.Core, Version=13.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Printing.v13.2.Core, Version=13.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.RichEdit.v13.2.Core, Version=13.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Sparkline.v13.2.Core, Version=13.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Utils.v13.2, Version=13.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\DevExpress 13.2\Components\Bin\Framework\DevExpress.Utils.v13.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Utils.v13.2.UI, Version=13.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Xpo.v13.2, Version=13.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraBars.v13.2, Version=13.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v13.2, Version=13.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraCharts.v13.2.UI, Version=13.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraCharts.v13.2.Wizard, Version=13.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraEditors.v13.2, Version=13.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraGauges.v13.2.Core, Version=13.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraGauges.v13.2.Win, Version=13.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraGrid.v13.2, Version=13.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraLayout.v13.2, Version=13.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraMap.v13.2, Version=13.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraNavBar.v13.2, Version=13.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\DevExpress 13.2\Components\Bin\Framework\DevExpress.XtraNavBar.v13.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraPivotGrid.v13.2, Version=13.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraPrinting.v13.2, Version=13.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraRichEdit.v13.2, Version=13.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraRichEdit.v13.2.Extensions, Version=13.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraTreeList.v13.2, Version=13.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="FarsiLibrary.Resources, Version=1.9.0.0, Culture=neutral, PublicKeyToken=def7c46cace23f8f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\FarsiLibrary.Resources.dll</HintPath>
+    </Reference>
+    <Reference Include="FarsiLibrary.Utils, Version=1.9.0.0, Culture=neutral, PublicKeyToken=def7c46cace23f8f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\FarsiLibrary.Utils.dll</HintPath>
+    </Reference>
+    <Reference Include="FarsiLibrary.Win, Version=1.9.0.0, Culture=neutral, PublicKeyToken=def7c46cace23f8f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\FarsiLibrary.Win.dll</HintPath>
+    </Reference>
+    <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="GHDiamond, Version=2.2012.12.0, Culture=neutral, PublicKeyToken=094e473293d6d748, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\GHDiamond.dll</HintPath>
+    </Reference>
+    <Reference Include="GHDiamond.Win, Version=2.2012.12.0, Culture=neutral, PublicKeyToken=094e473293d6d748, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\GHDiamond.Win.dll</HintPath>
+    </Reference>
+    <Reference Include="PersianDate, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\component visual studio\component visual studio 2010\other component\persian calender\PersianDate\PersianDate\PersianDate\PersianDate\bin\Debug\PersianDate.dll</HintPath>
+    </Reference>
+    <Reference Include="PopupControl, Version=1.4.0.968, Culture=neutral, PublicKeyToken=04c10344d6495b18, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\component visual studio\component visual studio 2010\other component\persian calender\PersianDate\PersianDate\PersianDate\PersianDate\bin\Debug\PopupControl.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Telerik.WinControls, Version=2014.2.617.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Telerik\UI for WinForms Q2 2014\Bin40\Telerik.WinControls.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.WinControls.GridView, Version=2014.2.617.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.WinControls.RichTextBox, Version=2014.2.617.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.WinControls.SpellChecker, Version=2014.2.617.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.WinControls.UI, Version=2014.2.617.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
+    <Reference Include="TelerikCommon, Version=2014.2.617.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Accounting_bill_F.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Accounting_bill_F.Designer.cs">
+      <DependentUpon>Accounting_bill_F.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AcessLevel.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Ambulance_F.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ambulance_F.Designer.cs">
+      <DependentUpon>Ambulance_F.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ambulance_Kind.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Ambulance_PathKind.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Ambulance_recipe.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Ambulance_scortKind.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Ambulance_tariff.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Ambulance_tariff_F.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ambulance_tariff_F.Designer.cs">
+      <DependentUpon>Ambulance_tariff_F.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Comisions_Members.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Comisions_Request_Cause.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Comision_report2_F.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Comision_report2_F.Designer.cs">
+      <DependentUpon>Comision_report2_F.cs</DependentUpon>
+    </Compile>
+    <Compile Include="dr_procedures_report_employee2.cs">
+      <DependentUpon>dr_procedures_report_employee2.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="dr_procedures_report_employee2_F.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="dr_procedures_report_employee2_F.Designer.cs">
+      <DependentUpon>dr_procedures_report_employee2_F.cs</DependentUpon>
+    </Compile>
+    <Compile Include="dr_procedures_report_employee1_F.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="dr_procedures_report_employee1_F.Designer.cs">
+      <DependentUpon>dr_procedures_report_employee1_F.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Comision_report3_F.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Comision_report3_F.Designer.cs">
+      <DependentUpon>Comision_report3_F.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Comision_report1_F.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Comision_report1_F.Designer.cs">
+      <DependentUpon>Comision_report1_F.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Comision_report2.cs">
+      <DependentUpon>Comision_report2.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Comision_report3.cs">
+      <DependentUpon>Comision_report3.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Comision_report1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Comision_report1.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Comision_View_F.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Comision_View_F.Designer.cs">
+      <DependentUpon>Comision_View_F.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AppCode\BussinessClass.cs" />
+    <Compile Include="AppCode\DataAcessClass.cs" />
+    <Compile Include="AppCode\DLUtils.cs" />
+    <Compile Include="Clinic.cs">
+      <DependentUpon>ClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Comision.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Comision_kinds.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Comision_locations.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Comission_members_F.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Comission_members_F.Designer.cs">
+      <DependentUpon>Comission_members_F.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Comission_Result_F.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Comission_Result_F.Designer.cs">
+      <DependentUpon>Comission_Result_F.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Comission_F.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Comission_F.Designer.cs">
+      <DependentUpon>Comission_F.cs</DependentUpon>
+    </Compile>
+    <Compile Include="dr_procedures_report_employee1.cs">
+      <DependentUpon>dr_procedures_report_employee1.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Emergency_services_Edit_F.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Emergency_services_Edit_F.Designer.cs">
+      <DependentUpon>Emergency_services_Edit_F.cs</DependentUpon>
+    </Compile>
+    <Compile Include="emr_report_services_group.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>emr_report_services_group.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="emr_report_services_group_F.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="emr_report_services_group_F.Designer.cs">
+      <DependentUpon>emr_report_services_group_F.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Emr_teriaz_F.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Emr_teriaz_F.Designer.cs">
+      <DependentUpon>Emr_teriaz_F.cs</DependentUpon>
+    </Compile>
+    <Compile Include="hoteling_F.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="hoteling_F.Designer.cs">
+      <DependentUpon>hoteling_F.cs</DependentUpon>
+    </Compile>
+    <Compile Include="k_tariff_F.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="k_tariff_F.Designer.cs">
+      <DependentUpon>k_tariff_F.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Moshavereh_F.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Moshavereh_F.Designer.cs">
+      <DependentUpon>Moshavereh_F.cs</DependentUpon>
+    </Compile>
+    <Compile Include="office.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="P_CurrentPost.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="P_Education_Degree.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="P_OrganizationPost.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="P_OrganizationPost_F.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="P_OrganizationPost_F.Designer.cs">
+      <DependentUpon>P_OrganizationPost_F.cs</DependentUpon>
+    </Compile>
+    <Compile Include="P_Employment_Status.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="P_CurrentPost_F.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="P_CurrentPost_F.Designer.cs">
+      <DependentUpon>P_CurrentPost_F.cs</DependentUpon>
+    </Compile>
+    <Compile Include="P_Education_Degree_F.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="P_Education_Degree_F.Designer.cs">
+      <DependentUpon>P_Education_Degree_F.cs</DependentUpon>
+    </Compile>
+    <Compile Include="P_Personel.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="P_Personel_F.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="P_Personel_F.Designer.cs">
+      <DependentUpon>P_Personel_F.cs</DependentUpon>
+    </Compile>
+    <Compile Include="P_Reason_exit.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="P_soldier_status.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sata_departments.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Sata_Samaneh_F.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sata_Samaneh_F.Designer.cs">
+      <DependentUpon>Sata_Samaneh_F.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dr_Procedures_Services_F.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dr_Procedures_Services_F.Designer.cs">
+      <DependentUpon>Dr_Procedures_Services_F.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Emr_Services_F.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Emr_Services_F.Designer.cs">
+      <DependentUpon>Emr_Services_F.cs</DependentUpon>
+    </Compile>
+    <Compile Include="psychology_report20.cs">
+      <DependentUpon>psychology_report20.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Comisions_Reporting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Comisions_Reporting.designer.cs">
+      <DependentUpon>Comisions_Reporting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="psychology_Reporting20_F.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="psychology_Reporting20_F.Designer.cs">
+      <DependentUpon>psychology_Reporting20_F.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sata_Status.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Select_SurgeryPaientList_detail_Result1.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\Sata_Services\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Sono_reporting6_F.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sono_reporting6_F.Designer.cs">
+      <DependentUpon>Sono_reporting6_F.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Surgeryform2_F.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Surgeryform2_F.Designer.cs">
+      <DependentUpon>Surgeryform2_F.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Surgeryform2_report.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Surgeryform2_report.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="P_Personelview_F.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="P_Personelview_F.Designer.cs">
+      <DependentUpon>P_Personelview_F.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Surgey_detail_Report.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Surgey_detail_Report.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Bill_Paient_report.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Bill_Paient_report.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Bill_paient_reportView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bill_paient_reportView.designer.cs">
+      <DependentUpon>Bill_paient_reportView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dashboard_1_F.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dashboard_1_F.Designer.cs">
+      <DependentUpon>Dashboard_1_F.cs</DependentUpon>
+    </Compile>
+    <Compile Include="deviceslistkinduse_Result.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="devicespaientview_report.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>devicespaientview_report.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="devicespaientview_report_F.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="devicespaientview_report_F.Designer.cs">
+      <DependentUpon>devicespaientview_report_F.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DevicesUse_F.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DevicesUse_F.Designer.cs">
+      <DependentUpon>DevicesUse_F.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Doctors_industry_list.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="familynursing_firstgroups.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="full_niocperson2.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="indesutery_clinic_speciality_Result.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Industry_Med_detail.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Industry_Med_detail_F.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Industry_Med_detail_F.Designer.cs">
+      <DependentUpon>Industry_Med_detail_F.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JobLocations2.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NiocPerson2.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PaientSurgeryList.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Paient_bracelet.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Paient_bracelet.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="paient_bracelet_F.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="paient_bracelet_F.Designer.cs">
+      <DependentUpon>paient_bracelet_F.cs</DependentUpon>
+    </Compile>
+    <Compile Include="psychology_Reporting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="psychology_Reporting.designer.cs">
+      <DependentUpon>psychology_Reporting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Emergeny_Services.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Emr_Drug.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="emr_report_joblocations.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>emr_report_joblocations.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="emr_report_joblocations_F.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="emr_report_joblocations_F.Designer.cs">
+      <DependentUpon>emr_report_joblocations_F.cs</DependentUpon>
+    </Compile>
+    <Compile Include="emr_report_services.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>emr_report_services.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="emr_report_services_F.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="emr_report_services_F.Designer.cs">
+      <DependentUpon>emr_report_services_F.cs</DependentUpon>
+    </Compile>
+    <Compile Include="multisurgerykind_percent.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PaientStatus_industry_medicine.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="psychology_Services.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="psychology_Services_view_Result.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Sono_report7.cs">
+      <DependentUpon>Sono_report7.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Services_Select_FN_F.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Services_Select_FN_F.Designer.cs">
+      <DependentUpon>Services_Select_FN_F.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Services_Select_F.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Services_Select_F.Designer.cs">
+      <DependentUpon>Services_Select_F.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sono_recipe_Select_F.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sono_recipe_Select_F.Designer.cs">
+      <DependentUpon>Sono_recipe_Select_F.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Emergency_Reporting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Emergency_Reporting.designer.cs">
+      <DependentUpon>Emergency_Reporting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sono_reporting7_F.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sono_reporting7_F.Designer.cs">
+      <DependentUpon>Sono_reporting7_F.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StoreTa_FactorToRequest_F.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StoreTa_FactorToRequest_F.Designer.cs">
+      <DependentUpon>StoreTa_FactorToRequest_F.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StoreTa_Search_F.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StoreTa_Search_F.Designer.cs">
+      <DependentUpon>StoreTa_Search_F.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SurgeryDeviceslist.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Surgery_DevicesList_GroupAssign_F.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Surgery_DevicesList_GroupAssign_F.Designer.cs">
+      <DependentUpon>Surgery_DevicesList_GroupAssign_F.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Surgery_Deviceslist_select_F.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Surgery_Deviceslist_select_F.Designer.cs">
+      <DependentUpon>Surgery_Deviceslist_select_F.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Surgery_DevicesPlan_CR.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Surgery_DevicesPlan_CR.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Surgery_DevicesPlan_print_F.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Surgery_DevicesPlan_print_F.Designer.cs">
+      <DependentUpon>Surgery_DevicesPlan_print_F.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Surgery_devices_GroupUse.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Surgery_Devices_Kinduse.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Surgery_Doctors_Work.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Surgery_Doctors_Work.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Surgery_Doctors_Work_B.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Surgery_Doctors_Work_B.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Surgery_Doctors_Work_B_F.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Surgery_Doctors_Work_B_F.Designer.cs">
+      <DependentUpon>Surgery_Doctors_Work_B_F.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Surgery_Doctors_Work_F.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Surgery_Doctors_Work_F.Designer.cs">
+      <DependentUpon>Surgery_Doctors_Work_F.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Surgery_Payment_F.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Surgery_Payment_F.Designer.cs">
+      <DependentUpon>Surgery_Payment_F.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Surgery_Prepayment_ViewF.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Surgery_Prepayment_ViewF.Designer.cs">
+      <DependentUpon>Surgery_Prepayment_ViewF.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Surgery_Answer_CR.cs">
+      <DependentUpon>Surgery_Answer_CR.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Surgery_Answer_F.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Surgery_Answer_F.Designer.cs">
+      <DependentUpon>Surgery_Answer_F.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Surgery_Defaultanswer.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Surgery_Defaultanswer_F.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Surgery_Defaultanswer_F.Designer.cs">
+      <DependentUpon>Surgery_Defaultanswer_F.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Surgery_Defaultanswer_Ins_F.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Surgery_Defaultanswer_Ins_F.Designer.cs">
+      <DependentUpon>Surgery_Defaultanswer_Ins_F.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Surgery_Descriptions.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Surgery_paient_bill2.cs">
+      <DependentUpon>Surgery_paient_bill2.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Surgery_paient_bill.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Surgery_paient_bill.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Surgery_paient_bill_F.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Surgery_paient_bill_F.Designer.cs">
+      <DependentUpon>Surgery_paient_bill_F.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Surgery_Prepayment_Def_F.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Surgery_Prepayment_Def_F.Designer.cs">
+      <DependentUpon>Surgery_Prepayment_Def_F.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Surgery_recipe_answer_F.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Surgery_recipe_answer_F.Designer.cs">
+      <DependentUpon>Surgery_recipe_answer_F.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sono_services_Select_F.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sono_services_Select_F.Designer.cs">
+      <DependentUpon>Sono_services_Select_F.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Surgerypaientserviceslist_F.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Surgerypaientserviceslist_F.Designer.cs">
+      <DependentUpon>Surgerypaientserviceslist_F.cs</DependentUpon>
+    </Compile>
+    <Compile Include="bihoshi_kind.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Bill_Paient_F.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bill_Paient_F.Designer.cs">
+      <DependentUpon>Bill_Paient_F.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cash.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ChangePassword_F.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChangePhysioEndDate_F.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChangePhysioEndDate_F.Designer.cs">
+      <DependentUpon>ChangePhysioEndDate_F.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChangTurnDate_F.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChangTurnDate_F.Designer.cs">
+      <DependentUpon>ChangTurnDate_F.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ClinicModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ClinicModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ClinicModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ClinicModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ClinicModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="DayClinicModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DayClinicModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DayClinicModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DayClinicModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DayClinicModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Department.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="department_boss_user_Result.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Department_post.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Department_post_View.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Device.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="devices_paient_view_Result.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="devices_plan_edit_view_Result.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DocNumber_Edit_F.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DocNumber_Edit_F.Designer.cs">
+      <DependentUpon>DocNumber_Edit_F.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DocNumber_View_F.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DocNumber_View_F.Designer.cs">
+      <DependentUpon>DocNumber_View_F.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EMR_Shifts.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="File.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HotelingPrice.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Name.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="newcode.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SurgeryPartBedroom_view_F.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SurgeryPartBedroom_view_F.Designer.cs">
+      <DependentUpon>SurgeryPartBedroom_view_F.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Surgery_Balancing_Edit_F.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Surgery_Balancing_Edit_F.Designer.cs">
+      <DependentUpon>Surgery_Balancing_Edit_F.cs</DependentUpon>
+    </Compile>
+    <Compile Include="partbedroomempty_Result.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="physiotoraphist_view_Result.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Physio_report13_Result.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Physio_report20_Result.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Physio_report2_Result.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Physio_XML_5_Result.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProtezDetail.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RadioDentist_report11_Result.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RadioDentist_report17_Result.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RadioDentist_report2_Result.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RadioDentist_report3_Result.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RadioDentist_report4_1_Result.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RadioDentist_report4_Result.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RadioDentist_report5_Result.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RadioDentist_report6_Result.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RadioDentist_report7_Result.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="radio_answrer_print_Result.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Radio_report10_Result.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Radio_report11_Result.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Radio_report12_Result.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Radio_report13_Result.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Radio_report14_Result.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Radio_report15_Result.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Radio_report16_Result.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Radio_report17_Result.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="radio_report18_Result.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Radio_report22.cs">
+      <DependentUpon>Radio_report22.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Radio_report22_Result.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Radio_report2_1_Result.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Radio_report2_Result.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Radio_report3_Result.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Radio_report4_1_Result.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Radio_report4_Result.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Radio_report5_Result.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Radio_report6_Result.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Radio_report7_Result.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Radio_report8_Result.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Radio_report9_Result.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Radio_reporting22_F.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Radio_reporting22_F.Designer.cs">
+      <DependentUpon>Radio_reporting22_F.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Radio_XML_5_Result.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ScheduleOperations.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ScheduleOperations.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ScheduleOperations_F.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ScheduleOperations_F.Designer.cs">
+      <DependentUpon>ScheduleOperations_F.cs</DependentUpon>
+    </Compile>
+    <Compile Include="search_storeTa_factor_view_Result.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SelectPersonTblvdfamily_Result.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Select_Dr_Procedures_DoctorsServices_detail_Result.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Select_Dr_Procedures_DoctorsServices_Result.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Select_EMR_DoctorsServices_Result.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Select_PaientSurgeryList_Result.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Select_PaientSurgeryList_s_Result.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Select_physio_DoctorsServices_detail_Result.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Select_physio_DoctorsServices_Result.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="select_physio_reservations_Result.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Select_physio_SessionsDetails_Result.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Select_psychology_DoctorsServices_detail_Result.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Select_psychology_DoctorsServices_Result.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Select_RadioDentist_DoctorsServices_detail_Result.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Select_RadioDentist_DoctorsServices_Result.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Select_Radio_DoctorsServices_detail_Result.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Select_Radio_DoctorsServices_Result.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Select_services_Result.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Select_Sono_DoctorsServices_detail_Result.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Select_Sono_DoctorsServices_Result.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="select_surgerynames_Result.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Select_SurgeryPaientList_detail_Result.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Select_surgery_recipe_Result.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="serach_StoreTa_export2_detail_Result.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="serach_StoreTa_export_confirm_Result.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="serach_StoreTa_export_department_Result.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="serach_StoreTa_export_detail2_print_Result.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="serach_StoreTa_export_detail_print_Result.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="serach_StoreTa_export_detail_Result.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="serach_StoreTa_export_print2_Result.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="serach_StoreTa_export_print_Result.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="serach_StoreTa_export_Request2_store_Result.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="serach_StoreTa_export_Request_store_Result.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="serach_StoreTa_export_Result.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="serach_StoreTa_factor_Full_Result.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Sono_answrer_print_Result.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Sono_recipe_view_Result.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sono_report11_Result.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sono_report14_Result.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Sono_report2_Result.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Sono_report3_Result.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Sono_report4_1_Result.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sono_report4_Result.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Sono_report5_Result.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Sono_XML_5_Result.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="store_Ta_cartex_Result.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="store_Ta_stock_full_NIS_Result.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="store_Ta_stock_full_orderpoint_Result.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="store_Ta_stock_full_Result.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="store_Ta_stock_kala_code_date_Result.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SurgeryBihooshi_Balancing.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SurgeryDetail_F.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SurgeryDetail_F.Designer.cs">
+      <DependentUpon>SurgeryDetail_F.cs</DependentUpon>
+    </Compile>
+    <Compile Include="surgerypaientserviceslist_Result.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SurgeryPaientServices_F.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SurgeryPaientServices_F.Designer.cs">
+      <DependentUpon>SurgeryPaientServices_F.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SurgeryPaient_Balancing.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SurgeryPaient_Bihooshi_Balancing.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SurgeryPartBedroom_F.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SurgeryPartBedroom_F.Designer.cs">
+      <DependentUpon>SurgeryPartBedroom_F.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Surgery_Balancing.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Surgery_Bill_detail.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Surgery_DevicesList_F.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Surgery_DevicesList_F.Designer.cs">
+      <DependentUpon>Surgery_DevicesList_F.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Surgery_DevicesPaient_F.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Surgery_DevicesPaient_F.Designer.cs">
+      <DependentUpon>Surgery_DevicesPaient_F.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Surgery_DevicesPaient_Plan_F.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Surgery_DevicesPaient_Plan_F.Designer.cs">
+      <DependentUpon>Surgery_DevicesPaient_Plan_F.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Surgery_DevicesPlan_View_F.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Surgery_DevicesPlan_View_F.Designer.cs">
+      <DependentUpon>Surgery_DevicesPlan_View_F.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Surgery_DevicesPlan_F.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Surgery_DevicesPlan_F.Designer.cs">
+      <DependentUpon>Surgery_DevicesPlan_F.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Surgery_DevicesTariff_F.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Surgery_DevicesTariff_F.Designer.cs">
+      <DependentUpon>Surgery_DevicesTariff_F.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Surgery_Deviceslist_View_F.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Surgery_Deviceslist_View_F.Designer.cs">
+      <DependentUpon>Surgery_Deviceslist_View_F.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DoctorsList.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DoctorsList_clinic.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Doctors_contract.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Doctors_speciality.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Dr_Procedures_DoctorsServices.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Dr_Procedures_Recipe.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Dr_Procedures_Servives.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Dr_Procedures_Shifts.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Dr_proc_dr.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ICD.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ICDOrgan.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Informations_F.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Informations_F.Designer.cs">
+      <DependentUpon>Informations_F.cs</DependentUpon>
+    </Compile>
+    <Compile Include="KindRoom.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PaientSurgeryListview_F.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PaientSurgeryListview_F.Designer.cs">
+      <DependentUpon>PaientSurgeryListview_F.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PaientSurgeryList_F.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PaientSurgeryList_F.Designer.cs">
+      <DependentUpon>PaientSurgeryList_F.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Paient_Surgerylist_select.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Paient_Surgerylist_select.Designer.cs">
+      <DependentUpon>Paient_Surgerylist_select.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PartBedRoom.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PartRoom.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Part_Name.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PartBedRoom_F.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PartBedRoom_F.Designer.cs">
+      <DependentUpon>PartBedRoom_F.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Part_rooms_F.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Part_rooms_F.Designer.cs">
+      <DependentUpon>Part_rooms_F.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Part_names_F.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Part_names_F.Designer.cs">
+      <DependentUpon>Part_names_F.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Part_Names_view_F.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Part_Names_view_F.Designer.cs">
+      <DependentUpon>Part_Names_view_F.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Physio_report13.cs">
+      <DependentUpon>Physio_report13.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Physio_report20.cs">
+      <DependentUpon>Physio_report20.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Physio_reporting13_F.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Physio_reporting13_F.Designer.cs">
+      <DependentUpon>Physio_reporting13_F.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Physio_reporting20_F.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Physio_reporting20_F.Designer.cs">
+      <DependentUpon>Physio_reporting20_F.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="psychology_services_Edit_F.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="psychology_services_Edit_F.Designer.cs">
+      <DependentUpon>psychology_services_Edit_F.cs</DependentUpon>
+    </Compile>
+    <Compile Include="education.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Emergency_B_Recipe_F.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Emergency_B_Recipe_F.designer.cs">
+      <DependentUpon>Emergency_B_Recipe_F.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dr_Procedures_Recipe_F.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dr_Procedures_Recipe_F.designer.cs">
+      <DependentUpon>Dr_Procedures_Recipe_F.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dr_Procedures_Reporting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dr_Procedures_Reporting.designer.cs">
+      <DependentUpon>Dr_Procedures_Reporting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Psychology_Recipe_F.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Psychology_Recipe_F.designer.cs">
+      <DependentUpon>Psychology_Recipe_F.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Emergency_Recipe_F.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Emergency_Recipe_F.designer.cs">
+      <DependentUpon>Emergency_Recipe_F.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EmployeeInfoTbl.cs">
+      <DependentUpon>ClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Emergency_Recipe_view_F.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Emergency_Recipe_view_F.Designer.cs">
+      <DependentUpon>Emergency_Recipe_view_F.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddPerson_F.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddPerson_F.Designer.cs">
+      <DependentUpon>AddPerson_F.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EMR_bedroom_number.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EMR_CL_cause.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EMR_DoctorsServices.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EMR_Recipe.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EMR_Room_number.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EventsDescription.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EventsLog.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Fellowship.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="full_niocperson.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Issurance_contract.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Issurance_services.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="JobLocation.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Kala_buy_Request.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Kala_buy_Request.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Location.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main_group_services.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main_Services.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MT31.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MT31.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MT33.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MT33.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MT4.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MT4.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MT51.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MT51.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="NiocPerson.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PaientStatu.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PaientType.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PaientType2.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Paramedicine_speciality.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PersonTbl.cs">
+      <DependentUpon>ClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Physio_Diagnostic.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Physio_DoctorsServices.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="physio_locations.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Physio_Recipe.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Physio_Reporting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Physio_Reporting.designer.cs">
+      <DependentUpon>Physio_Reporting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Physio_reporting2_F.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Physio_reporting2_F.Designer.cs">
+      <DependentUpon>Physio_reporting2_F.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Physio_Reservations_view_F.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Physio_Reservations_view_F.Designer.cs">
+      <DependentUpon>Physio_Reservations_view_F.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Physio_Reservetion.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Physio_Reservetion_F.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Physio_Reservetion_F.Designer.cs">
+      <DependentUpon>Physio_Reservetion_F.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Physio_services_Edit_F.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Physio_services_Edit_F.Designer.cs">
+      <DependentUpon>Physio_services_Edit_F.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Physio_Sessions.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Physio_Sessions_F.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Physio_Sessions_F.Designer.cs">
+      <DependentUpon>Physio_Sessions_F.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Physio_Shifts.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Physio_Treatment_area.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Post.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="psychology_DoctorsServices.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="psychology_Recipe.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="psychology_Shifts.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RadioDentist_Recipe.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Radio_Answer_CR_oldformat.cs">
+      <DependentUpon>Radio_Answer_CR_oldformat.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Radio_Answer__oldformat_F.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Radio_Answer__oldformat_F.Designer.cs">
+      <DependentUpon>Radio_Answer__oldformat_F.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Radio_Area.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Radio_Defaultanswer.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Radio_DentistDefaultanswer_F.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Radio_DentistDefaultanswer_F.Designer.cs">
+      <DependentUpon>Radio_DentistDefaultanswer_F.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Radio_DentistDefaultanswer_Ins_F.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Radio_DentistDefaultanswer_Ins_F.Designer.cs">
+      <DependentUpon>Radio_DentistDefaultanswer_Ins_F.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Radio_DentistDefaultanswer.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Radio_DentistDoctorsServices.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Radio_DentistfilmSize.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Radio_Dentistimagetype.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Radio_Dentistlocations.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Radio_DentistShifts.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Radio_DoctorsServices.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Radio_filmSize.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Radio_DentistfilmSize_F.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Radio_DentistfilmSize_F.Designer.cs">
+      <DependentUpon>Radio_DentistfilmSize_F.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Radio_DentistfilmSize_Ins_F.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Radio_DentistfilmSize_Ins_F.Designer.cs">
+      <DependentUpon>Radio_DentistfilmSize_Ins_F.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Radio_imagetype.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Radio_locations.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Radio_Recipe.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Radio_DentistRecipe_F.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Radio_DentistRecipe_F.Designer.cs">
+      <DependentUpon>Radio_DentistRecipe_F.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Radio_Recipe_F.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Radio_Recipe_F.Designer.cs">
+      <DependentUpon>Radio_Recipe_F.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Psychology_Recipe_view_F.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Psychology_Recipe_view_F.Designer.cs">
+      <DependentUpon>Psychology_Recipe_view_F.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dr_Procedures_Recipe_view_F.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dr_Procedures_Recipe_view_F.Designer.cs">
+      <DependentUpon>Dr_Procedures_Recipe_view_F.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Radio_Dentist_request_view_F.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Radio_Dentist_request_view_F.Designer.cs">
+      <DependentUpon>Radio_Dentist_request_view_F.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Radio_DentistRecipe_view_F.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Radio_DentistRecipe_view_F.Designer.cs">
+      <DependentUpon>Radio_DentistRecipe_view_F.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Radio_reciptions2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Radio_reciptions2.Designer.cs">
+      <DependentUpon>Radio_reciptions2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RadioDentist_report10.cs">
+      <DependentUpon>RadioDentist_report10.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Radio_report10.cs">
+      <DependentUpon>Radio_report10.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Radio_DentistReporting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Radio_DentistReporting.Designer.cs">
+      <DependentUpon>Radio_DentistReporting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RadioDentist_report11.cs">
+      <DependentUpon>RadioDentist_report11.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="RadioDentist_report12.cs">
+      <DependentUpon>RadioDentist_report12.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="RadioDentist_report13.cs">
+      <DependentUpon>RadioDentist_report13.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="RadioDentist_report14.cs">
+      <DependentUpon>RadioDentist_report14.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="RadioDentist_report15.cs">
+      <DependentUpon>RadioDentist_report15.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="RadioDentist_report16.cs">
+      <DependentUpon>RadioDentist_report16.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="RadioDentist_report17.cs">
+      <DependentUpon>RadioDentist_report17.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="RadioDentist_report18.cs">
+      <DependentUpon>RadioDentist_report18.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="RadioDentist_report2.cs">
+      <DependentUpon>RadioDentist_report2.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="RadioDentist_report3.cs">
+      <DependentUpon>RadioDentist_report3.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="RadioDentist_report4.cs">
+      <DependentUpon>RadioDentist_report4.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="RadioDentist_report4_1.cs">
+      <DependentUpon>RadioDentist_report4_1.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="RadioDentist_report5.cs">
+      <DependentUpon>RadioDentist_report5.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="RadioDentist_report6.cs">
+      <DependentUpon>RadioDentist_report6.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="RadioDentist_report7.cs">
+      <DependentUpon>RadioDentist_report7.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="RadioDentist_report8.cs">
+      <DependentUpon>RadioDentist_report8.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="RadioDentist_report9.cs">
+      <DependentUpon>RadioDentist_report9.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Radio_Dentistservices_Edit_F.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Radio_Dentistservices_Edit_F.Designer.cs">
+      <DependentUpon>Radio_Dentistservices_Edit_F.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RadioDentist_reporting11_F.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RadioDentist_reporting11_F.Designer.cs">
+      <DependentUpon>RadioDentist_reporting11_F.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RadioDentist_reporting17_F.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RadioDentist_reporting17_F.Designer.cs">
+      <DependentUpon>RadioDentist_reporting17_F.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RadioDentist_reporting2_F.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RadioDentist_reporting2_F.Designer.cs">
+      <DependentUpon>RadioDentist_reporting2_F.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RadioDentist_reporting3_F.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RadioDentist_reporting3_F.Designer.cs">
+      <DependentUpon>RadioDentist_reporting3_F.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RadioDentist_reporting4_F.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RadioDentist_reporting4_F.Designer.cs">
+      <DependentUpon>RadioDentist_reporting4_F.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RadioDentist_reporting5_F.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RadioDentist_reporting5_F.Designer.cs">
+      <DependentUpon>RadioDentist_reporting5_F.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RadioDentist_reporting6_F.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RadioDentist_reporting6_F.Designer.cs">
+      <DependentUpon>RadioDentist_reporting6_F.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RadioDentist_reporting7_F.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RadioDentist_reporting7_F.Designer.cs">
+      <DependentUpon>RadioDentist_reporting7_F.cs</DependentUpon>
+    </Compile>
+    <Compile Include="release_cause.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Sono_report13.cs">
+      <DependentUpon>Sono_report13.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Radio_report16.cs">
+      <DependentUpon>Radio_report16.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Radio_report18.cs">
+      <DependentUpon>Radio_report18.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Radio_report17.cs">
+      <DependentUpon>Radio_report17.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Radio_report8.cs">
+      <DependentUpon>Radio_report8.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Radio_report9.cs">
+      <DependentUpon>Radio_report9.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Radio_report11.cs">
+      <DependentUpon>Radio_report11.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Radio_report12.cs">
+      <DependentUpon>Radio_report12.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Radio_report13.cs">
+      <DependentUpon>Radio_report13.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Radio_report14.cs">
+      <DependentUpon>Radio_report14.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Radio_report15.cs">
+      <DependentUpon>Radio_report15.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Radio_report7.cs">
+      <DependentUpon>Radio_report7.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Radio_report2.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Radio_report2.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Radio_report3.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Radio_report3.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Radio_report4.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Radio_report4.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Radio_report4_1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Radio_report4_1.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Radio_report5.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Radio_report5.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Radio_report6.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Radio_report6.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Radio_Reporting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Radio_Reporting.Designer.cs">
+      <DependentUpon>Radio_Reporting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Radio_reporting11_F.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Radio_reporting11_F.Designer.cs">
+      <DependentUpon>Radio_reporting11_F.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Radio_reporting17_F.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Radio_reporting17_F.Designer.cs">
+      <DependentUpon>Radio_reporting17_F.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Radio_reporting2_F.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Radio_reporting2_F.Designer.cs">
+      <DependentUpon>Radio_reporting2_F.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Radio_reporting3_F.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Radio_reporting3_F.Designer.cs">
+      <DependentUpon>Radio_reporting3_F.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Radio_reporting4_F.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Radio_reporting4_F.Designer.cs">
+      <DependentUpon>Radio_reporting4_F.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Radio_reporting5_F.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Radio_reporting5_F.Designer.cs">
+      <DependentUpon>Radio_reporting5_F.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Radio_reporting6_F.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Radio_reporting6_F.Designer.cs">
+      <DependentUpon>Radio_reporting6_F.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Radio_reporting7_F.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Radio_reporting7_F.Designer.cs">
+      <DependentUpon>Radio_reporting7_F.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Radio_services_Edit_F.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Radio_services_Edit_F.Designer.cs">
+      <DependentUpon>Radio_services_Edit_F.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Radio_Shifts.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Search_F.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Search_F.Designer.cs">
+      <DependentUpon>Search_F.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Physio_Recipe_F.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Physio_Recipe_F.Designer.cs">
+      <DependentUpon>Physio_Recipe_F.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Physio_Recipe_view_F.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Physio_Recipe_view_F.Designer.cs">
+      <DependentUpon>Physio_Recipe_view_F.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Secondary_Group_Services.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Services_list.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Sono_Answer_CR.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Sono_Answer_CR.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="login_f.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main_f.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="personnel_F.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="personnel_F.Designer.cs">
+      <DependentUpon>personnel_F.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Radio_Answer_CR.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Radio_Answer_CR.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Radio_Answer_F.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Radio_Answer_F.Designer.cs">
+      <DependentUpon>Radio_Answer_F.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Radio_Defaultanswer_F.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Radio_Defaultanswer_F.Designer.cs">
+      <DependentUpon>Radio_Defaultanswer_F.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Radio_Defaultanswer_Ins_F.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Radio_Defaultanswer_Ins_F.Designer.cs">
+      <DependentUpon>Radio_Defaultanswer_Ins_F.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Radio_filmSize_F.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Radio_filmSize_F.Designer.cs">
+      <DependentUpon>Radio_filmSize_F.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Radio_filmSize_Ins_F.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Radio_filmSize_Ins_F.Designer.cs">
+      <DependentUpon>Radio_filmSize_Ins_F.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Radio_recipe_answer_F.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Radio_recipe_answer_F.Designer.cs">
+      <DependentUpon>Radio_recipe_answer_F.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Radio_Recipe_view_F.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Radio_Recipe_view_F.Designer.cs">
+      <DependentUpon>Radio_Recipe_view_F.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Services_F.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Services_F.Designer.cs">
+      <DependentUpon>Services_F.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sono_Answer_F.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sono_Answer_F.Designer.cs">
+      <DependentUpon>Sono_Answer_F.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SONO_Defaultanswer.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Sono_Defaultanswer_F.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sono_Defaultanswer_F.Designer.cs">
+      <DependentUpon>Sono_Defaultanswer_F.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sono_Defaultanswer_Ins_F.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sono_Defaultanswer_Ins_F.Designer.cs">
+      <DependentUpon>Sono_Defaultanswer_Ins_F.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sono_DoctorsServices.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SONO_locations.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SONO_Recipe.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Sono_recipe_answer_F.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sono_recipe_answer_F.Designer.cs">
+      <DependentUpon>Sono_recipe_answer_F.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sono_Recipe_F.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sono_Recipe_F.Designer.cs">
+      <DependentUpon>Sono_Recipe_F.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sono_Recipe_view_F.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sono_Recipe_view_F.Designer.cs">
+      <DependentUpon>Sono_Recipe_view_F.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Physio_report2.cs">
+      <DependentUpon>Physio_report2.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Sono_report2.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Sono_report2.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Sono_report3.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Sono_report3.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Sono_report4.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Sono_report4.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Sono_report4_1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Sono_report4_1.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Sono_report5.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Sono_report5.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Sono_report6.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Sono_report6.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Sono_Reporting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sono_Reporting.designer.cs">
+      <DependentUpon>Sono_Reporting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sono_reporting13_F.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sono_reporting13_F.Designer.cs">
+      <DependentUpon>Sono_reporting13_F.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sono_reporting2_F.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sono_reporting2_F.Designer.cs">
+      <DependentUpon>Sono_reporting2_F.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sono_reporting3_F.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sono_reporting3_F.Designer.cs">
+      <DependentUpon>Sono_reporting3_F.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dr_Procedures_services_Edit_F.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dr_Procedures_services_Edit_F.Designer.cs">
+      <DependentUpon>Dr_Procedures_services_Edit_F.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PaientSurgery_services_Edit_F.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PaientSurgery_services_Edit_F.Designer.cs">
+      <DependentUpon>PaientSurgery_services_Edit_F.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sono_services_Edit_F.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sono_services_Edit_F.Designer.cs">
+      <DependentUpon>Sono_services_Edit_F.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SONO_Shifts.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="speciality.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Sscientific_Grade.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="StorePh_Company.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="storePh_export.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="storePh_export2.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="StorePh_exportDetail.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="StorePh_exportDetail2.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="StorePh_Group.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="StorePh_import.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="StorePh_importDetail.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="StorePh_Kala.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="StorePh_Unit.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="StoreTa_card_index.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StoreTa_card_index.Designer.cs">
+      <DependentUpon>StoreTa_card_index.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StoreTa_Company.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="StoreTa_Company_F.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StoreTa_Company_F.Designer.cs">
+      <DependentUpon>StoreTa_Company_F.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StoreTa_Company_View_F.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StoreTa_Company_View_F.Designer.cs">
+      <DependentUpon>StoreTa_Company_View_F.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StoreTa_export.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="StoreTa_export2.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="StoreTa_exportDetail.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="StoreTa_exportDetail2.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="StoreTa_Factor_Detail_F.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StoreTa_Factor_Detail_F.Designer.cs">
+      <DependentUpon>StoreTa_Factor_Detail_F.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StoreTa_Factor_F.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StoreTa_Factor_F.Designer.cs">
+      <DependentUpon>StoreTa_Factor_F.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StoreTa_Factor_View_F.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StoreTa_Factor_View_F.Designer.cs">
+      <DependentUpon>StoreTa_Factor_View_F.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StoreTa_Group.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="StoreTa_Group_F.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StoreTa_Group_F.Designer.cs">
+      <DependentUpon>StoreTa_Group_F.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StoreTa_Group_view_F.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StoreTa_Group_view_F.Designer.cs">
+      <DependentUpon>StoreTa_Group_view_F.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StoreTa_import.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="StoreTa_ImportDetail.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="StoreTa_Kala.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="StoreTa_Kala_F.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StoreTa_Kala_F.Designer.cs">
+      <DependentUpon>StoreTa_Kala_F.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StoreTa_Kala_View_F.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StoreTa_Kala_View_F.Designer.cs">
+      <DependentUpon>StoreTa_Kala_View_F.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StoreTa_NIS_view_F.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StoreTa_NIS_view_F.Designer.cs">
+      <DependentUpon>StoreTa_NIS_view_F.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StoreTa_OrderPoint_view_F.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StoreTa_OrderPoint_view_F.Designer.cs">
+      <DependentUpon>StoreTa_OrderPoint_view_F.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StoreTa_Request2_CrystalReport1.cs">
+      <DependentUpon>StoreTa_Request2_CrystalReport1.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="StoreTa_Request_CrystalReport1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StoreTa_Request_CrystalReport1.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="StoreTa_Request_Detail_Second_F.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StoreTa_Request_Detail_Second_F.Designer.cs">
+      <DependentUpon>StoreTa_Request_Detail_Second_F.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StoreTa_Request_Detail_F.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StoreTa_Request_Detail_F.Designer.cs">
+      <DependentUpon>StoreTa_Request_Detail_F.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StoreTa_Request2_print.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StoreTa_Request2_print.Designer.cs">
+      <DependentUpon>StoreTa_Request2_print.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StoreTa_Request_Second_F.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StoreTa_Request_Second_F.designer.cs">
+      <DependentUpon>StoreTa_Request_Second_F.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StoreTa_Request_F.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StoreTa_Request_F.designer.cs">
+      <DependentUpon>StoreTa_Request_F.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StoreTa_Request_user_F.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StoreTa_Request_user_F.Designer.cs">
+      <DependentUpon>StoreTa_Request_user_F.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StoreTa_Request_print.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StoreTa_Request_print.Designer.cs">
+      <DependentUpon>StoreTa_Request_print.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StoreTa_Request_view_Confirm_F.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StoreTa_Request_view_Confirm_F.Designer.cs">
+      <DependentUpon>StoreTa_Request_view_Confirm_F.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StoreTa_Request_view_F.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StoreTa_Request_view_F.Designer.cs">
+      <DependentUpon>StoreTa_Request_view_F.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StoreTa_Request_view_Store2_F.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StoreTa_Request_view_Store2_F.Designer.cs">
+      <DependentUpon>StoreTa_Request_view_Store2_F.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StoreTa_Request_view_Store_F.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StoreTa_Request_view_Store_F.Designer.cs">
+      <DependentUpon>StoreTa_Request_view_Store_F.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StoreTa_Request_view_User_F.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StoreTa_Request_view_User_F.Designer.cs">
+      <DependentUpon>StoreTa_Request_view_User_F.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StoreTa_Return_view_F.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StoreTa_Return_view_F.Designer.cs">
+      <DependentUpon>StoreTa_Return_view_F.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StoreTa_Unit.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="StoreTa_Unit_F.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StoreTa_Unit_F.Designer.cs">
+      <DependentUpon>StoreTa_Unit_F.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StoreTa_Unit_view_F.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StoreTa_Unit_view_F.Designer.cs">
+      <DependentUpon>StoreTa_Unit_view_F.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StoreTa_Unused_view_F.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StoreTa_Unused_view_F.Designer.cs">
+      <DependentUpon>StoreTa_Unused_view_F.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SurgeryDetail.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SurgeryDevicesPaient.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SurgeryDevicesPlan.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SurgeryDevicesPlanDetail.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="surgeryDevicesTariff.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SurgeryDevices_group.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SurgeryDocument_Status.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SurgeryName.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SurgeryNamesView.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SurgeryPaientBedroom.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SurgeryPaientList.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SurgeryPaientService.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SurgeryPaient_Status.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SurgeryRoom.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SurgeryServicesTariff.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Surgery_HistoryIll.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Surgery_Illnesshistory.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Surgery_Names_F.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Surgery_Names_F.Designer.cs">
+      <DependentUpon>Surgery_Names_F.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Surgery_PartName.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Surgery_payment.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Surgery_prepayment.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Surgery_prepayment_F.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Surgery_prepayment_F.Designer.cs">
+      <DependentUpon>Surgery_prepayment_F.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ambulance_View_F.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ambulance_View_F.Designer.cs">
+      <DependentUpon>Ambulance_View_F.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Surgery_release_F.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Surgery_release_F.Designer.cs">
+      <DependentUpon>Surgery_release_F.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Surgery_Reports_F.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Surgery_Reports_F.Designer.cs">
+      <DependentUpon>Surgery_Reports_F.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Psychology_Services_F.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Psychology_Services_F.Designer.cs">
+      <DependentUpon>Psychology_Services_F.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Surgery_Select_F.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Surgery_Select_F.Designer.cs">
+      <DependentUpon>Surgery_Select_F.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Surgery_ServicesgroupList.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Surgery_Bill_F.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Surgery_Bill_F.Designer.cs">
+      <DependentUpon>Surgery_Bill_F.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Surgery_assurance_view_F.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Surgery_assurance_view_F.Designer.cs">
+      <DependentUpon>Surgery_assurance_view_F.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Surgery_view_F.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Surgery_view_F.Designer.cs">
+      <DependentUpon>Surgery_view_F.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Surgery_Recipe.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Surgery_recipe_F.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Surgery_recipe_F.Designer.cs">
+      <DependentUpon>Surgery_recipe_F.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Surgery_Part_view_F.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Surgery_Part_view_F.Designer.cs">
+      <DependentUpon>Surgery_Part_view_F.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Surgery_Recipe_view_F.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Surgery_Recipe_view_F.Designer.cs">
+      <DependentUpon>Surgery_Recipe_view_F.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Surgery_ServicesList.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Surgey_detail_Report_F.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Surgey_detail_Report_F.Designer.cs">
+      <DependentUpon>Surgey_detail_Report_F.cs</DependentUpon>
+    </Compile>
+    <Compile Include="tadilat_kind.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Tariff.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Tariff_F.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tariff_F.Designer.cs">
+      <DependentUpon>Tariff_F.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tariff_kind.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Tariff_kinds.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Tariff_kind_View.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Tariifcash.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TblCompany.cs">
+      <DependentUpon>ClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TblEmployeetype.cs">
+      <DependentUpon>ClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TblManagement.cs">
+      <DependentUpon>ClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TblRelation.cs">
+      <DependentUpon>ClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TblUser.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TblUsersView.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Tbl_ValidCenterZone.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tempturnno.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Transfer_Document_F.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transfer_Document_F.Designer.cs">
+      <DependentUpon>Transfer_Document_F.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TurnStatu.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="updateradiorecipe2.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="update_radiorecipe1.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="userKind.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Users_F.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Users_F.Designer.cs">
+      <DependentUpon>Users_F.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Users_View_F.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Users_View_F.Designer.cs">
+      <DependentUpon>Users_View_F.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User_Edit1_F.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="User_Edit1_F.Designer.cs">
+      <DependentUpon>User_Edit1_F.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User_edit_F.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="User_edit_F.Designer.cs">
+      <DependentUpon>User_edit_F.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ValidCenter.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="View_1.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="View_2.cs">
+      <DependentUpon>DayClinicModel.tt</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Accounting_bill_F.resx">
+      <DependentUpon>Accounting_bill_F.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddPerson_F.resx">
+      <DependentUpon>AddPerson_F.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ambulance_F.resx">
+      <DependentUpon>Ambulance_F.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ambulance_tariff_F.resx">
+      <DependentUpon>Ambulance_tariff_F.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Comision_report2_F.resx">
+      <DependentUpon>Comision_report2_F.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="dr_procedures_report_employee2.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>dr_procedures_report_employee2.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="dr_procedures_report_employee2_F.resx">
+      <DependentUpon>dr_procedures_report_employee2_F.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="dr_procedures_report_employee1_F.resx">
+      <DependentUpon>dr_procedures_report_employee1_F.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Comision_report3_F.resx">
+      <DependentUpon>Comision_report3_F.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Comision_report1_F.resx">
+      <DependentUpon>Comision_report1_F.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Comision_report2.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Comision_report2.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Comision_report3.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Comision_report3.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Comision_report1.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Comision_report1.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Comision_View_F.resx">
+      <DependentUpon>Comision_View_F.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Comission_members_F.resx">
+      <DependentUpon>Comission_members_F.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Comission_Result_F.resx">
+      <DependentUpon>Comission_Result_F.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Comission_F.resx">
+      <DependentUpon>Comission_F.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="dr_procedures_report_employee1.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>dr_procedures_report_employee1.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Emergency_services_Edit_F.resx">
+      <DependentUpon>Emergency_services_Edit_F.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="emr_report_services_group.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>emr_report_services_group.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="emr_report_services_group_F.resx">
+      <DependentUpon>emr_report_services_group_F.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Emr_teriaz_F.resx">
+      <DependentUpon>Emr_teriaz_F.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="hoteling_F.resx">
+      <DependentUpon>hoteling_F.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="k_tariff_F.resx">
+      <DependentUpon>k_tariff_F.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Moshavereh_F.resx">
+      <DependentUpon>Moshavereh_F.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="P_OrganizationPost_F.resx">
+      <DependentUpon>P_OrganizationPost_F.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="P_CurrentPost_F.resx">
+      <DependentUpon>P_CurrentPost_F.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="P_Education_Degree_F.resx">
+      <DependentUpon>P_Education_Degree_F.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="P_Personel_F.resx">
+      <DependentUpon>P_Personel_F.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sata_Samaneh_F.resx">
+      <DependentUpon>Sata_Samaneh_F.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dr_Procedures_Services_F.resx">
+      <DependentUpon>Dr_Procedures_Services_F.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Emr_Services_F.resx">
+      <DependentUpon>Emr_Services_F.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="psychology_report20.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>psychology_report20.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Comisions_Reporting.resx">
+      <DependentUpon>Comisions_Reporting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="psychology_Reporting20_F.resx">
+      <DependentUpon>psychology_Reporting20_F.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sono_reporting6_F.resx">
+      <DependentUpon>Sono_reporting6_F.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Surgeryform2_F.resx">
+      <DependentUpon>Surgeryform2_F.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Surgeryform2_report.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Surgeryform2_report.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="P_Personelview_F.resx">
+      <DependentUpon>P_Personelview_F.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Surgey_detail_Report.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Surgey_detail_Report.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bill_Paient_report.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Bill_Paient_report.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bill_paient_reportView.resx">
+      <DependentUpon>Bill_paient_reportView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dashboard_1_F.resx">
+      <DependentUpon>Dashboard_1_F.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="devicespaientview_report.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>devicespaientview_report.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="devicespaientview_report_F.resx">
+      <DependentUpon>devicespaientview_report_F.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DevicesUse_F.resx">
+      <DependentUpon>DevicesUse_F.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Industry_Med_detail_F.resx">
+      <DependentUpon>Industry_Med_detail_F.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Paient_bracelet.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Paient_bracelet.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="paient_bracelet_F.resx">
+      <DependentUpon>paient_bracelet_F.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="psychology_Reporting.resx">
+      <DependentUpon>psychology_Reporting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="emr_report_joblocations.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>emr_report_joblocations.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="emr_report_joblocations_F.resx">
+      <DependentUpon>emr_report_joblocations_F.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="emr_report_services.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>emr_report_services.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="emr_report_services_F.resx">
+      <DependentUpon>emr_report_services_F.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Physio_reporting2_F.resx">
+      <DependentUpon>Physio_reporting2_F.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sono_report7.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Sono_report7.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Services_Select_FN_F.resx">
+      <DependentUpon>Services_Select_FN_F.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Services_Select_F.resx">
+      <DependentUpon>Services_Select_F.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sono_recipe_Select_F.resx">
+      <DependentUpon>Sono_recipe_Select_F.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Emergency_Reporting.resx">
+      <DependentUpon>Emergency_Reporting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sono_reporting7_F.resx">
+      <DependentUpon>Sono_reporting7_F.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StoreTa_FactorToRequest_F.resx">
+      <DependentUpon>StoreTa_FactorToRequest_F.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StoreTa_Search_F.resx">
+      <DependentUpon>StoreTa_Search_F.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Surgery_DevicesList_GroupAssign_F.resx">
+      <DependentUpon>Surgery_DevicesList_GroupAssign_F.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Surgery_Deviceslist_select_F.resx">
+      <DependentUpon>Surgery_Deviceslist_select_F.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Surgery_DevicesPlan_CR.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Surgery_DevicesPlan_CR.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Surgery_DevicesPlan_print_F.resx">
+      <DependentUpon>Surgery_DevicesPlan_print_F.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Surgery_Doctors_Work.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Surgery_Doctors_Work.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Surgery_Doctors_Work_B.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Surgery_Doctors_Work_B.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Surgery_Doctors_Work_B_F.resx">
+      <DependentUpon>Surgery_Doctors_Work_B_F.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Surgery_Doctors_Work_F.resx">
+      <DependentUpon>Surgery_Doctors_Work_F.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Surgery_Payment_F.resx">
+      <DependentUpon>Surgery_Payment_F.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Surgery_Prepayment_ViewF.resx">
+      <DependentUpon>Surgery_Prepayment_ViewF.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Surgery_Answer_CR.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Surgery_Answer_CR.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Surgery_Answer_F.resx">
+      <DependentUpon>Surgery_Answer_F.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Surgery_Defaultanswer_F.resx">
+      <DependentUpon>Surgery_Defaultanswer_F.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Surgery_Defaultanswer_Ins_F.resx">
+      <DependentUpon>Surgery_Defaultanswer_Ins_F.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Surgery_paient_bill2.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Surgery_paient_bill2.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Surgery_paient_bill.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Surgery_paient_bill.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Surgery_paient_bill_F.resx">
+      <DependentUpon>Surgery_paient_bill_F.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Surgery_Prepayment_Def_F.resx">
+      <DependentUpon>Surgery_Prepayment_Def_F.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Surgery_recipe_answer_F.resx">
+      <DependentUpon>Surgery_recipe_answer_F.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sono_services_Select_F.resx">
+      <DependentUpon>Sono_services_Select_F.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Surgerypaientserviceslist_F.resx">
+      <DependentUpon>Surgerypaientserviceslist_F.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bill_Paient_F.resx">
+      <DependentUpon>Bill_Paient_F.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChangePassword_F.resx">
+      <DependentUpon>ChangePassword_F.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChangePhysioEndDate_F.resx">
+      <DependentUpon>ChangePhysioEndDate_F.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChangTurnDate_F.resx">
+      <DependentUpon>ChangTurnDate_F.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DocNumber_Edit_F.resx">
+      <DependentUpon>DocNumber_Edit_F.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DocNumber_View_F.resx">
+      <DependentUpon>DocNumber_View_F.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SurgeryPartBedroom_view_F.resx">
+      <DependentUpon>SurgeryPartBedroom_view_F.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Surgery_Balancing_Edit_F.resx">
+      <DependentUpon>Surgery_Balancing_Edit_F.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Radio_report22.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Radio_report22.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Radio_reporting22_F.resx">
+      <DependentUpon>Radio_reporting22_F.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ScheduleOperations.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ScheduleOperations.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ScheduleOperations_F.resx">
+      <DependentUpon>ScheduleOperations_F.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StoreTa_Request_view_Store_F.resx">
+      <DependentUpon>StoreTa_Request_view_Store_F.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SurgeryDetail_F.resx">
+      <DependentUpon>SurgeryDetail_F.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SurgeryPaientServices_F.resx">
+      <DependentUpon>SurgeryPaientServices_F.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SurgeryPartBedroom_F.resx">
+      <DependentUpon>SurgeryPartBedroom_F.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Surgery_DevicesList_F.resx">
+      <DependentUpon>Surgery_DevicesList_F.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Surgery_DevicesPaient_F.resx">
+      <DependentUpon>Surgery_DevicesPaient_F.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Surgery_DevicesPaient_Plan_F.resx">
+      <DependentUpon>Surgery_DevicesPaient_Plan_F.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Surgery_DevicesPlan_View_F.resx">
+      <DependentUpon>Surgery_DevicesPlan_View_F.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Surgery_DevicesPlan_F.resx">
+      <DependentUpon>Surgery_DevicesPlan_F.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Surgery_DevicesTariff_F.resx">
+      <DependentUpon>Surgery_DevicesTariff_F.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Surgery_Deviceslist_View_F.resx">
+      <DependentUpon>Surgery_Deviceslist_View_F.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Informations_F.resx">
+      <DependentUpon>Informations_F.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PaientSurgeryListview_F.resx">
+      <DependentUpon>PaientSurgeryListview_F.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PaientSurgeryList_F.resx">
+      <DependentUpon>PaientSurgeryList_F.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Paient_Surgerylist_select.resx">
+      <DependentUpon>Paient_Surgerylist_select.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PartBedRoom_F.resx">
+      <DependentUpon>PartBedRoom_F.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Part_rooms_F.resx">
+      <DependentUpon>Part_rooms_F.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Part_names_F.resx">
+      <DependentUpon>Part_names_F.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Part_Names_view_F.resx">
+      <DependentUpon>Part_Names_view_F.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Physio_report13.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Physio_report13.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Physio_report20.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Physio_report20.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Physio_reporting13_F.resx">
+      <DependentUpon>Physio_reporting13_F.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="psychology_services_Edit_F.resx">
+      <DependentUpon>psychology_services_Edit_F.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Emergency_B_Recipe_F.resx">
+      <DependentUpon>Emergency_B_Recipe_F.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dr_Procedures_Recipe_F.resx">
+      <DependentUpon>Dr_Procedures_Recipe_F.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dr_Procedures_Reporting.resx">
+      <DependentUpon>Dr_Procedures_Reporting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Psychology_Recipe_F.resx">
+      <DependentUpon>Psychology_Recipe_F.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Emergency_Recipe_F.resx">
+      <DependentUpon>Emergency_Recipe_F.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Emergency_Recipe_view_F.resx">
+      <DependentUpon>Emergency_Recipe_view_F.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Kala_buy_Request.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Kala_buy_Request.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="login_f.resx">
+      <DependentUpon>login_f.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main_f.resx">
+      <DependentUpon>Main_f.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MT31.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>MT31.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MT33.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>MT33.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MT4.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>MT4.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MT51.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>MT51.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="personnel_F.resx">
+      <DependentUpon>personnel_F.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Physio_Recipe_F.resx">
+      <DependentUpon>Physio_Recipe_F.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Physio_Recipe_view_F.resx">
+      <DependentUpon>Physio_Recipe_view_F.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Physio_Reporting.resx">
+      <DependentUpon>Physio_Reporting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Physio_Reservations_view_F.resx">
+      <DependentUpon>Physio_Reservations_view_F.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Physio_Reservetion_F.resx">
+      <DependentUpon>Physio_Reservetion_F.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Physio_services_Edit_F.resx">
+      <DependentUpon>Physio_services_Edit_F.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Physio_Sessions_F.resx">
+      <DependentUpon>Physio_Sessions_F.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Radio_Answer_CR_oldformat.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Radio_Answer_CR_oldformat.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Radio_Answer_CR.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Radio_Answer_CR.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Radio_Answer__oldformat_F.resx">
+      <DependentUpon>Radio_Answer__oldformat_F.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Radio_Answer_F.resx">
+      <DependentUpon>Radio_Answer_F.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Radio_DentistDefaultanswer_F.resx">
+      <DependentUpon>Radio_DentistDefaultanswer_F.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Radio_Defaultanswer_F.resx">
+      <DependentUpon>Radio_Defaultanswer_F.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Radio_DentistDefaultanswer_Ins_F.resx">
+      <DependentUpon>Radio_DentistDefaultanswer_Ins_F.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Radio_Defaultanswer_Ins_F.resx">
+      <DependentUpon>Radio_Defaultanswer_Ins_F.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Radio_DentistfilmSize_F.resx">
+      <DependentUpon>Radio_DentistfilmSize_F.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Radio_filmSize_F.resx">
+      <DependentUpon>Radio_filmSize_F.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Radio_DentistfilmSize_Ins_F.resx">
+      <DependentUpon>Radio_DentistfilmSize_Ins_F.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Radio_filmSize_Ins_F.resx">
+      <DependentUpon>Radio_filmSize_Ins_F.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Radio_recipe_answer_F.resx">
+      <DependentUpon>Radio_recipe_answer_F.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Radio_DentistRecipe_F.resx">
+      <DependentUpon>Radio_DentistRecipe_F.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Radio_Recipe_F.resx">
+      <DependentUpon>Radio_Recipe_F.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Psychology_Recipe_view_F.resx">
+      <DependentUpon>Psychology_Recipe_view_F.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dr_Procedures_Recipe_view_F.resx">
+      <DependentUpon>Dr_Procedures_Recipe_view_F.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Radio_Dentist_request_view_F.resx">
+      <DependentUpon>Radio_Dentist_request_view_F.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Radio_DentistRecipe_view_F.resx">
+      <DependentUpon>Radio_DentistRecipe_view_F.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Radio_Recipe_view_F.resx">
+      <DependentUpon>Radio_Recipe_view_F.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Radio_reciptions2.resx">
+      <DependentUpon>Radio_reciptions2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RadioDentist_report10.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RadioDentist_report10.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Radio_report10.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Radio_report10.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Radio_DentistReporting.resx">
+      <DependentUpon>Radio_DentistReporting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RadioDentist_report11.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RadioDentist_report11.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RadioDentist_report12.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RadioDentist_report12.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RadioDentist_report13.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RadioDentist_report13.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RadioDentist_report14.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RadioDentist_report14.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RadioDentist_report15.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RadioDentist_report15.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RadioDentist_report16.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RadioDentist_report16.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RadioDentist_report17.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RadioDentist_report17.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RadioDentist_report18.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RadioDentist_report18.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RadioDentist_report2.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RadioDentist_report2.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RadioDentist_report3.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RadioDentist_report3.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RadioDentist_report4.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RadioDentist_report4.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RadioDentist_report4_1.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RadioDentist_report4_1.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RadioDentist_report5.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RadioDentist_report5.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RadioDentist_report6.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RadioDentist_report6.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RadioDentist_report7.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RadioDentist_report7.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RadioDentist_report8.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RadioDentist_report8.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RadioDentist_report9.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RadioDentist_report9.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Radio_Dentistservices_Edit_F.resx">
+      <DependentUpon>Radio_Dentistservices_Edit_F.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RadioDentist_reporting11_F.resx">
+      <DependentUpon>RadioDentist_reporting11_F.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RadioDentist_reporting17_F.resx">
+      <DependentUpon>RadioDentist_reporting17_F.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RadioDentist_reporting2_F.resx">
+      <DependentUpon>RadioDentist_reporting2_F.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RadioDentist_reporting3_F.resx">
+      <DependentUpon>RadioDentist_reporting3_F.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RadioDentist_reporting4_F.resx">
+      <DependentUpon>RadioDentist_reporting4_F.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RadioDentist_reporting5_F.resx">
+      <DependentUpon>RadioDentist_reporting5_F.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RadioDentist_reporting6_F.resx">
+      <DependentUpon>RadioDentist_reporting6_F.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RadioDentist_reporting7_F.resx">
+      <DependentUpon>RadioDentist_reporting7_F.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sono_report13.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Sono_report13.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Radio_report16.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Radio_report16.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Radio_report18.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Radio_report18.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Radio_report17.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Radio_report17.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Radio_report8.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Radio_report8.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Radio_report9.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Radio_report9.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Radio_report11.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Radio_report11.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Radio_report12.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Radio_report12.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Radio_report13.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Radio_report13.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Radio_report14.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Radio_report14.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Radio_report15.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Radio_report15.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Radio_report7.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Radio_report7.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Radio_report2.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Radio_report2.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Radio_report3.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Radio_report3.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Radio_report4.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Radio_report4.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Radio_report4_1.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Radio_report4_1.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Radio_report5.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Radio_report5.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Radio_report6.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Radio_report6.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Radio_Reporting.resx">
+      <DependentUpon>Radio_Reporting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Radio_reporting11_F.resx">
+      <DependentUpon>Radio_reporting11_F.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Radio_reporting17_F.resx">
+      <DependentUpon>Radio_reporting17_F.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="radio_reporting2_F.resx">
+      <DependentUpon>Radio_reporting2_F.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Radio_reporting3_F.resx">
+      <DependentUpon>Radio_reporting3_F.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Radio_reporting4_F.resx">
+      <DependentUpon>Radio_reporting4_F.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Radio_reporting5_F.resx">
+      <DependentUpon>Radio_reporting5_F.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Radio_reporting6_F.resx">
+      <DependentUpon>Radio_reporting6_F.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Radio_reporting7_F.resx">
+      <DependentUpon>Radio_reporting7_F.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Radio_services_Edit_F.resx">
+      <DependentUpon>Radio_services_Edit_F.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Search_F.resx">
+      <DependentUpon>Search_F.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Services_F.resx">
+      <DependentUpon>Services_F.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sono_Answer_CR.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Sono_Answer_CR.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sono_Answer_F.resx">
+      <DependentUpon>Sono_Answer_F.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sono_Defaultanswer_F.resx">
+      <DependentUpon>Sono_Defaultanswer_F.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sono_Defaultanswer_Ins_F.resx">
+      <DependentUpon>Sono_Defaultanswer_Ins_F.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sono_recipe_answer_F.resx">
+      <DependentUpon>Sono_recipe_answer_F.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sono_Recipe_F.resx">
+      <DependentUpon>Sono_Recipe_F.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sono_Recipe_view_F.resx">
+      <DependentUpon>Sono_Recipe_view_F.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Physio_report2.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Physio_report2.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sono_report2.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Sono_report2.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sono_report3.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Sono_report3.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sono_report4.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Sono_report4.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sono_report4_1.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Sono_report4_1.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sono_report5.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Sono_report5.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sono_report6.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Sono_report6.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sono_Reporting.resx">
+      <DependentUpon>Sono_Reporting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sono_reporting13_F.resx">
+      <DependentUpon>Sono_reporting13_F.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sono_reporting2_F.resx">
+      <DependentUpon>Sono_reporting2_F.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sono_reporting3_F.resx">
+      <DependentUpon>Sono_reporting3_F.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dr_Procedures_services_Edit_F.resx">
+      <DependentUpon>Dr_Procedures_services_Edit_F.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PaientSurgery_services_Edit_F.resx">
+      <DependentUpon>PaientSurgery_services_Edit_F.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sono_services_Edit_F.resx">
+      <DependentUpon>Sono_services_Edit_F.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StoreTa_card_index.resx">
+      <DependentUpon>StoreTa_card_index.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StoreTa_Company_F.resx">
+      <DependentUpon>StoreTa_Company_F.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StoreTa_Company_View_F.resx">
+      <DependentUpon>StoreTa_Company_View_F.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StoreTa_Factor_Detail_F.resx">
+      <DependentUpon>StoreTa_Factor_Detail_F.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StoreTa_Factor_F.resx">
+      <DependentUpon>StoreTa_Factor_F.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StoreTa_Factor_View_F.resx">
+      <DependentUpon>StoreTa_Factor_View_F.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StoreTa_Group_F.resx">
+      <DependentUpon>StoreTa_Group_F.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StoreTa_Group_view_F.resx">
+      <DependentUpon>StoreTa_Group_view_F.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StoreTa_Kala_F.resx">
+      <DependentUpon>StoreTa_Kala_F.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StoreTa_Kala_View_F.resx">
+      <DependentUpon>StoreTa_Kala_View_F.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StoreTa_NIS_view_F.resx">
+      <DependentUpon>StoreTa_NIS_view_F.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StoreTa_OrderPoint_view_F.resx">
+      <DependentUpon>StoreTa_OrderPoint_view_F.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StoreTa_Request2_CrystalReport1.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>StoreTa_Request2_CrystalReport1.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StoreTa_Request_CrystalReport1.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>StoreTa_Request_CrystalReport1.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StoreTa_Request_Detail_Second_F.resx">
+      <DependentUpon>StoreTa_Request_Detail_Second_F.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StoreTa_Request_Detail_F.resx">
+      <DependentUpon>StoreTa_Request_Detail_F.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StoreTa_Request2_print.resx">
+      <DependentUpon>StoreTa_Request2_print.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StoreTa_Request_Second_F.resx">
+      <DependentUpon>StoreTa_Request_Second_F.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StoreTa_Request_F.resx">
+      <DependentUpon>StoreTa_Request_F.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StoreTa_Request_user_F.resx">
+      <DependentUpon>StoreTa_Request_user_F.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StoreTa_Request_print.resx">
+      <DependentUpon>StoreTa_Request_print.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StoreTa_Request_view_Confirm_F.resx">
+      <DependentUpon>StoreTa_Request_view_Confirm_F.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StoreTa_Request_view_F.resx">
+      <DependentUpon>StoreTa_Request_view_F.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StoreTa_Request_view_Store2_F.resx">
+      <DependentUpon>StoreTa_Request_view_Store2_F.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StoreTa_Request_view_User_F.resx">
+      <DependentUpon>StoreTa_Request_view_User_F.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StoreTa_Return_view_F.resx">
+      <DependentUpon>StoreTa_Return_view_F.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StoreTa_Unit_F.resx">
+      <DependentUpon>StoreTa_Unit_F.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StoreTa_Unit_view_F.resx">
+      <DependentUpon>StoreTa_Unit_view_F.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StoreTa_Unused_view_F.resx">
+      <DependentUpon>StoreTa_Unused_view_F.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Surgery_Names_F.resx">
+      <DependentUpon>Surgery_Names_F.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Surgery_prepayment_F.resx">
+      <DependentUpon>Surgery_prepayment_F.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Surgery_Bill_F.resx">
+      <DependentUpon>Surgery_Bill_F.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ambulance_View_F.resx">
+      <DependentUpon>Ambulance_View_F.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Surgery_release_F.resx">
+      <DependentUpon>Surgery_release_F.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Surgery_Reports_F.resx">
+      <DependentUpon>Surgery_Reports_F.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Psychology_Services_F.resx">
+      <DependentUpon>Psychology_Services_F.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Surgery_Select_F.resx">
+      <DependentUpon>Surgery_Select_F.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Surgery_assurance_view_F.resx">
+      <DependentUpon>Surgery_assurance_view_F.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Surgery_view_F.resx">
+      <DependentUpon>Surgery_view_F.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Surgery_recipe_F.resx">
+      <DependentUpon>Surgery_recipe_F.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Surgery_Part_view_F.resx">
+      <DependentUpon>Surgery_Part_view_F.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Surgery_Recipe_view_F.resx">
+      <DependentUpon>Surgery_Recipe_view_F.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Surgey_detail_Report_F.resx">
+      <DependentUpon>Surgey_detail_Report_F.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tariff_F.resx">
+      <DependentUpon>Tariff_F.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transfer_Document_F.resx">
+      <DependentUpon>Transfer_Document_F.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Users_F.resx">
+      <DependentUpon>Users_F.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Users_View_F.resx">
+      <DependentUpon>Users_View_F.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User_Edit1_F.resx">
+      <DependentUpon>User_Edit1_F.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User_edit_F.resx">
+      <DependentUpon>User_edit_F.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <EntityDeploy Include="DayClinicModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>DayClinicModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <EntityDeploy Include="ClinicModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ClinicModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="ClinicModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ClinicModel.edmx</DependentUpon>
+      <LastGenOutput>ClinicModel.Context.cs</LastGenOutput>
+    </None>
+    <None Include="ClinicModel.edmx.diagram">
+      <DependentUpon>ClinicModel.edmx</DependentUpon>
+    </None>
+    <None Include="ClinicModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ClinicModel.edmx</DependentUpon>
+      <LastGenOutput>ClinicModel.cs</LastGenOutput>
+    </None>
+    <None Include="DayClinicModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>DayClinicModel.edmx</DependentUpon>
+      <LastGenOutput>DayClinicModel.Context.cs</LastGenOutput>
+    </None>
+    <None Include="DayClinicModel.edmx.diagram">
+      <DependentUpon>DayClinicModel.edmx</DependentUpon>
+    </None>
+    <None Include="DayClinicModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>DayClinicModel.edmx</DependentUpon>
+      <LastGenOutput>DayClinicModel.cs</LastGenOutput>
+    </None>
+    <None Include="packages.config" />
+    <None Include="PIHO DAYCLINIC SOFTWARE_TemporaryKey.pfx" />
+    <None Include="Properties\app.manifest" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="Service References\Sata_Services\HospitalService.wsdl" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Insicons.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\del5.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\editicons.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\editicons2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\images5.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\Insicons.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\Insicons2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\Insicons4.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\del2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\del1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5.1">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5.1 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\arrow icon71.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\images.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\images2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\search images4.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\Search-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\aligncenter.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\alignjustify.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\alignleft.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\alignright.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bold.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fontcolor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\font-decreasesize.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\font-increasesize.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\italic.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Strikethrough16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\subscript.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\superscript.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\superscript1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\underline.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Insicons3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Franksouza183-Fs-Apps-scan-monitor.ico" />
+    <None Include="Resources\dicom3.jpg" />
+    <None Include="Resources\images.jpg" />
+    <None Include="Resources\GFI264-Calendar.jpg" />
+    <None Include="Resources\calendar-icon-294x300.jpg" />
+    <None Include="Resources\calendar-icon-294x300_2.jpg" />
+    <None Include="Resources\images333.jpg" />
+    <None Include="Resources\calendar.gif" />
+    <None Include="Resources\images55.jpg" />
+    <None Include="Resources\images34.jpg" />
+    <None Include="Resources\imagesdatew.jpg" />
+    <None Include="Resources\imagesc.jpg" />
+    <None Include="Resources\redo.png" />
+    <None Include="Resources\undo.png" />
+    <None Include="Resources\copy.png" />
+    <None Include="Resources\cut.png" />
+    <None Include="Resources\paste.png" />
+    <None Include="Resources\save.png" />
+    <None Include="image\arrow icon4.jpg" />
+    <None Include="image\arrow icon7.jpg" />
+    <None Include="Resources\EnableSpellCheck.png" />
+    <None Include="Resources\images2.jpg" />
+    <None Include="Resources\images4.jpg" />
+    <None Include="image\arrow  icon8.jpg" />
+    <None Include="Resources\stethoscope.ico" />
+    <None Include="Resources\Calendar-icon_empty.jpg" />
+    <None Include="Resources\Calendar-icon_empty2.jpg" />
+    <None Include="Resources\ParagraphBackgroundColor.png" />
+    <None Include="Service References\Sata_Services\HospitalService.disco" />
+    <None Include="Service References\Sata_Services\configuration91.svcinfo" />
+    <None Include="Service References\Sata_Services\configuration.svcinfo" />
+    <None Include="Service References\Sata_Services\PIHO_DAYCLINIC_SOFTWARE.Sata_Services.GetAllResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Sata_Services\PIHO_DAYCLINIC_SOFTWARE.Sata_Services.GetPatientAdmissionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Sata_Services\PIHO_DAYCLINIC_SOFTWARE.Sata_Services.GetReceptionNumberResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Sata_Services\PIHO_DAYCLINIC_SOFTWARE.Sata_Services.Response.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Sata_Services\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="stethoscope.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Reports\" />
+  </ItemGroup>
+  <ItemGroup>
+    <PublishFile Include="stethoscope.ico">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>False</IncludeHash>
+      <FileType>File</FileType>
+    </PublishFile>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\Sata_Services\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

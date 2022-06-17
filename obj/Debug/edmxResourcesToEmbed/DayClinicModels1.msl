@@ -1,0 +1,414 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DayclinicModelStoreContainer" CdmEntityContainer="DayclinicEntities">
+    <EntitySetMapping Name="AcessLevels">
+      <EntityTypeMapping TypeName="DayclinicModel.AcessLevel">
+        <MappingFragment StoreEntitySet="AcessLevel">
+          <ScalarProperty Name="code" ColumnName="code" />
+          <ScalarProperty Name="UserCode" ColumnName="UserCode" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="AcessLevel1" ColumnName="AcessLevel" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Departments">
+      <EntityTypeMapping TypeName="DayclinicModel.Department">
+        <MappingFragment StoreEntitySet="Department">
+          <ScalarProperty Name="department_code" ColumnName="department_code" />
+          <ScalarProperty Name="department1" ColumnName="department" />
+          <ScalarProperty Name="kind" ColumnName="kind" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Department_post">
+      <EntityTypeMapping TypeName="DayclinicModel.Department_post">
+        <MappingFragment StoreEntitySet="Department_post">
+          <ScalarProperty Name="Department_post_Code" ColumnName="Department_post_Code" />
+          <ScalarProperty Name="UserCode" ColumnName="UserCode" />
+          <ScalarProperty Name="DepartmentCode" ColumnName="DepartmentCode" />
+          <ScalarProperty Name="PostCode" ColumnName="PostCode" />
+          <ScalarProperty Name="PostDate" ColumnName="PostDate" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Doctors_speciality">
+      <EntityTypeMapping TypeName="DayclinicModel.Doctors_speciality">
+        <MappingFragment StoreEntitySet="Doctors_speciality">
+          <ScalarProperty Name="Doctors_speciality_code" ColumnName="Doctors_speciality_code" />
+          <ScalarProperty Name="Doctors_speciality1" ColumnName="Doctors_speciality" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="educations">
+      <EntityTypeMapping TypeName="DayclinicModel.education">
+        <MappingFragment StoreEntitySet="educations">
+          <ScalarProperty Name="educations_code" ColumnName="educations_code" />
+          <ScalarProperty Name="educations" ColumnName="educations" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EventsDescriptions">
+      <EntityTypeMapping TypeName="DayclinicModel.EventsDescription">
+        <MappingFragment StoreEntitySet="EventsDescription">
+          <ScalarProperty Name="LogCode" ColumnName="LogCode" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EventsLogs">
+      <EntityTypeMapping TypeName="DayclinicModel.EventsLog">
+        <MappingFragment StoreEntitySet="EventsLog">
+          <ScalarProperty Name="EventsLogCode" ColumnName="EventsLogCode" />
+          <ScalarProperty Name="usercode" ColumnName="usercode" />
+          <ScalarProperty Name="logdate" ColumnName="logdate" />
+          <ScalarProperty Name="logtime" ColumnName="logtime" />
+          <ScalarProperty Name="LogCode" ColumnName="LogCode" />
+          <ScalarProperty Name="Ipadress" ColumnName="Ipadress" />
+          <ScalarProperty Name="changecode" ColumnName="changecode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Fellowships">
+      <EntityTypeMapping TypeName="DayclinicModel.Fellowship">
+        <MappingFragment StoreEntitySet="Fellowship">
+          <ScalarProperty Name="Fellowshipcode" ColumnName="Fellowshipcode" />
+          <ScalarProperty Name="Fellowship1" ColumnName="Fellowship" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Main_group_services">
+      <EntityTypeMapping TypeName="DayclinicModel.Main_group_services">
+        <MappingFragment StoreEntitySet="Main_group_services">
+          <ScalarProperty Name="Main_group_Code" ColumnName="Main_group_Code" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Main_Services">
+      <EntityTypeMapping TypeName="DayclinicModel.Main_Services">
+        <MappingFragment StoreEntitySet="Main_Services">
+          <ScalarProperty Name="Main_Services_code" ColumnName="Main_Services_code" />
+          <ScalarProperty Name="Main_group_Code" ColumnName="Main_group_Code" />
+          <ScalarProperty Name="Secondary_group_code" ColumnName="Secondary_group_code" />
+          <ScalarProperty Name="Attribute" ColumnName="Attribute" />
+          <ScalarProperty Name="ServicesCode" ColumnName="ServicesCode" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="comment" ColumnName="comment" />
+          <ScalarProperty Name="K_Anesthesia" ColumnName="K_Anesthesia" />
+          <ScalarProperty Name="K_Professional" ColumnName="K_Professional" />
+          <ScalarProperty Name="K_Technical" ColumnName="K_Technical" />
+          <ScalarProperty Name="K_Total" ColumnName="K_Total" />
+          <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+          <ScalarProperty Name="ModificationDate" ColumnName="ModificationDate" />
+          <ScalarProperty Name="Version" ColumnName="Version" />
+          <ScalarProperty Name="TerminologyId" ColumnName="TerminologyId" />
+          <ScalarProperty Name="group1" ColumnName="group1" />
+          <ScalarProperty Name="group2" ColumnName="group2" />
+          <ScalarProperty Name="group3" ColumnName="group3" />
+          <ScalarProperty Name="Group4" ColumnName="Group4" />
+          <ScalarProperty Name="Group5" ColumnName="Group5" />
+          <ScalarProperty Name="English_Name" ColumnName="English_Name" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Old_Code" ColumnName="Old_Code" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PaientStatus">
+      <EntityTypeMapping TypeName="DayclinicModel.PaientStatu">
+        <MappingFragment StoreEntitySet="PaientStatus">
+          <ScalarProperty Name="PaientStatuscode" ColumnName="PaientStatuscode" />
+          <ScalarProperty Name="PaientStatusName" ColumnName="PaientStatusName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PaientTypes">
+      <EntityTypeMapping TypeName="DayclinicModel.PaientType">
+        <MappingFragment StoreEntitySet="PaientType">
+          <ScalarProperty Name="PaientTypeCode" ColumnName="PaientTypeCode" />
+          <ScalarProperty Name="PaientTypeName" ColumnName="PaientTypeName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PaientType2">
+      <EntityTypeMapping TypeName="DayclinicModel.PaientType2">
+        <MappingFragment StoreEntitySet="PaientType2">
+          <ScalarProperty Name="PaientTypeCode2" ColumnName="PaientTypeCode2" />
+          <ScalarProperty Name="PaientTypeName2" ColumnName="PaientTypeName2" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Posts">
+      <EntityTypeMapping TypeName="DayclinicModel.Post">
+        <MappingFragment StoreEntitySet="Post">
+          <ScalarProperty Name="post_Code" ColumnName="post_Code" />
+          <ScalarProperty Name="post1" ColumnName="post" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Radio_body">
+      <EntityTypeMapping TypeName="DayclinicModel.Radio_body">
+        <MappingFragment StoreEntitySet="Radio_body">
+          <ScalarProperty Name="body_code" ColumnName="body_code" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Radio_Defaultanswer">
+      <EntityTypeMapping TypeName="DayclinicModel.Radio_Defaultanswer">
+        <MappingFragment StoreEntitySet="Radio_Defaultanswer">
+          <ScalarProperty Name="answer_Code" ColumnName="answer_Code" />
+          <ScalarProperty Name="answer" ColumnName="answer" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Radio_DoctorsServices">
+      <EntityTypeMapping TypeName="DayclinicModel.Radio_DoctorsServices">
+        <MappingFragment StoreEntitySet="Radio_DoctorsServices">
+          <ScalarProperty Name="DoctorsServices_Code" ColumnName="DoctorsServices_Code" />
+          <ScalarProperty Name="TurnId" ColumnName="TurnId" />
+          <ScalarProperty Name="ServicesCode" ColumnName="ServicesCode" />
+          <ScalarProperty Name="Area" ColumnName="Area" />
+          <ScalarProperty Name="answerCode" ColumnName="answerCode" />
+          <ScalarProperty Name="answer" ColumnName="answer" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Radio_FilmServices">
+      <EntityTypeMapping TypeName="DayclinicModel.Radio_FilmServices">
+        <MappingFragment StoreEntitySet="Radio_FilmServices">
+          <ScalarProperty Name="FilmSize_code" ColumnName="FilmSize_code" />
+          <ScalarProperty Name="turnid" ColumnName="turnid" />
+          <ScalarProperty Name="FilmSize" ColumnName="FilmSize" />
+          <ScalarProperty Name="Count" ColumnName="Count" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Radio_filmSize">
+      <EntityTypeMapping TypeName="DayclinicModel.Radio_filmSize">
+        <MappingFragment StoreEntitySet="Radio_filmSize">
+          <ScalarProperty Name="Size_code" ColumnName="Size_code" />
+          <ScalarProperty Name="Size" ColumnName="Size" />
+          <ScalarProperty Name="count1" ColumnName="count1" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Radio_Groupbodies">
+      <EntityTypeMapping TypeName="DayclinicModel.Radio_Groupbodies">
+        <MappingFragment StoreEntitySet="Radio_Groupbodies">
+          <ScalarProperty Name="Groupbodies_code" ColumnName="Groupbodies_code" />
+          <ScalarProperty Name="Servicescode" ColumnName="Servicescode" />
+          <ScalarProperty Name="bodycode" ColumnName="bodycode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Radio_imagetype">
+      <EntityTypeMapping TypeName="DayclinicModel.Radio_imagetype">
+        <MappingFragment StoreEntitySet="Radio_imagetype">
+          <ScalarProperty Name="imagetype_code" ColumnName="imagetype_code" />
+          <ScalarProperty Name="ImageType" ColumnName="ImageType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Radio_locations">
+      <EntityTypeMapping TypeName="DayclinicModel.Radio_locations">
+        <MappingFragment StoreEntitySet="Radio_locations">
+          <ScalarProperty Name="Locations_code" ColumnName="Locations_code" />
+          <ScalarProperty Name="Locations" ColumnName="Locations" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Radio_Recipe">
+      <EntityTypeMapping TypeName="DayclinicModel.Radio_Recipe">
+        <MappingFragment StoreEntitySet="Radio_Recipe">
+          <ScalarProperty Name="Turnid" ColumnName="Turnid" />
+          <ScalarProperty Name="IDPerson" ColumnName="IDPerson" />
+          <ScalarProperty Name="persno" ColumnName="persno" />
+          <ScalarProperty Name="Personelcode" ColumnName="Personelcode" />
+          <ScalarProperty Name="Fkvdfamily" ColumnName="Fkvdfamily" />
+          <ScalarProperty Name="Currentdate" ColumnName="Currentdate" />
+          <ScalarProperty Name="currentTime" ColumnName="currentTime" />
+          <ScalarProperty Name="Turndate" ColumnName="Turndate" />
+          <ScalarProperty Name="Turntime" ColumnName="Turntime" />
+          <ScalarProperty Name="turnNo" ColumnName="turnNo" />
+          <ScalarProperty Name="DoctorsCode" ColumnName="DoctorsCode" />
+          <ScalarProperty Name="Servicescode" ColumnName="Servicescode" />
+          <ScalarProperty Name="TurnStatus" ColumnName="TurnStatus" />
+          <ScalarProperty Name="Shiftcode" ColumnName="Shiftcode" />
+          <ScalarProperty Name="PaientType" ColumnName="PaientType" />
+          <ScalarProperty Name="PaientStatus" ColumnName="PaientStatus" />
+          <ScalarProperty Name="Usercode" ColumnName="Usercode" />
+          <ScalarProperty Name="ipadress" ColumnName="ipadress" />
+          <ScalarProperty Name="validcenterzone" ColumnName="validcenterzone" />
+          <ScalarProperty Name="Doctors_speciality" ColumnName="Doctors_speciality" />
+          <ScalarProperty Name="radiographer" ColumnName="radiographer" />
+          <ScalarProperty Name="loactions" ColumnName="loactions" />
+          <ScalarProperty Name="radio_doctors" ColumnName="radio_doctors" />
+          <ScalarProperty Name="PaientType2" ColumnName="PaientType2" />
+          <ScalarProperty Name="ImagingType" ColumnName="ImagingType" />
+          <ScalarProperty Name="FileNo" ColumnName="FileNo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Radio_Services">
+      <EntityTypeMapping TypeName="DayclinicModel.Radio_Services">
+        <MappingFragment StoreEntitySet="Radio_Services">
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="ServicesCode" ColumnName="ServicesCode" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="EnglishName" ColumnName="EnglishName" />
+          <ScalarProperty Name="K_h" ColumnName="K_h" />
+          <ScalarProperty Name="K_f" ColumnName="K_f" />
+          <ScalarProperty Name="K_s" ColumnName="K_s" />
+          <ScalarProperty Name="k_b" ColumnName="k_b" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="oldCode" ColumnName="oldCode" />
+          <ScalarProperty Name="Attribute" ColumnName="Attribute" />
+          <ScalarProperty Name="group1" ColumnName="group1" />
+          <ScalarProperty Name="group2" ColumnName="group2" />
+          <ScalarProperty Name="group3" ColumnName="group3" />
+          <ScalarProperty Name="comment" ColumnName="comment" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Radio_Shifts">
+      <EntityTypeMapping TypeName="DayclinicModel.Radio_Shifts">
+        <MappingFragment StoreEntitySet="Radio_Shifts">
+          <ScalarProperty Name="Shiftcode" ColumnName="Shiftcode" />
+          <ScalarProperty Name="Shiftname" ColumnName="Shiftname" />
+          <ScalarProperty Name="Fromtime" ColumnName="Fromtime" />
+          <ScalarProperty Name="totime" ColumnName="totime" />
+          <ScalarProperty Name="XmlShiftCode" ColumnName="XmlShiftCode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Secondary_Group_Services">
+      <EntityTypeMapping TypeName="DayclinicModel.Secondary_Group_Services">
+        <MappingFragment StoreEntitySet="Secondary_Group_Services">
+          <ScalarProperty Name="Secondary_group_code" ColumnName="Secondary_group_code" />
+          <ScalarProperty Name="main_groupCode" ColumnName="main_groupCode" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="specialities">
+      <EntityTypeMapping TypeName="DayclinicModel.speciality">
+        <MappingFragment StoreEntitySet="speciality">
+          <ScalarProperty Name="specialitycode" ColumnName="specialitycode" />
+          <ScalarProperty Name="speciality1" ColumnName="speciality" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sscientific_Grade">
+      <EntityTypeMapping TypeName="DayclinicModel.Sscientific_Grade">
+        <MappingFragment StoreEntitySet="Sscientific_Grade">
+          <ScalarProperty Name="SscientificGrade_code" ColumnName="SscientificGrade_code" />
+          <ScalarProperty Name="Sscientific_Grade1" ColumnName="Sscientific_Grade" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TblUsers">
+      <EntityTypeMapping TypeName="DayclinicModel.TblUser">
+        <MappingFragment StoreEntitySet="TblUsers">
+          <ScalarProperty Name="UserCode" ColumnName="UserCode" />
+          <ScalarProperty Name="personalNO" ColumnName="personalNO" />
+          <ScalarProperty Name="Fname" ColumnName="Fname" />
+          <ScalarProperty Name="Lname" ColumnName="Lname" />
+          <ScalarProperty Name="SN" ColumnName="SN" />
+          <ScalarProperty Name="DoctorNO" ColumnName="DoctorNO" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="EnglishName" ColumnName="EnglishName" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="Image" ColumnName="Image" />
+          <ScalarProperty Name="PersianTitle" ColumnName="PersianTitle" />
+          <ScalarProperty Name="educations" ColumnName="educations" />
+          <ScalarProperty Name="speciality_Kind" ColumnName="speciality_Kind" />
+          <ScalarProperty Name="Sscientific_Grade" ColumnName="Sscientific_Grade" />
+          <ScalarProperty Name="speciality" ColumnName="speciality" />
+          <ScalarProperty Name="Fellowship" ColumnName="Fellowship" />
+          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+          <ScalarProperty Name="Enddate" ColumnName="Enddate" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+          <ScalarProperty Name="mobile" ColumnName="mobile" />
+          <ScalarProperty Name="Adress" ColumnName="Adress" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TurnStatus">
+      <EntityTypeMapping TypeName="DayclinicModel.TurnStatu">
+        <MappingFragment StoreEntitySet="TurnStatus">
+          <ScalarProperty Name="TurnStatuscode" ColumnName="TurnStatuscode" />
+          <ScalarProperty Name="TurnStatusName" ColumnName="TurnStatusName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="userKinds">
+      <EntityTypeMapping TypeName="DayclinicModel.userKind">
+        <MappingFragment StoreEntitySet="userKind">
+          <ScalarProperty Name="GroupCode" ColumnName="GroupCode" />
+          <ScalarProperty Name="GroupName" ColumnName="GroupName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DoctorsLists">
+      <EntityTypeMapping TypeName="DayclinicModel.DoctorsList">
+        <MappingFragment StoreEntitySet="DoctorsList">
+          <ScalarProperty Name="personId" ColumnName="personId" />
+          <ScalarProperty Name="FullName" ColumnName="FullName" />
+          <ScalarProperty Name="LNAME" ColumnName="LNAME" />
+          <ScalarProperty Name="FNAME" ColumnName="FNAME" />
+          <ScalarProperty Name="PERSNO" ColumnName="PERSNO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="full_niocperson">
+      <EntityTypeMapping TypeName="DayclinicModel.full_niocperson">
+        <MappingFragment StoreEntitySet="full_niocperson">
+          <ScalarProperty Name="Pk_ValidCenterZone" ColumnName="Pk_ValidCenterZone" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Fk_Nesbat" ColumnName="Fk_Nesbat" />
+          <ScalarProperty Name="Pk_vdfamily" ColumnName="Pk_vdfamily" />
+          <ScalarProperty Name="RelationOrderNo" ColumnName="RelationOrderNo" />
+          <ScalarProperty Name="IDPerson" ColumnName="IDPerson" />
+          <ScalarProperty Name="Fk_Management" ColumnName="Fk_Management" />
+          <ScalarProperty Name="IdEmployeeType" ColumnName="IdEmployeeType" />
+          <ScalarProperty Name="ValidCenterDesc" ColumnName="ValidCenterDesc" />
+          <ScalarProperty Name="ValidCenterZoneDesc" ColumnName="ValidCenterZoneDesc" />
+          <ScalarProperty Name="BirthDate" ColumnName="BirthDate" />
+          <ScalarProperty Name="Managementname" ColumnName="Managementname" />
+          <ScalarProperty Name="companyname" ColumnName="companyname" />
+          <ScalarProperty Name="NesbatDesc" ColumnName="NesbatDesc" />
+          <ScalarProperty Name="fullname2" ColumnName="fullname2" />
+          <ScalarProperty Name="fullname" ColumnName="fullname" />
+          <ScalarProperty Name="PersNo" ColumnName="PersNo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="JobLocations">
+      <EntityTypeMapping TypeName="DayclinicModel.JobLocation">
+        <MappingFragment StoreEntitySet="JobLocations">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Managementname" ColumnName="Managementname" />
+          <ScalarProperty Name="companyname" ColumnName="companyname" />
+          <ScalarProperty Name="Fk_Management" ColumnName="Fk_Management" />
+          <ScalarProperty Name="Pk_Company" ColumnName="Pk_Company" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ValidCenters">
+      <EntityTypeMapping TypeName="DayclinicModel.ValidCenter">
+        <MappingFragment StoreEntitySet="ValidCenter">
+          <ScalarProperty Name="pk_ValidCenter" ColumnName="pk_ValidCenter" />
+          <ScalarProperty Name="ValidCenterDesc" ColumnName="ValidCenterDesc" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+          <ScalarProperty Name="ValidCenterZoneDesc" ColumnName="ValidCenterZoneDesc" />
+          <ScalarProperty Name="Pk_ValidCenterZone" ColumnName="Pk_ValidCenterZone" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

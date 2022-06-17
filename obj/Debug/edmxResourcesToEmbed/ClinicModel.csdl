@@ -1,0 +1,223 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ClinicModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="ClinicEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="EmployeeInfoTbls" EntityType="ClinicModel.EmployeeInfoTbl" />
+    <EntitySet Name="PersonTbls" EntityType="ClinicModel.PersonTbl" />
+    <EntitySet Name="TblCompanies" EntityType="ClinicModel.TblCompany" />
+    <EntitySet Name="TblEmployeetypes" EntityType="ClinicModel.TblEmployeetype" />
+    <EntitySet Name="TblManagements" EntityType="ClinicModel.TblManagement" />
+    <EntitySet Name="TblRelations" EntityType="ClinicModel.TblRelation" />
+    <AssociationSet Name="FK_EmployeeInfoTbl_TblCompany" Association="ClinicModel.FK_EmployeeInfoTbl_TblCompany">
+      <End Role="TblCompany" EntitySet="TblCompanies" />
+      <End Role="EmployeeInfoTbl" EntitySet="EmployeeInfoTbls" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EmployeeInfoTbl_TblEmployeetype" Association="ClinicModel.FK_EmployeeInfoTbl_TblEmployeetype">
+      <End Role="TblEmployeetype" EntitySet="TblEmployeetypes" />
+      <End Role="EmployeeInfoTbl" EntitySet="EmployeeInfoTbls" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EmployeeInfoTbl_TblManagement" Association="ClinicModel.FK_EmployeeInfoTbl_TblManagement">
+      <End Role="TblManagement" EntitySet="TblManagements" />
+      <End Role="EmployeeInfoTbl" EntitySet="EmployeeInfoTbls" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PersonTbl_EmployeeInfoTbl" Association="ClinicModel.FK_PersonTbl_EmployeeInfoTbl">
+      <End Role="EmployeeInfoTbl" EntitySet="EmployeeInfoTbls" />
+      <End Role="PersonTbl" EntitySet="PersonTbls" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PersonTbl_TblRelation" Association="ClinicModel.FK_PersonTbl_TblRelation">
+      <End Role="TblRelation" EntitySet="TblRelations" />
+      <End Role="PersonTbl" EntitySet="PersonTbls" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TblCompany_TblManagement" Association="ClinicModel.FK_TblCompany_TblManagement">
+      <End Role="TblManagement" EntitySet="TblManagements" />
+      <End Role="TblCompany" EntitySet="TblCompanies" />
+    </AssociationSet>
+    <EntitySet Name="Clinics" EntityType="ClinicModel.Clinic" />
+  </EntityContainer>
+  <EntityType Name="EmployeeInfoTbl">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="String" Nullable="false" MaxLength="16" FixedLength="false" Unicode="false" />
+    <Property Name="IdPerson" Type="Guid" />
+    <Property Name="TblCompany_Id" Type="Int32" />
+    <Property Name="TblManagement_Id" Type="Int32" />
+    <Property Name="TblSubCompany_Id" Type="Int32" />
+    <Property Name="Telephone" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Name="HomePhone" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="WorkPhone" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
+    <Property Name="Address1" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Address2" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="WifePhone" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
+    <Property Name="PostalCode" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+    <Property Name="TblRelationFamily_Id" Type="Int16" />
+    <Property Name="ComboTable_Id_WorkType" Type="Int32" />
+    <Property Name="TblEmployeetype_Id" Type="Int32" Nullable="false" />
+    <Property Name="PersNo" Type="Int32" Nullable="false" />
+    <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="WorkAddress" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="TblCompany" Relationship="ClinicModel.FK_EmployeeInfoTbl_TblCompany" FromRole="EmployeeInfoTbl" ToRole="TblCompany" />
+    <NavigationProperty Name="TblEmployeetype" Relationship="ClinicModel.FK_EmployeeInfoTbl_TblEmployeetype" FromRole="EmployeeInfoTbl" ToRole="TblEmployeetype" />
+    <NavigationProperty Name="TblManagement" Relationship="ClinicModel.FK_EmployeeInfoTbl_TblManagement" FromRole="EmployeeInfoTbl" ToRole="TblManagement" />
+    <NavigationProperty Name="PersonTbls" Relationship="ClinicModel.FK_PersonTbl_EmployeeInfoTbl" FromRole="EmployeeInfoTbl" ToRole="PersonTbl" />
+  </EntityType>
+  <EntityType Name="PersonTbl">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Guid" Nullable="false" />
+    <Property Name="Fname" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Lname" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="EmployeeInfoTbl_Id" Type="String" Nullable="false" MaxLength="16" FixedLength="false" Unicode="false" />
+    <Property Name="Deleted" Type="Boolean" Nullable="false" />
+    <Property Name="NationalCode" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+    <Property Name="TblRelation_Id" Type="Int16" Nullable="false" />
+    <Property Name="RelationOrderNo" Type="Int16" />
+    <Property Name="Sex" Type="Boolean" Nullable="false" />
+    <Property Name="ActualDeleted" Type="Boolean" Nullable="false" />
+    <Property Name="BirthDate" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="false" />
+    <Property Name="FatherFname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="TblValidCenter_Id" Type="Int32" Nullable="false" />
+    <Property Name="TblValidCenterCity_Id" Type="Int32" Nullable="false" />
+    <Property Name="TblEduDegree_Id" Type="Int16" />
+    <Property Name="Mobile" Type="String" MaxLength="11" FixedLength="true" Unicode="false" />
+    <Property Name="TblMaritalStatus_Id" Type="Int16" />
+    <Property Name="Pk_vdfamily" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ComboTable_Id_sex" Type="Int32" />
+    <Property Name="MiladyBirthDate" Type="DateTime" Precision="0" />
+    <Property Name="LastUpdateDate" Type="Int32" />
+    <Property Name="LastUpdateTime" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="IDJobRelated" Type="Int16" />
+    <Property Name="PostCode" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PersNo" Type="Int32" />
+    <NavigationProperty Name="EmployeeInfoTbl" Relationship="ClinicModel.FK_PersonTbl_EmployeeInfoTbl" FromRole="PersonTbl" ToRole="EmployeeInfoTbl" />
+    <NavigationProperty Name="TblRelation" Relationship="ClinicModel.FK_PersonTbl_TblRelation" FromRole="PersonTbl" ToRole="TblRelation" />
+  </EntityType>
+  <EntityType Name="TblCompany">
+    <Key>
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="TblManagement_Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="TblManagement_Id" Type="Int32" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="IdentityId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <NavigationProperty Name="EmployeeInfoTbls" Relationship="ClinicModel.FK_EmployeeInfoTbl_TblCompany" FromRole="TblCompany" ToRole="EmployeeInfoTbl" />
+    <NavigationProperty Name="TblManagement" Relationship="ClinicModel.FK_TblCompany_TblManagement" FromRole="TblCompany" ToRole="TblManagement" />
+    <Property Name="ModifyTime" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="TblEmployeetype">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="EmployeeTypeDesc" Type="String" Nullable="false" MaxLength="64" FixedLength="false" Unicode="true" />
+    <Property Name="Treaty_Id" Type="Int32" />
+    <Property Name="Display" Type="Boolean" />
+    <Property Name="Number" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Tartib" Type="Int32" />
+    <NavigationProperty Name="EmployeeInfoTbls" Relationship="ClinicModel.FK_EmployeeInfoTbl_TblEmployeetype" FromRole="TblEmployeetype" ToRole="EmployeeInfoTbl" />
+  </EntityType>
+  <EntityType Name="TblManagement">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="EmployeeInfoTbls" Relationship="ClinicModel.FK_EmployeeInfoTbl_TblManagement" FromRole="TblManagement" ToRole="EmployeeInfoTbl" />
+    <NavigationProperty Name="TblCompanies" Relationship="ClinicModel.FK_TblCompany_TblManagement" FromRole="TblManagement" ToRole="TblCompany" />
+    <Property Name="ModifyTime" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="TblRelation">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int16" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Nesbatxml" Type="Int16" />
+    <NavigationProperty Name="PersonTbls" Relationship="ClinicModel.FK_PersonTbl_TblRelation" FromRole="TblRelation" ToRole="PersonTbl" />
+  </EntityType>
+  <Association Name="FK_EmployeeInfoTbl_TblCompany">
+    <End Type="ClinicModel.TblCompany" Role="TblCompany" Multiplicity="0..1" />
+    <End Type="ClinicModel.EmployeeInfoTbl" Role="EmployeeInfoTbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TblCompany">
+        <PropertyRef Name="Id" />
+        <PropertyRef Name="TblManagement_Id" />
+      </Principal>
+      <Dependent Role="EmployeeInfoTbl">
+        <PropertyRef Name="TblCompany_Id" />
+        <PropertyRef Name="TblManagement_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EmployeeInfoTbl_TblEmployeetype">
+    <End Type="ClinicModel.TblEmployeetype" Role="TblEmployeetype" Multiplicity="1" />
+    <End Type="ClinicModel.EmployeeInfoTbl" Role="EmployeeInfoTbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TblEmployeetype">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="EmployeeInfoTbl">
+        <PropertyRef Name="TblEmployeetype_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EmployeeInfoTbl_TblManagement">
+    <End Type="ClinicModel.TblManagement" Role="TblManagement" Multiplicity="0..1" />
+    <End Type="ClinicModel.EmployeeInfoTbl" Role="EmployeeInfoTbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TblManagement">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="EmployeeInfoTbl">
+        <PropertyRef Name="TblManagement_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PersonTbl_EmployeeInfoTbl">
+    <End Type="ClinicModel.EmployeeInfoTbl" Role="EmployeeInfoTbl" Multiplicity="1" />
+    <End Type="ClinicModel.PersonTbl" Role="PersonTbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EmployeeInfoTbl">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="PersonTbl">
+        <PropertyRef Name="EmployeeInfoTbl_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PersonTbl_TblRelation">
+    <End Type="ClinicModel.TblRelation" Role="TblRelation" Multiplicity="1" />
+    <End Type="ClinicModel.PersonTbl" Role="PersonTbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TblRelation">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="PersonTbl">
+        <PropertyRef Name="TblRelation_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TblCompany_TblManagement">
+    <End Type="ClinicModel.TblManagement" Role="TblManagement" Multiplicity="1" />
+    <End Type="ClinicModel.TblCompany" Role="TblCompany" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TblManagement">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="TblCompany">
+        <PropertyRef Name="Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Clinic">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Description" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="ClinicMain_Id" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="IsActive" Type="Boolean" />
+  </EntityType>
+</Schema>

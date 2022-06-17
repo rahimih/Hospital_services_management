@@ -1,0 +1,565 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DayclinicModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="AcessLevel">
+    <Key>
+      <PropertyRef Name="code" />
+    </Key>
+    <Property Name="code" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserCode" Type="int" />
+    <Property Name="UserName" Type="nvarchar" MaxLength="10" />
+    <Property Name="Password" Type="nvarchar" MaxLength="10" />
+    <Property Name="AcessLevel" Type="tinyint" />
+    <Property Name="Status" Type="bit" />
+  </EntityType>
+  <EntityType Name="Department">
+    <Key>
+      <PropertyRef Name="department_code" />
+    </Key>
+    <Property Name="department_code" Type="tinyint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="department" Type="nvarchar" MaxLength="150" />
+    <Property Name="kind" Type="bit" />
+  </EntityType>
+  <EntityType Name="Department_post">
+    <Key>
+      <PropertyRef Name="Department_post_Code" />
+    </Key>
+    <Property Name="Department_post_Code" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserCode" Type="int" />
+    <Property Name="DepartmentCode" Type="tinyint" />
+    <Property Name="PostCode" Type="int" />
+    <Property Name="PostDate" Type="nvarchar" MaxLength="10" />
+    <Property Name="Status" Type="bit" />
+  </EntityType>
+  <EntityType Name="Doctors_speciality">
+    <Key>
+      <PropertyRef Name="Doctors_speciality_code" />
+    </Key>
+    <Property Name="Doctors_speciality_code" Type="tinyint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Doctors_speciality" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="educations">
+    <Key>
+      <PropertyRef Name="educations_code" />
+    </Key>
+    <Property Name="educations_code" Type="tinyint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="educations" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="EventsDescription">
+    <Key>
+      <PropertyRef Name="LogCode" />
+    </Key>
+    <Property Name="LogCode" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Description" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="EventsLog">
+    <Key>
+      <PropertyRef Name="EventsLogCode" />
+    </Key>
+    <Property Name="EventsLogCode" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="usercode" Type="nvarchar" MaxLength="10" />
+    <Property Name="logdate" Type="nvarchar" MaxLength="10" />
+    <Property Name="logtime" Type="nvarchar" MaxLength="10" />
+    <Property Name="LogCode" Type="int" />
+    <Property Name="Ipadress" Type="nvarchar" MaxLength="15" />
+    <Property Name="changecode" Type="int" />
+  </EntityType>
+  <EntityType Name="Fellowship">
+    <Key>
+      <PropertyRef Name="Fellowshipcode" />
+    </Key>
+    <Property Name="Fellowshipcode" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Fellowship" Type="nvarchar" MaxLength="150" />
+  </EntityType>
+  <EntityType Name="Main_group_services">
+    <Key>
+      <PropertyRef Name="Main_group_Code" />
+    </Key>
+    <Property Name="Main_group_Code" Type="tinyint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="150" />
+  </EntityType>
+  <EntityType Name="Main_Services">
+    <Key>
+      <PropertyRef Name="Main_Services_code" />
+    </Key>
+    <Property Name="Main_Services_code" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Main_group_Code" Type="tinyint" />
+    <Property Name="Secondary_group_code" Type="int" />
+    <Property Name="Attribute" Type="nvarchar" MaxLength="255" />
+    <Property Name="ServicesCode" Type="int" />
+    <Property Name="Name" Type="nvarchar(max)" />
+    <Property Name="comment" Type="nvarchar" MaxLength="250" />
+    <Property Name="K_Anesthesia" Type="float" />
+    <Property Name="K_Professional" Type="float" />
+    <Property Name="K_Technical" Type="float" />
+    <Property Name="K_Total" Type="float" />
+    <Property Name="CreationDate" Type="nvarchar" MaxLength="25" />
+    <Property Name="ModificationDate" Type="nvarchar" MaxLength="25" />
+    <Property Name="Version" Type="float" />
+    <Property Name="TerminologyId" Type="nvarchar" MaxLength="5" />
+    <Property Name="group1" Type="nvarchar" MaxLength="255" />
+    <Property Name="group2" Type="nvarchar" MaxLength="255" />
+    <Property Name="group3" Type="nvarchar" MaxLength="255" />
+    <Property Name="Group4" Type="nvarchar" MaxLength="250" />
+    <Property Name="Group5" Type="nvarchar" MaxLength="350" />
+    <Property Name="English_Name" Type="nvarchar" MaxLength="350" />
+    <Property Name="Status" Type="bit" />
+    <Property Name="Old_Code" Type="int" />
+  </EntityType>
+  <EntityType Name="PaientStatus">
+    <Key>
+      <PropertyRef Name="PaientStatuscode" />
+    </Key>
+    <Property Name="PaientStatuscode" Type="tinyint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PaientStatusName" Type="nvarchar" MaxLength="25" />
+  </EntityType>
+  <EntityType Name="PaientType">
+    <Key>
+      <PropertyRef Name="PaientTypeCode" />
+    </Key>
+    <Property Name="PaientTypeCode" Type="tinyint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PaientTypeName" Type="nvarchar" MaxLength="25" />
+  </EntityType>
+  <EntityType Name="PaientType2">
+    <Key>
+      <PropertyRef Name="PaientTypeCode2" />
+    </Key>
+    <Property Name="PaientTypeCode2" Type="tinyint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PaientTypeName2" Type="nvarchar" MaxLength="25" />
+  </EntityType>
+  <EntityType Name="Post">
+    <Key>
+      <PropertyRef Name="post_Code" />
+    </Key>
+    <Property Name="post_Code" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="post" Type="nvarchar" MaxLength="150" />
+  </EntityType>
+  <EntityType Name="Radio_body">
+    <Key>
+      <PropertyRef Name="body_code" />
+    </Key>
+    <Property Name="body_code" Type="tinyint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="Radio_Defaultanswer">
+    <Key>
+      <PropertyRef Name="answer_Code" />
+    </Key>
+    <Property Name="answer_Code" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="answer" Type="nvarchar(max)" />
+    <Property Name="Name" Type="nvarchar" MaxLength="250" />
+  </EntityType>
+  <EntityType Name="Radio_DoctorsServices">
+    <Key>
+      <PropertyRef Name="DoctorsServices_Code" />
+    </Key>
+    <Property Name="DoctorsServices_Code" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TurnId" Type="int" />
+    <Property Name="ServicesCode" Type="int" />
+    <Property Name="Area" Type="nvarchar" MaxLength="1" />
+    <Property Name="answerCode" Type="int" />
+    <Property Name="answer" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Radio_FilmServices">
+    <Key>
+      <PropertyRef Name="FilmSize_code" />
+    </Key>
+    <Property Name="FilmSize_code" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="turnid" Type="int" />
+    <Property Name="FilmSize" Type="tinyint" />
+    <Property Name="Count" Type="tinyint" />
+  </EntityType>
+  <EntityType Name="Radio_filmSize">
+    <Key>
+      <PropertyRef Name="Size_code" />
+    </Key>
+    <Property Name="Size_code" Type="tinyint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Size" Type="nvarchar" MaxLength="7" />
+    <Property Name="count1" Type="tinyint" />
+  </EntityType>
+  <EntityType Name="Radio_Groupbodies">
+    <Key>
+      <PropertyRef Name="Groupbodies_code" />
+    </Key>
+    <Property Name="Groupbodies_code" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Servicescode" Type="int" />
+    <Property Name="bodycode" Type="tinyint" />
+  </EntityType>
+  <EntityType Name="Radio_imagetype">
+    <Key>
+      <PropertyRef Name="imagetype_code" />
+    </Key>
+    <Property Name="imagetype_code" Type="tinyint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ImageType" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Radio_locations">
+    <Key>
+      <PropertyRef Name="Locations_code" />
+    </Key>
+    <Property Name="Locations_code" Type="tinyint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Locations" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Radio_Recipe">
+    <Key>
+      <PropertyRef Name="Turnid" />
+    </Key>
+    <Property Name="Turnid" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IDPerson" Type="nvarchar" MaxLength="50" />
+    <Property Name="persno" Type="int" />
+    <Property Name="Personelcode" Type="nvarchar" MaxLength="10" />
+    <Property Name="Fkvdfamily" Type="int" />
+    <Property Name="Currentdate" Type="nvarchar" MaxLength="10" />
+    <Property Name="currentTime" Type="nvarchar" MaxLength="10" />
+    <Property Name="Turndate" Type="nvarchar" MaxLength="10" />
+    <Property Name="Turntime" Type="nvarchar" MaxLength="10" />
+    <Property Name="turnNo" Type="tinyint" />
+    <Property Name="DoctorsCode" Type="int" />
+    <Property Name="Servicescode" Type="tinyint" />
+    <Property Name="TurnStatus" Type="tinyint" />
+    <Property Name="Shiftcode" Type="tinyint" />
+    <Property Name="PaientType" Type="tinyint" />
+    <Property Name="PaientStatus" Type="tinyint" />
+    <Property Name="Usercode" Type="tinyint" />
+    <Property Name="ipadress" Type="nvarchar" MaxLength="50" />
+    <Property Name="validcenterzone" Type="int" />
+    <Property Name="Doctors_speciality" Type="tinyint" />
+    <Property Name="radiographer" Type="int" />
+    <Property Name="loactions" Type="tinyint" />
+    <Property Name="radio_doctors" Type="int" />
+    <Property Name="PaientType2" Type="int" />
+    <Property Name="ImagingType" Type="int" />
+    <Property Name="FileNo" Type="int" />
+  </EntityType>
+  <EntityType Name="Radio_Services">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="Code" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ServicesCode" Type="int" />
+    <Property Name="Name" Type="nvarchar" MaxLength="250" />
+    <Property Name="EnglishName" Type="nvarchar" MaxLength="250" />
+    <Property Name="K_h" Type="float" />
+    <Property Name="K_f" Type="float" />
+    <Property Name="K_s" Type="float" />
+    <Property Name="k_b" Type="float" />
+    <Property Name="Status" Type="bit" />
+    <Property Name="oldCode" Type="int" />
+    <Property Name="Attribute" Type="nchar" MaxLength="3" />
+    <Property Name="group1" Type="nvarchar" MaxLength="50" />
+    <Property Name="group2" Type="nvarchar" MaxLength="50" />
+    <Property Name="group3" Type="nvarchar" MaxLength="100" />
+    <Property Name="comment" Type="nvarchar" MaxLength="250" />
+  </EntityType>
+  <EntityType Name="Radio_Shifts">
+    <Key>
+      <PropertyRef Name="Shiftcode" />
+    </Key>
+    <Property Name="Shiftcode" Type="tinyint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Shiftname" Type="nvarchar" MaxLength="10" />
+    <Property Name="Fromtime" Type="time" Precision="7" />
+    <Property Name="totime" Type="time" Precision="7" />
+    <Property Name="XmlShiftCode" Type="int" />
+  </EntityType>
+  <EntityType Name="Secondary_Group_Services">
+    <Key>
+      <PropertyRef Name="Secondary_group_code" />
+    </Key>
+    <Property Name="Secondary_group_code" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="main_groupCode" Type="tinyint" />
+    <Property Name="Name" Type="nvarchar" MaxLength="250" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'Dayclinic.dbo.services3' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="services3">
+          <Property Name="Attribute" Type="nvarchar" MaxLength="255" />
+          <Property Name="Code" Type="nvarchar" MaxLength="255" />
+          <Property Name="Value" Type="nvarchar" MaxLength="255" />
+          <Property Name="Comment" Type="nvarchar" MaxLength="255" />
+          <Property Name="RelativeValue" Type="float" />
+          <Property Name="Group4" Type="nvarchar" MaxLength="255" />
+          <Property Name="code1" Type="nvarchar" MaxLength="255" />
+          <Property Name="code2" Type="nvarchar" MaxLength="255" />
+        </EntityType>-->
+  <EntityType Name="speciality">
+    <Key>
+      <PropertyRef Name="specialitycode" />
+    </Key>
+    <Property Name="specialitycode" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="speciality" Type="nvarchar" MaxLength="150" />
+  </EntityType>
+  <EntityType Name="Sscientific_Grade">
+    <Key>
+      <PropertyRef Name="SscientificGrade_code" />
+    </Key>
+    <Property Name="SscientificGrade_code" Type="tinyint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Sscientific_Grade" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="TblUsers">
+    <Key>
+      <PropertyRef Name="UserCode" />
+    </Key>
+    <Property Name="UserCode" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="personalNO" Type="int" />
+    <Property Name="Fname" Type="nvarchar" MaxLength="50" />
+    <Property Name="Lname" Type="nvarchar" MaxLength="50" />
+    <Property Name="SN" Type="nchar" MaxLength="10" />
+    <Property Name="DoctorNO" Type="nchar" MaxLength="10" />
+    <Property Name="Active" Type="bit" />
+    <Property Name="EnglishName" Type="varchar" MaxLength="100" />
+    <Property Name="title" Type="varchar" MaxLength="3" />
+    <Property Name="Image" Type="image" />
+    <Property Name="PersianTitle" Type="nvarchar" MaxLength="10" />
+    <Property Name="educations" Type="tinyint" />
+    <Property Name="speciality_Kind" Type="tinyint" />
+    <Property Name="Sscientific_Grade" Type="tinyint" />
+    <Property Name="speciality" Type="tinyint" />
+    <Property Name="Fellowship" Type="tinyint" />
+    <Property Name="StartDate" Type="nvarchar" MaxLength="10" />
+    <Property Name="Enddate" Type="nvarchar" MaxLength="10" />
+    <Property Name="Status" Type="bit" />
+    <Property Name="phone" Type="nvarchar" MaxLength="11" />
+    <Property Name="mobile" Type="nvarchar" MaxLength="11" />
+    <Property Name="Adress" Type="nvarchar" MaxLength="250" />
+  </EntityType>
+  <EntityType Name="TurnStatus">
+    <Key>
+      <PropertyRef Name="TurnStatuscode" />
+    </Key>
+    <Property Name="TurnStatuscode" Type="tinyint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TurnStatusName" Type="nvarchar" MaxLength="25" />
+  </EntityType>
+  <EntityType Name="userKind">
+    <Key>
+      <PropertyRef Name="GroupCode" />
+    </Key>
+    <Property Name="GroupCode" Type="tinyint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="GroupName" Type="nvarchar" MaxLength="25" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'Dayclinic.dbo.DoctorsList' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="DoctorsList">
+    <Key>
+      <PropertyRef Name="PERSNO" />
+    </Key>
+    <Property Name="PERSNO" Type="int" Nullable="false" />
+    <Property Name="FNAME" Type="varchar" MaxLength="50" />
+    <Property Name="LNAME" Type="varchar" MaxLength="65" />
+    <Property Name="FullName" Type="varchar" MaxLength="116" />
+    <Property Name="personId" Type="char" MaxLength="10" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'Dayclinic.dbo.full_niocperson' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="full_niocperson">
+    <Key>
+      <PropertyRef Name="Pk_vdfamily" />
+    </Key>
+    <Property Name="PersNo" Type="int" />
+    <Property Name="fullname" Type="nvarchar" MaxLength="102" />
+    <Property Name="fullname2" Type="nvarchar" MaxLength="124" />
+    <Property Name="NesbatDesc" Type="varchar" MaxLength="20" />
+    <Property Name="companyname" Type="varchar" MaxLength="80" />
+    <Property Name="Managementname" Type="varchar" MaxLength="50" />
+    <Property Name="BirthDate" Type="nchar" MaxLength="10" />
+    <Property Name="ValidCenterZoneDesc" Type="nvarchar" MaxLength="70" />
+    <Property Name="ValidCenterDesc" Type="varchar" MaxLength="70" />
+    <Property Name="IdEmployeeType" Type="int" />
+    <Property Name="Fk_Management" Type="int" />
+    <Property Name="IDPerson" Type="uniqueidentifier" />
+    <Property Name="RelationOrderNo" Type="int" />
+    <Property Name="Pk_vdfamily" Type="int" Nullable="false" />
+    <Property Name="Fk_Nesbat" Type="tinyint" />
+    <Property Name="ID" Type="int" />
+    <Property Name="Pk_ValidCenterZone" Type="int" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'Dayclinic.dbo.JobLocations' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="JobLocations">
+    <Key>
+      <PropertyRef Name="Pk_Company" />
+      <PropertyRef Name="Fk_Management" />
+      <PropertyRef Name="Managementname" />
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="Pk_Company" Type="smallint" Nullable="false" />
+    <Property Name="Fk_Management" Type="tinyint" Nullable="false" />
+    <Property Name="companyname" Type="varchar" MaxLength="80" />
+    <Property Name="Managementname" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ID" Type="int" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'Dayclinic.dbo.ValidCenter' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="ValidCenter">
+    <Key>
+      <PropertyRef Name="Pk_ValidCenterZone" />
+      <PropertyRef Name="ValidCenterZoneDesc" />
+      <PropertyRef Name="Deleted" />
+      <PropertyRef Name="ValidCenterDesc" />
+      <PropertyRef Name="pk_ValidCenter" />
+    </Key>
+    <Property Name="Pk_ValidCenterZone" Type="int" Nullable="false" />
+    <Property Name="ValidCenterZoneDesc" Type="nvarchar" MaxLength="70" Nullable="false" />
+    <Property Name="Deleted" Type="bit" Nullable="false" />
+    <Property Name="ValidCenterDesc" Type="varchar" MaxLength="70" Nullable="false" />
+    <Property Name="pk_ValidCenter" Type="smallint" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_AcessLevel_AcessLevel">
+    <End Role="TblUsers" Type="Self.TblUsers" Multiplicity="0..1" />
+    <End Role="AcessLevel" Type="Self.AcessLevel" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TblUsers">
+        <PropertyRef Name="UserCode" />
+      </Principal>
+      <Dependent Role="AcessLevel">
+        <PropertyRef Name="UserCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EventsLog_EventsDescription">
+    <End Role="EventsDescription" Type="Self.EventsDescription" Multiplicity="0..1" />
+    <End Role="EventsLog" Type="Self.EventsLog" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EventsDescription">
+        <PropertyRef Name="LogCode" />
+      </Principal>
+      <Dependent Role="EventsLog">
+        <PropertyRef Name="LogCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Main_Services_Main_group_services">
+    <End Role="Main_group_services" Type="Self.Main_group_services" Multiplicity="0..1" />
+    <End Role="Main_Services" Type="Self.Main_Services" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Main_group_services">
+        <PropertyRef Name="Main_group_Code" />
+      </Principal>
+      <Dependent Role="Main_Services">
+        <PropertyRef Name="Main_group_Code" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Main_Services_Secondary_Group_Services">
+    <End Role="Secondary_Group_Services" Type="Self.Secondary_Group_Services" Multiplicity="0..1" />
+    <End Role="Main_Services" Type="Self.Main_Services" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Secondary_Group_Services">
+        <PropertyRef Name="Secondary_group_code" />
+      </Principal>
+      <Dependent Role="Main_Services">
+        <PropertyRef Name="Secondary_group_code" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Secondary_Group_Services_Main_group_services">
+    <End Role="Main_group_services" Type="Self.Main_group_services" Multiplicity="0..1" />
+    <End Role="Secondary_Group_Services" Type="Self.Secondary_Group_Services" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Main_group_services">
+        <PropertyRef Name="Main_group_Code" />
+      </Principal>
+      <Dependent Role="Secondary_Group_Services">
+        <PropertyRef Name="main_groupCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="DayclinicModelStoreContainer">
+    <EntitySet Name="AcessLevel" EntityType="Self.AcessLevel" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Department" EntityType="Self.Department" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Department_post" EntityType="Self.Department_post" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Doctors_speciality" EntityType="Self.Doctors_speciality" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="educations" EntityType="Self.educations" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EventsDescription" EntityType="Self.EventsDescription" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EventsLog" EntityType="Self.EventsLog" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Fellowship" EntityType="Self.Fellowship" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Main_group_services" EntityType="Self.Main_group_services" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Main_Services" EntityType="Self.Main_Services" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PaientStatus" EntityType="Self.PaientStatus" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PaientType" EntityType="Self.PaientType" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PaientType2" EntityType="Self.PaientType2" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Post" EntityType="Self.Post" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Radio_body" EntityType="Self.Radio_body" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Radio_Defaultanswer" EntityType="Self.Radio_Defaultanswer" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Radio_DoctorsServices" EntityType="Self.Radio_DoctorsServices" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Radio_FilmServices" EntityType="Self.Radio_FilmServices" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Radio_filmSize" EntityType="Self.Radio_filmSize" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Radio_Groupbodies" EntityType="Self.Radio_Groupbodies" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Radio_imagetype" EntityType="Self.Radio_imagetype" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Radio_locations" EntityType="Self.Radio_locations" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Radio_Recipe" EntityType="Self.Radio_Recipe" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Radio_Services" EntityType="Self.Radio_Services" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Radio_Shifts" EntityType="Self.Radio_Shifts" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Secondary_Group_Services" EntityType="Self.Secondary_Group_Services" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="speciality" EntityType="Self.speciality" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Sscientific_Grade" EntityType="Self.Sscientific_Grade" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TblUsers" EntityType="Self.TblUsers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TurnStatus" EntityType="Self.TurnStatus" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="userKind" EntityType="Self.userKind" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DoctorsList" EntityType="Self.DoctorsList" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[DoctorsList].[PERSNO] AS [PERSNO], 
+[DoctorsList].[FNAME] AS [FNAME], 
+[DoctorsList].[LNAME] AS [LNAME], 
+[DoctorsList].[FullName] AS [FullName], 
+[DoctorsList].[personId] AS [personId]
+FROM [dbo].[DoctorsList] AS [DoctorsList]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="full_niocperson" EntityType="Self.full_niocperson" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[full_niocperson].[PersNo] AS [PersNo], 
+[full_niocperson].[fullname] AS [fullname], 
+[full_niocperson].[fullname2] AS [fullname2], 
+[full_niocperson].[NesbatDesc] AS [NesbatDesc], 
+[full_niocperson].[companyname] AS [companyname], 
+[full_niocperson].[Managementname] AS [Managementname], 
+[full_niocperson].[BirthDate] AS [BirthDate], 
+[full_niocperson].[ValidCenterZoneDesc] AS [ValidCenterZoneDesc], 
+[full_niocperson].[ValidCenterDesc] AS [ValidCenterDesc], 
+[full_niocperson].[IdEmployeeType] AS [IdEmployeeType], 
+[full_niocperson].[Fk_Management] AS [Fk_Management], 
+[full_niocperson].[IDPerson] AS [IDPerson], 
+[full_niocperson].[RelationOrderNo] AS [RelationOrderNo], 
+[full_niocperson].[Pk_vdfamily] AS [Pk_vdfamily], 
+[full_niocperson].[Fk_Nesbat] AS [Fk_Nesbat], 
+[full_niocperson].[ID] AS [ID], 
+[full_niocperson].[Pk_ValidCenterZone] AS [Pk_ValidCenterZone]
+FROM [dbo].[full_niocperson] AS [full_niocperson]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="JobLocations" EntityType="Self.JobLocations" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[JobLocations].[Pk_Company] AS [Pk_Company], 
+[JobLocations].[Fk_Management] AS [Fk_Management], 
+[JobLocations].[companyname] AS [companyname], 
+[JobLocations].[Managementname] AS [Managementname], 
+[JobLocations].[ID] AS [ID]
+FROM [dbo].[JobLocations] AS [JobLocations]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="ValidCenter" EntityType="Self.ValidCenter" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[ValidCenter].[Pk_ValidCenterZone] AS [Pk_ValidCenterZone], 
+[ValidCenter].[ValidCenterZoneDesc] AS [ValidCenterZoneDesc], 
+[ValidCenter].[Deleted] AS [Deleted], 
+[ValidCenter].[ValidCenterDesc] AS [ValidCenterDesc], 
+[ValidCenter].[pk_ValidCenter] AS [pk_ValidCenter]
+FROM [dbo].[ValidCenter] AS [ValidCenter]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK_AcessLevel_AcessLevel" Association="Self.FK_AcessLevel_AcessLevel">
+      <End Role="TblUsers" EntitySet="TblUsers" />
+      <End Role="AcessLevel" EntitySet="AcessLevel" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EventsLog_EventsDescription" Association="Self.FK_EventsLog_EventsDescription">
+      <End Role="EventsDescription" EntitySet="EventsDescription" />
+      <End Role="EventsLog" EntitySet="EventsLog" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Main_Services_Main_group_services" Association="Self.FK_Main_Services_Main_group_services">
+      <End Role="Main_group_services" EntitySet="Main_group_services" />
+      <End Role="Main_Services" EntitySet="Main_Services" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Main_Services_Secondary_Group_Services" Association="Self.FK_Main_Services_Secondary_Group_Services">
+      <End Role="Secondary_Group_Services" EntitySet="Secondary_Group_Services" />
+      <End Role="Main_Services" EntitySet="Main_Services" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Secondary_Group_Services_Main_group_services" Association="Self.FK_Secondary_Group_Services_Main_group_services">
+      <End Role="Main_group_services" EntitySet="Main_group_services" />
+      <End Role="Secondary_Group_Services" EntitySet="Secondary_Group_Services" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

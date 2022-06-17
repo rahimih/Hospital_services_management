@@ -1,0 +1,211 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ClinicModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Clinic">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Description" Type="nvarchar" MaxLength="100" />
+    <Property Name="ClinicMain_Id" Type="varchar" MaxLength="10" />
+    <Property Name="IsActive" Type="bit" />
+  </EntityType>
+  <EntityType Name="EmployeeInfoTbl">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="varchar" MaxLength="16" Nullable="false" />
+    <Property Name="IdPerson" Type="uniqueidentifier" />
+    <Property Name="TblCompany_Id" Type="int" />
+    <Property Name="TblManagement_Id" Type="int" />
+    <Property Name="TblSubCompany_Id" Type="int" />
+    <Property Name="Telephone" Type="varchar" MaxLength="40" />
+    <Property Name="HomePhone" Type="varchar" MaxLength="15" />
+    <Property Name="WorkPhone" Type="varchar" MaxLength="11" />
+    <Property Name="Address1" Type="nvarchar" MaxLength="100" />
+    <Property Name="Address2" Type="nvarchar" MaxLength="100" />
+    <Property Name="WifePhone" Type="varchar" MaxLength="11" />
+    <Property Name="PostalCode" Type="char" MaxLength="10" />
+    <Property Name="TblRelationFamily_Id" Type="smallint" />
+    <Property Name="ComboTable_Id_WorkType" Type="int" />
+    <Property Name="TblEmployeetype_Id" Type="int" Nullable="false" />
+    <Property Name="PersNo" Type="int" Nullable="false" />
+    <Property Name="Email" Type="varchar" MaxLength="100" />
+    <Property Name="WorkAddress" Type="nvarchar" MaxLength="150" />
+  </EntityType>
+  <EntityType Name="PersonTbl">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Fname" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Lname" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="EmployeeInfoTbl_Id" Type="varchar" MaxLength="16" Nullable="false" />
+    <Property Name="Deleted" Type="bit" Nullable="false" />
+    <Property Name="NationalCode" Type="char" MaxLength="10" />
+    <Property Name="TblRelation_Id" Type="smallint" Nullable="false" />
+    <Property Name="RelationOrderNo" Type="smallint" />
+    <Property Name="Sex" Type="bit" Nullable="false" />
+    <Property Name="ActualDeleted" Type="bit" Nullable="false" />
+    <Property Name="BirthDate" Type="char" MaxLength="10" Nullable="false" />
+    <Property Name="FatherFname" Type="nvarchar" MaxLength="50" />
+    <Property Name="TblValidCenter_Id" Type="int" Nullable="false" />
+    <Property Name="TblValidCenterCity_Id" Type="int" Nullable="false" />
+    <Property Name="TblEduDegree_Id" Type="smallint" />
+    <Property Name="Mobile" Type="char" MaxLength="11" />
+    <Property Name="TblMaritalStatus_Id" Type="smallint" />
+    <Property Name="Pk_vdfamily" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ComboTable_Id_sex" Type="int" />
+    <Property Name="MiladyBirthDate" Type="date" />
+    <Property Name="LastUpdateDate" Type="int" />
+    <Property Name="LastUpdateTime" Type="nvarchar" MaxLength="20" />
+    <Property Name="IDJobRelated" Type="smallint" />
+    <Property Name="PostCode" Type="nvarchar" MaxLength="20" />
+    <Property Name="Email" Type="nvarchar" MaxLength="50" />
+    <Property Name="PersNo" Type="int" />
+  </EntityType>
+  <EntityType Name="TblCompany">
+    <Key>
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="TblManagement_Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="TblManagement_Id" Type="int" Nullable="false" />
+    <Property Name="Description" Type="nvarchar" MaxLength="100" />
+    <Property Name="IdentityId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ModifyTime" Type="datetime" />
+  </EntityType>
+  <EntityType Name="TblEmployeetype">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="EmployeeTypeDesc" Type="nvarchar" MaxLength="64" Nullable="false" />
+    <Property Name="Treaty_Id" Type="int" />
+    <Property Name="Display" Type="bit" />
+    <Property Name="Number" Type="nvarchar" MaxLength="100" />
+    <Property Name="Tartib" Type="int" />
+  </EntityType>
+  <EntityType Name="TblManagement">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Description" Type="nvarchar" MaxLength="100" />
+    <Property Name="ModifyTime" Type="datetime" />
+  </EntityType>
+  <EntityType Name="TblRelation">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="smallint" Nullable="false" />
+    <Property Name="Description" Type="nvarchar" MaxLength="20" />
+    <Property Name="Nesbatxml" Type="smallint" />
+  </EntityType>
+  <Association Name="FK_EmployeeInfoTbl_TblCompany">
+    <End Role="TblCompany" Type="Self.TblCompany" Multiplicity="0..1" />
+    <End Role="EmployeeInfoTbl" Type="Self.EmployeeInfoTbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TblCompany">
+        <PropertyRef Name="Id" />
+        <PropertyRef Name="TblManagement_Id" />
+      </Principal>
+      <Dependent Role="EmployeeInfoTbl">
+        <PropertyRef Name="TblCompany_Id" />
+        <PropertyRef Name="TblManagement_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EmployeeInfoTbl_TblEmployeetype">
+    <End Role="TblEmployeetype" Type="Self.TblEmployeetype" Multiplicity="1" />
+    <End Role="EmployeeInfoTbl" Type="Self.EmployeeInfoTbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TblEmployeetype">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="EmployeeInfoTbl">
+        <PropertyRef Name="TblEmployeetype_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EmployeeInfoTbl_TblManagement">
+    <End Role="TblManagement" Type="Self.TblManagement" Multiplicity="0..1" />
+    <End Role="EmployeeInfoTbl" Type="Self.EmployeeInfoTbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TblManagement">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="EmployeeInfoTbl">
+        <PropertyRef Name="TblManagement_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PersonTbl_EmployeeInfoTbl">
+    <End Role="EmployeeInfoTbl" Type="Self.EmployeeInfoTbl" Multiplicity="1" />
+    <End Role="PersonTbl" Type="Self.PersonTbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EmployeeInfoTbl">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="PersonTbl">
+        <PropertyRef Name="EmployeeInfoTbl_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PersonTbl_TblRelation">
+    <End Role="TblRelation" Type="Self.TblRelation" Multiplicity="1" />
+    <End Role="PersonTbl" Type="Self.PersonTbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TblRelation">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="PersonTbl">
+        <PropertyRef Name="TblRelation_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Tbl_Company_TblManagement">
+    <End Role="TblManagement" Type="Self.TblManagement" Multiplicity="1" />
+    <End Role="TblCompany" Type="Self.TblCompany" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TblManagement">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="TblCompany">
+        <PropertyRef Name="Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="ClinicModelStoreContainer">
+    <EntitySet Name="Clinic" EntityType="Self.Clinic" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EmployeeInfoTbl" EntityType="Self.EmployeeInfoTbl" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PersonTbl" EntityType="Self.PersonTbl" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TblCompany" EntityType="Self.TblCompany" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TblEmployeetype" EntityType="Self.TblEmployeetype" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TblManagement" EntityType="Self.TblManagement" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TblRelation" EntityType="Self.TblRelation" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_EmployeeInfoTbl_TblCompany" Association="Self.FK_EmployeeInfoTbl_TblCompany">
+      <End Role="TblCompany" EntitySet="TblCompany" />
+      <End Role="EmployeeInfoTbl" EntitySet="EmployeeInfoTbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EmployeeInfoTbl_TblEmployeetype" Association="Self.FK_EmployeeInfoTbl_TblEmployeetype">
+      <End Role="TblEmployeetype" EntitySet="TblEmployeetype" />
+      <End Role="EmployeeInfoTbl" EntitySet="EmployeeInfoTbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EmployeeInfoTbl_TblManagement" Association="Self.FK_EmployeeInfoTbl_TblManagement">
+      <End Role="TblManagement" EntitySet="TblManagement" />
+      <End Role="EmployeeInfoTbl" EntitySet="EmployeeInfoTbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PersonTbl_EmployeeInfoTbl" Association="Self.FK_PersonTbl_EmployeeInfoTbl">
+      <End Role="EmployeeInfoTbl" EntitySet="EmployeeInfoTbl" />
+      <End Role="PersonTbl" EntitySet="PersonTbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PersonTbl_TblRelation" Association="Self.FK_PersonTbl_TblRelation">
+      <End Role="TblRelation" EntitySet="TblRelation" />
+      <End Role="PersonTbl" EntitySet="PersonTbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tbl_Company_TblManagement" Association="Self.FK_Tbl_Company_TblManagement">
+      <End Role="TblManagement" EntitySet="TblManagement" />
+      <End Role="TblCompany" EntitySet="TblCompany" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

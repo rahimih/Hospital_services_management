@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+  <general>
+    <ipadress>HADI-PC\MSSQLSERVER2014</ipadress>
+    <dentistipadress>HADI-PC\MSSQLSERVER2014</dentistipadress>
+     <emr_calculate>0</emr_calculate>
+  </general>
+</configuration>
+

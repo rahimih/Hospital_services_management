@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+  <general>
+    <fontnameRadio>Times new roman</fontnameRadio>
+    <fontsizeRadio>12</fontsizeRadio>
+    <fontnameRadioDentist>Times new roman</fontnameRadioDentist>
+    <fontsizeRadioDentist>12</fontsizeRadioDentist>
+    <fontnameSono>Vani</fontnameSono>
+    <fontsizeSono>12</fontsizeSono>
+    <backcolorSono>white</backcolorSono>
+    <fontnameSurgery>Tahoma</fontnameSurgery>
+    <fontsizeSurgery>12</fontsizeSurgery>
+  </general>
+</configuration>

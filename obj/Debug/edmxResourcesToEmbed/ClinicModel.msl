@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ClinicModelStoreContainer" CdmEntityContainer="ClinicEntities">
+    <EntitySetMapping Name="EmployeeInfoTbls">
+      <EntityTypeMapping TypeName="ClinicModel.EmployeeInfoTbl">
+        <MappingFragment StoreEntitySet="EmployeeInfoTbl">
+          <ScalarProperty Name="WorkAddress" ColumnName="WorkAddress" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="PersNo" ColumnName="PersNo" />
+          <ScalarProperty Name="TblEmployeetype_Id" ColumnName="TblEmployeetype_Id" />
+          <ScalarProperty Name="ComboTable_Id_WorkType" ColumnName="ComboTable_Id_WorkType" />
+          <ScalarProperty Name="TblRelationFamily_Id" ColumnName="TblRelationFamily_Id" />
+          <ScalarProperty Name="PostalCode" ColumnName="PostalCode" />
+          <ScalarProperty Name="WifePhone" ColumnName="WifePhone" />
+          <ScalarProperty Name="Address2" ColumnName="Address2" />
+          <ScalarProperty Name="Address1" ColumnName="Address1" />
+          <ScalarProperty Name="WorkPhone" ColumnName="WorkPhone" />
+          <ScalarProperty Name="HomePhone" ColumnName="HomePhone" />
+          <ScalarProperty Name="Telephone" ColumnName="Telephone" />
+          <ScalarProperty Name="TblSubCompany_Id" ColumnName="TblSubCompany_Id" />
+          <ScalarProperty Name="TblManagement_Id" ColumnName="TblManagement_Id" />
+          <ScalarProperty Name="TblCompany_Id" ColumnName="TblCompany_Id" />
+          <ScalarProperty Name="IdPerson" ColumnName="IdPerson" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PersonTbls">
+      <EntityTypeMapping TypeName="ClinicModel.PersonTbl">
+        <MappingFragment StoreEntitySet="PersonTbl">
+          <ScalarProperty Name="PersNo" ColumnName="PersNo" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="PostCode" ColumnName="PostCode" />
+          <ScalarProperty Name="IDJobRelated" ColumnName="IDJobRelated" />
+          <ScalarProperty Name="LastUpdateTime" ColumnName="LastUpdateTime" />
+          <ScalarProperty Name="LastUpdateDate" ColumnName="LastUpdateDate" />
+          <ScalarProperty Name="MiladyBirthDate" ColumnName="MiladyBirthDate" />
+          <ScalarProperty Name="ComboTable_Id_sex" ColumnName="ComboTable_Id_sex" />
+          <ScalarProperty Name="Pk_vdfamily" ColumnName="Pk_vdfamily" />
+          <ScalarProperty Name="TblMaritalStatus_Id" ColumnName="TblMaritalStatus_Id" />
+          <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+          <ScalarProperty Name="TblEduDegree_Id" ColumnName="TblEduDegree_Id" />
+          <ScalarProperty Name="TblValidCenterCity_Id" ColumnName="TblValidCenterCity_Id" />
+          <ScalarProperty Name="TblValidCenter_Id" ColumnName="TblValidCenter_Id" />
+          <ScalarProperty Name="FatherFname" ColumnName="FatherFname" />
+          <ScalarProperty Name="BirthDate" ColumnName="BirthDate" />
+          <ScalarProperty Name="ActualDeleted" ColumnName="ActualDeleted" />
+          <ScalarProperty Name="Sex" ColumnName="Sex" />
+          <ScalarProperty Name="RelationOrderNo" ColumnName="RelationOrderNo" />
+          <ScalarProperty Name="TblRelation_Id" ColumnName="TblRelation_Id" />
+          <ScalarProperty Name="NationalCode" ColumnName="NationalCode" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+          <ScalarProperty Name="EmployeeInfoTbl_Id" ColumnName="EmployeeInfoTbl_Id" />
+          <ScalarProperty Name="Lname" ColumnName="Lname" />
+          <ScalarProperty Name="Fname" ColumnName="Fname" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TblCompanies">
+      <EntityTypeMapping TypeName="ClinicModel.TblCompany">
+        <MappingFragment StoreEntitySet="TblCompany">
+          <ScalarProperty Name="ModifyTime" ColumnName="ModifyTime" />
+          <ScalarProperty Name="IdentityId" ColumnName="IdentityId" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="TblManagement_Id" ColumnName="TblManagement_Id" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TblEmployeetypes">
+      <EntityTypeMapping TypeName="ClinicModel.TblEmployeetype">
+        <MappingFragment StoreEntitySet="TblEmployeetype">
+          <ScalarProperty Name="Tartib" ColumnName="Tartib" />
+          <ScalarProperty Name="Number" ColumnName="Number" />
+          <ScalarProperty Name="Display" ColumnName="Display" />
+          <ScalarProperty Name="Treaty_Id" ColumnName="Treaty_Id" />
+          <ScalarProperty Name="EmployeeTypeDesc" ColumnName="EmployeeTypeDesc" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TblManagements">
+      <EntityTypeMapping TypeName="ClinicModel.TblManagement">
+        <MappingFragment StoreEntitySet="TblManagement">
+          <ScalarProperty Name="ModifyTime" ColumnName="ModifyTime" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TblRelations">
+      <EntityTypeMapping TypeName="ClinicModel.TblRelation">
+        <MappingFragment StoreEntitySet="TblRelation">
+          <ScalarProperty Name="Nesbatxml" ColumnName="Nesbatxml" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Clinics">
+      <EntityTypeMapping TypeName="ClinicModel.Clinic">
+        <MappingFragment StoreEntitySet="Clinic">
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="ClinicMain_Id" ColumnName="ClinicMain_Id" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

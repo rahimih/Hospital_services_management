@@ -1,0 +1,511 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DayclinicModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="AcessLevel">
+    <Key>
+      <PropertyRef Name="code" />
+    </Key>
+    <Property Name="code" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserCode" Type="Int32" />
+    <Property Name="UserName" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Password" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="AcessLevel1" Type="Byte" />
+    <Property Name="Status" Type="Boolean" />
+    <NavigationProperty Name="TblUser" Relationship="Self.FK_AcessLevel_AcessLevel" FromRole="AcessLevel" ToRole="TblUsers" />
+  </EntityType>
+  <EntityType Name="Department">
+    <Key>
+      <PropertyRef Name="department_code" />
+    </Key>
+    <Property Name="department_code" Type="Byte" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="department1" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="kind" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="Department_post">
+    <Key>
+      <PropertyRef Name="Department_post_Code" />
+    </Key>
+    <Property Name="Department_post_Code" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserCode" Type="Int32" />
+    <Property Name="DepartmentCode" Type="Byte" />
+    <Property Name="PostCode" Type="Int32" />
+    <Property Name="PostDate" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Status" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="Doctors_speciality">
+    <Key>
+      <PropertyRef Name="Doctors_speciality_code" />
+    </Key>
+    <Property Name="Doctors_speciality_code" Type="Byte" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Doctors_speciality1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="education">
+    <Key>
+      <PropertyRef Name="educations_code" />
+    </Key>
+    <Property Name="educations_code" Type="Byte" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="educations" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="EventsDescription">
+    <Key>
+      <PropertyRef Name="LogCode" />
+    </Key>
+    <Property Name="LogCode" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="EventsLogs" Relationship="Self.FK_EventsLog_EventsDescription" FromRole="EventsDescription" ToRole="EventsLog" />
+  </EntityType>
+  <EntityType Name="EventsLog">
+    <Key>
+      <PropertyRef Name="EventsLogCode" />
+    </Key>
+    <Property Name="EventsLogCode" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="usercode" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="logdate" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="logtime" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="LogCode" Type="Int32" />
+    <Property Name="Ipadress" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="changecode" Type="Int32" />
+    <NavigationProperty Name="EventsDescription" Relationship="Self.FK_EventsLog_EventsDescription" FromRole="EventsLog" ToRole="EventsDescription" />
+  </EntityType>
+  <EntityType Name="Fellowship">
+    <Key>
+      <PropertyRef Name="Fellowshipcode" />
+    </Key>
+    <Property Name="Fellowshipcode" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Fellowship1" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Main_group_services">
+    <Key>
+      <PropertyRef Name="Main_group_Code" />
+    </Key>
+    <Property Name="Main_group_Code" Type="Byte" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Main_Services" Relationship="Self.FK_Main_Services_Main_group_services" FromRole="Main_group_services" ToRole="Main_Services" />
+    <NavigationProperty Name="Secondary_Group_Services" Relationship="Self.FK_Secondary_Group_Services_Main_group_services" FromRole="Main_group_services" ToRole="Secondary_Group_Services" />
+  </EntityType>
+  <EntityType Name="Main_Services">
+    <Key>
+      <PropertyRef Name="Main_Services_code" />
+    </Key>
+    <Property Name="Main_Services_code" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Main_group_Code" Type="Byte" />
+    <Property Name="Secondary_group_code" Type="Int32" />
+    <Property Name="Attribute" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="ServicesCode" Type="Int32" />
+    <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="comment" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="K_Anesthesia" Type="Double" />
+    <Property Name="K_Professional" Type="Double" />
+    <Property Name="K_Technical" Type="Double" />
+    <Property Name="K_Total" Type="Double" />
+    <Property Name="CreationDate" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Name="ModificationDate" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Name="Version" Type="Double" />
+    <Property Name="TerminologyId" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Name="group1" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="group2" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="group3" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Group4" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="Group5" Type="String" MaxLength="350" FixedLength="false" Unicode="true" />
+    <Property Name="English_Name" Type="String" MaxLength="350" FixedLength="false" Unicode="true" />
+    <Property Name="Status" Type="Boolean" />
+    <Property Name="Old_Code" Type="Int32" />
+    <NavigationProperty Name="Main_group_services" Relationship="Self.FK_Main_Services_Main_group_services" FromRole="Main_Services" ToRole="Main_group_services" />
+    <NavigationProperty Name="Secondary_Group_Services" Relationship="Self.FK_Main_Services_Secondary_Group_Services" FromRole="Main_Services" ToRole="Secondary_Group_Services" />
+  </EntityType>
+  <EntityType Name="PaientStatu">
+    <Key>
+      <PropertyRef Name="PaientStatuscode" />
+    </Key>
+    <Property Name="PaientStatuscode" Type="Byte" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PaientStatusName" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="PaientType">
+    <Key>
+      <PropertyRef Name="PaientTypeCode" />
+    </Key>
+    <Property Name="PaientTypeCode" Type="Byte" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PaientTypeName" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="PaientType2">
+    <Key>
+      <PropertyRef Name="PaientTypeCode2" />
+    </Key>
+    <Property Name="PaientTypeCode2" Type="Byte" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PaientTypeName2" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Post">
+    <Key>
+      <PropertyRef Name="post_Code" />
+    </Key>
+    <Property Name="post_Code" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="post1" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Radio_body">
+    <Key>
+      <PropertyRef Name="body_code" />
+    </Key>
+    <Property Name="body_code" Type="Byte" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Radio_Defaultanswer">
+    <Key>
+      <PropertyRef Name="answer_Code" />
+    </Key>
+    <Property Name="answer_Code" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="answer" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Name" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Radio_DoctorsServices">
+    <Key>
+      <PropertyRef Name="DoctorsServices_Code" />
+    </Key>
+    <Property Name="DoctorsServices_Code" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TurnId" Type="Int32" />
+    <Property Name="ServicesCode" Type="Int32" />
+    <Property Name="Area" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Name="answerCode" Type="Int32" />
+    <Property Name="answer" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Radio_FilmServices">
+    <Key>
+      <PropertyRef Name="FilmSize_code" />
+    </Key>
+    <Property Name="FilmSize_code" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="turnid" Type="Int32" />
+    <Property Name="FilmSize" Type="Byte" />
+    <Property Name="Count" Type="Byte" />
+  </EntityType>
+  <EntityType Name="Radio_filmSize">
+    <Key>
+      <PropertyRef Name="Size_code" />
+    </Key>
+    <Property Name="Size_code" Type="Byte" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Size" Type="String" MaxLength="7" FixedLength="false" Unicode="true" />
+    <Property Name="count1" Type="Byte" />
+  </EntityType>
+  <EntityType Name="Radio_Groupbodies">
+    <Key>
+      <PropertyRef Name="Groupbodies_code" />
+    </Key>
+    <Property Name="Groupbodies_code" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Servicescode" Type="Int32" />
+    <Property Name="bodycode" Type="Byte" />
+  </EntityType>
+  <EntityType Name="Radio_imagetype">
+    <Key>
+      <PropertyRef Name="imagetype_code" />
+    </Key>
+    <Property Name="imagetype_code" Type="Byte" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ImageType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Radio_locations">
+    <Key>
+      <PropertyRef Name="Locations_code" />
+    </Key>
+    <Property Name="Locations_code" Type="Byte" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Locations" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Radio_Recipe">
+    <Key>
+      <PropertyRef Name="Turnid" />
+    </Key>
+    <Property Name="Turnid" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IDPerson" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="persno" Type="Int32" />
+    <Property Name="Personelcode" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Fkvdfamily" Type="Int32" />
+    <Property Name="Currentdate" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="currentTime" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Turndate" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Turntime" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="turnNo" Type="Byte" />
+    <Property Name="DoctorsCode" Type="Int32" />
+    <Property Name="Servicescode" Type="Byte" />
+    <Property Name="TurnStatus" Type="Byte" />
+    <Property Name="Shiftcode" Type="Byte" />
+    <Property Name="PaientType" Type="Byte" />
+    <Property Name="PaientStatus" Type="Byte" />
+    <Property Name="Usercode" Type="Byte" />
+    <Property Name="ipadress" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="validcenterzone" Type="Int32" />
+    <Property Name="Doctors_speciality" Type="Byte" />
+    <Property Name="radiographer" Type="Int32" />
+    <Property Name="loactions" Type="Byte" />
+    <Property Name="radio_doctors" Type="Int32" />
+    <Property Name="PaientType2" Type="Int32" />
+    <Property Name="ImagingType" Type="Int32" />
+    <Property Name="FileNo" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Radio_Services">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="Code" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ServicesCode" Type="Int32" />
+    <Property Name="Name" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="EnglishName" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="K_h" Type="Double" />
+    <Property Name="K_f" Type="Double" />
+    <Property Name="K_s" Type="Double" />
+    <Property Name="k_b" Type="Double" />
+    <Property Name="Status" Type="Boolean" />
+    <Property Name="oldCode" Type="Int32" />
+    <Property Name="Attribute" Type="String" MaxLength="3" FixedLength="true" Unicode="true" />
+    <Property Name="group1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="group2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="group3" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="comment" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Radio_Shifts">
+    <Key>
+      <PropertyRef Name="Shiftcode" />
+    </Key>
+    <Property Name="Shiftcode" Type="Byte" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Shiftname" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Fromtime" Type="Time" Precision="7" />
+    <Property Name="totime" Type="Time" Precision="7" />
+    <Property Name="XmlShiftCode" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Secondary_Group_Services">
+    <Key>
+      <PropertyRef Name="Secondary_group_code" />
+    </Key>
+    <Property Name="Secondary_group_code" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="main_groupCode" Type="Byte" />
+    <Property Name="Name" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Main_group_services" Relationship="Self.FK_Secondary_Group_Services_Main_group_services" FromRole="Secondary_Group_Services" ToRole="Main_group_services" />
+    <NavigationProperty Name="Main_Services" Relationship="Self.FK_Main_Services_Secondary_Group_Services" FromRole="Secondary_Group_Services" ToRole="Main_Services" />
+  </EntityType>
+  <EntityType Name="speciality">
+    <Key>
+      <PropertyRef Name="specialitycode" />
+    </Key>
+    <Property Name="specialitycode" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="speciality1" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Sscientific_Grade">
+    <Key>
+      <PropertyRef Name="SscientificGrade_code" />
+    </Key>
+    <Property Name="SscientificGrade_code" Type="Byte" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Sscientific_Grade1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="TblUser">
+    <Key>
+      <PropertyRef Name="UserCode" />
+    </Key>
+    <Property Name="UserCode" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="personalNO" Type="Int32" />
+    <Property Name="Fname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Lname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SN" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="DoctorNO" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="Active" Type="Boolean" />
+    <Property Name="EnglishName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="title" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="Image" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="PersianTitle" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="educations" Type="Byte" />
+    <Property Name="speciality_Kind" Type="Byte" />
+    <Property Name="Sscientific_Grade" Type="Byte" />
+    <Property Name="speciality" Type="Byte" />
+    <Property Name="Fellowship" Type="Byte" />
+    <Property Name="StartDate" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Enddate" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Status" Type="Boolean" />
+    <Property Name="phone" Type="String" MaxLength="11" FixedLength="false" Unicode="true" />
+    <Property Name="mobile" Type="String" MaxLength="11" FixedLength="false" Unicode="true" />
+    <Property Name="Adress" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="AcessLevels" Relationship="Self.FK_AcessLevel_AcessLevel" FromRole="TblUsers" ToRole="AcessLevel" />
+  </EntityType>
+  <EntityType Name="TurnStatu">
+    <Key>
+      <PropertyRef Name="TurnStatuscode" />
+    </Key>
+    <Property Name="TurnStatuscode" Type="Byte" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TurnStatusName" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="userKind">
+    <Key>
+      <PropertyRef Name="GroupCode" />
+    </Key>
+    <Property Name="GroupCode" Type="Byte" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="GroupName" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <Association Name="FK_AcessLevel_AcessLevel">
+    <End Role="TblUsers" Type="Self.TblUser" Multiplicity="0..1" />
+    <End Role="AcessLevel" Type="Self.AcessLevel" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TblUsers">
+        <PropertyRef Name="UserCode" />
+      </Principal>
+      <Dependent Role="AcessLevel">
+        <PropertyRef Name="UserCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EventsLog_EventsDescription">
+    <End Role="EventsDescription" Type="Self.EventsDescription" Multiplicity="0..1" />
+    <End Role="EventsLog" Type="Self.EventsLog" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EventsDescription">
+        <PropertyRef Name="LogCode" />
+      </Principal>
+      <Dependent Role="EventsLog">
+        <PropertyRef Name="LogCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Main_Services_Main_group_services">
+    <End Role="Main_group_services" Type="Self.Main_group_services" Multiplicity="0..1" />
+    <End Role="Main_Services" Type="Self.Main_Services" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Main_group_services">
+        <PropertyRef Name="Main_group_Code" />
+      </Principal>
+      <Dependent Role="Main_Services">
+        <PropertyRef Name="Main_group_Code" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Secondary_Group_Services_Main_group_services">
+    <End Role="Main_group_services" Type="Self.Main_group_services" Multiplicity="0..1" />
+    <End Role="Secondary_Group_Services" Type="Self.Secondary_Group_Services" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Main_group_services">
+        <PropertyRef Name="Main_group_Code" />
+      </Principal>
+      <Dependent Role="Secondary_Group_Services">
+        <PropertyRef Name="main_groupCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Main_Services_Secondary_Group_Services">
+    <End Role="Secondary_Group_Services" Type="Self.Secondary_Group_Services" Multiplicity="0..1" />
+    <End Role="Main_Services" Type="Self.Main_Services" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Secondary_Group_Services">
+        <PropertyRef Name="Secondary_group_code" />
+      </Principal>
+      <Dependent Role="Main_Services">
+        <PropertyRef Name="Secondary_group_code" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="DayclinicEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="AcessLevels" EntityType="Self.AcessLevel" />
+    <EntitySet Name="Departments" EntityType="Self.Department" />
+    <EntitySet Name="Department_post" EntityType="Self.Department_post" />
+    <EntitySet Name="Doctors_speciality" EntityType="Self.Doctors_speciality" />
+    <EntitySet Name="educations" EntityType="Self.education" />
+    <EntitySet Name="EventsDescriptions" EntityType="Self.EventsDescription" />
+    <EntitySet Name="EventsLogs" EntityType="Self.EventsLog" />
+    <EntitySet Name="Fellowships" EntityType="Self.Fellowship" />
+    <EntitySet Name="Main_group_services" EntityType="Self.Main_group_services" />
+    <EntitySet Name="Main_Services" EntityType="Self.Main_Services" />
+    <EntitySet Name="PaientStatus" EntityType="Self.PaientStatu" />
+    <EntitySet Name="PaientTypes" EntityType="Self.PaientType" />
+    <EntitySet Name="PaientType2" EntityType="Self.PaientType2" />
+    <EntitySet Name="Posts" EntityType="Self.Post" />
+    <EntitySet Name="Radio_body" EntityType="Self.Radio_body" />
+    <EntitySet Name="Radio_Defaultanswer" EntityType="Self.Radio_Defaultanswer" />
+    <EntitySet Name="Radio_DoctorsServices" EntityType="Self.Radio_DoctorsServices" />
+    <EntitySet Name="Radio_FilmServices" EntityType="Self.Radio_FilmServices" />
+    <EntitySet Name="Radio_filmSize" EntityType="Self.Radio_filmSize" />
+    <EntitySet Name="Radio_Groupbodies" EntityType="Self.Radio_Groupbodies" />
+    <EntitySet Name="Radio_imagetype" EntityType="Self.Radio_imagetype" />
+    <EntitySet Name="Radio_locations" EntityType="Self.Radio_locations" />
+    <EntitySet Name="Radio_Recipe" EntityType="Self.Radio_Recipe" />
+    <EntitySet Name="Radio_Services" EntityType="Self.Radio_Services" />
+    <EntitySet Name="Radio_Shifts" EntityType="Self.Radio_Shifts" />
+    <EntitySet Name="Secondary_Group_Services" EntityType="Self.Secondary_Group_Services" />
+    <EntitySet Name="specialities" EntityType="Self.speciality" />
+    <EntitySet Name="Sscientific_Grade" EntityType="Self.Sscientific_Grade" />
+    <EntitySet Name="TblUsers" EntityType="Self.TblUser" />
+    <EntitySet Name="TurnStatus" EntityType="Self.TurnStatu" />
+    <EntitySet Name="userKinds" EntityType="Self.userKind" />
+    <AssociationSet Name="FK_AcessLevel_AcessLevel" Association="Self.FK_AcessLevel_AcessLevel">
+      <End Role="TblUsers" EntitySet="TblUsers" />
+      <End Role="AcessLevel" EntitySet="AcessLevels" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EventsLog_EventsDescription" Association="Self.FK_EventsLog_EventsDescription">
+      <End Role="EventsDescription" EntitySet="EventsDescriptions" />
+      <End Role="EventsLog" EntitySet="EventsLogs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Main_Services_Main_group_services" Association="Self.FK_Main_Services_Main_group_services">
+      <End Role="Main_group_services" EntitySet="Main_group_services" />
+      <End Role="Main_Services" EntitySet="Main_Services" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Secondary_Group_Services_Main_group_services" Association="Self.FK_Secondary_Group_Services_Main_group_services">
+      <End Role="Main_group_services" EntitySet="Main_group_services" />
+      <End Role="Secondary_Group_Services" EntitySet="Secondary_Group_Services" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Main_Services_Secondary_Group_Services" Association="Self.FK_Main_Services_Secondary_Group_Services">
+      <End Role="Secondary_Group_Services" EntitySet="Secondary_Group_Services" />
+      <End Role="Main_Services" EntitySet="Main_Services" />
+    </AssociationSet>
+    <EntitySet Name="DoctorsLists" EntityType="DayclinicModel.DoctorsList" />
+    <EntitySet Name="full_niocperson" EntityType="DayclinicModel.full_niocperson" />
+    <EntitySet Name="JobLocations" EntityType="DayclinicModel.JobLocation" />
+    <EntitySet Name="ValidCenters" EntityType="DayclinicModel.ValidCenter" />
+  </EntityContainer>
+  <EntityType Name="DoctorsList">
+    <Key>
+      <PropertyRef Name="PERSNO" />
+    </Key>
+    <Property Name="PERSNO" Type="Int32" Nullable="false" />
+    <Property Name="FNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="LNAME" Type="String" MaxLength="65" FixedLength="false" Unicode="false" />
+    <Property Name="FullName" Type="String" MaxLength="116" FixedLength="false" Unicode="false" />
+    <Property Name="personId" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+  </EntityType>
+  <EntityType Name="full_niocperson">
+    <Key>
+      <PropertyRef Name="Pk_vdfamily" />
+    </Key>
+    <Property Name="PersNo" Type="Int32" />
+    <Property Name="fullname" Type="String" MaxLength="102" FixedLength="false" Unicode="true" />
+    <Property Name="fullname2" Type="String" MaxLength="124" FixedLength="false" Unicode="true" />
+    <Property Name="NesbatDesc" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="companyname" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+    <Property Name="Managementname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="BirthDate" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="ValidCenterZoneDesc" Type="String" MaxLength="70" FixedLength="false" Unicode="true" />
+    <Property Name="ValidCenterDesc" Type="String" MaxLength="70" FixedLength="false" Unicode="false" />
+    <Property Name="IdEmployeeType" Type="Int32" />
+    <Property Name="Fk_Management" Type="Int32" />
+    <Property Name="IDPerson" Type="Guid" />
+    <Property Name="RelationOrderNo" Type="Int32" />
+    <Property Name="Pk_vdfamily" Type="Int32" Nullable="false" />
+    <Property Name="Fk_Nesbat" Type="Byte" />
+    <Property Name="ID" Type="Int32" />
+    <Property Name="Pk_ValidCenterZone" Type="Int32" />
+  </EntityType>
+  <EntityType Name="JobLocation">
+    <Key>
+      <PropertyRef Name="Pk_Company" />
+      <PropertyRef Name="Fk_Management" />
+      <PropertyRef Name="Managementname" />
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="Pk_Company" Type="Int16" Nullable="false" />
+    <Property Name="Fk_Management" Type="Byte" Nullable="false" />
+    <Property Name="companyname" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+    <Property Name="Managementname" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ID" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ValidCenter">
+    <Key>
+      <PropertyRef Name="Pk_ValidCenterZone" />
+      <PropertyRef Name="ValidCenterZoneDesc" />
+      <PropertyRef Name="Deleted" />
+      <PropertyRef Name="ValidCenterDesc" />
+      <PropertyRef Name="pk_ValidCenter" />
+    </Key>
+    <Property Name="Pk_ValidCenterZone" Type="Int32" Nullable="false" />
+    <Property Name="ValidCenterZoneDesc" Type="String" Nullable="false" MaxLength="70" FixedLength="false" Unicode="true" />
+    <Property Name="Deleted" Type="Boolean" Nullable="false" />
+    <Property Name="ValidCenterDesc" Type="String" Nullable="false" MaxLength="70" FixedLength="false" Unicode="false" />
+    <Property Name="pk_ValidCenter" Type="Int16" Nullable="false" />
+  </EntityType>
+</Schema>

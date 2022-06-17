@@ -1,0 +1,1700 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="dentistryModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="AcessLevel">
+    <Key>
+      <PropertyRef Name="code" />
+    </Key>
+    <Property Name="code" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserCode" Type="int" />
+    <Property Name="UserName" Type="nvarchar" MaxLength="10" />
+    <Property Name="Password" Type="nvarchar" MaxLength="10" />
+    <Property Name="AcessLevel" Type="tinyint" />
+  </EntityType>
+  <EntityType Name="Clinics">
+    <Key>
+      <PropertyRef Name="ClinicCode" />
+    </Key>
+    <Property Name="ClinicCode" Type="tinyint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ClinicName" Type="nvarchar" MaxLength="20" />
+    <Property Name="Depatrment" Type="nvarchar" MaxLength="50" />
+    <Property Name="RoomNO" Type="nvarchar" MaxLength="20" />
+    <Property Name="ClinicType" Type="tinyint" />
+    <Property Name="Comment" Type="nvarchar" MaxLength="150" />
+  </EntityType>
+  <EntityType Name="ClinicType">
+    <Key>
+      <PropertyRef Name="ClinicTypecode" />
+    </Key>
+    <Property Name="ClinicTypecode" Type="tinyint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ClinictypeName" Type="nvarchar" MaxLength="25" />
+  </EntityType>
+  <EntityType Name="consult">
+    <Key>
+      <PropertyRef Name="consultCode" />
+    </Key>
+    <Property Name="consultCode" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Idperson" Type="nchar" MaxLength="50" />
+    <Property Name="Persno" Type="int" />
+    <Property Name="Fkvdfamily" Type="int" />
+    <Property Name="Icd10code" Type="int" />
+    <Property Name="Servicescode" Type="int" />
+    <Property Name="ToothID" Type="tinyint" />
+    <Property Name="introductionDate" Type="nvarchar" MaxLength="10" />
+    <Property Name="introductionTime" Type="nvarchar" MaxLength="10" />
+    <Property Name="ConsultDoctors" Type="int" />
+    <Property Name="Doctorscode" Type="int" />
+    <Property Name="usercode" Type="int" />
+  </EntityType>
+  <EntityType Name="costconfirm_Detail">
+    <Key>
+      <PropertyRef Name="costconfirmDetailCode" />
+    </Key>
+    <Property Name="costconfirmDetailCode" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="costconfirmHeadCode" Type="bigint" />
+    <Property Name="Servicescode" Type="int" />
+    <Property Name="ToothID_old" Type="tinyint" />
+    <Property Name="Deleted" Type="bit" />
+    <Property Name="ToothID" Type="tinyint" />
+  </EntityType>
+  <EntityType Name="costconfirm_head">
+    <Key>
+      <PropertyRef Name="costconfirmCode" />
+    </Key>
+    <Property Name="costconfirmCode" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IDPerson" Type="nvarchar" MaxLength="50" />
+    <Property Name="Persno" Type="int" />
+    <Property Name="Fkvdfamily" Type="int" />
+    <Property Name="VisitDate" Type="nvarchar" MaxLength="10" />
+    <Property Name="Doctorsoutname" Type="nvarchar" MaxLength="100" />
+    <Property Name="Confirmdate" Type="nvarchar" MaxLength="10" />
+    <Property Name="Confirmtime" Type="nvarchar" MaxLength="10" />
+    <Property Name="Doctorscode" Type="int" />
+    <Property Name="usercode" Type="int" />
+    <Property Name="Ipadress" Type="nvarchar" MaxLength="15" />
+    <Property Name="deleted" Type="bit" />
+    <Property Name="relationorderno" Type="int" />
+  </EntityType>
+  <EntityType Name="dent_neededservice">
+    <Key>
+      <PropertyRef Name="pk_dent_neededService" />
+    </Key>
+    <Property Name="pk_dent_neededService" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="dent_neededServicedesc" Type="nchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="dent_screen1">
+    <Key>
+      <PropertyRef Name="pk_dent_Screen1" />
+    </Key>
+    <Property Name="pk_dent_Screen1" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="fk_dent_Screen2" Type="int" />
+    <Property Name="toothid_old" Type="int" />
+    <Property Name="fk_dent_neededService" Type="int" />
+    <Property Name="SpecificationDate" Type="nchar" MaxLength="10" />
+    <Property Name="PAComment" Type="nchar" MaxLength="5" />
+    <Property Name="Tcomment" Type="nchar" MaxLength="5" />
+    <Property Name="RctComment2" Type="nchar" MaxLength="5" />
+    <Property Name="toothid" Type="int" />
+    <Property Name="DentalSurgeryComment" Type="nchar" MaxLength="5" />
+    <Property Name="ExtractionComment" Type="nchar" MaxLength="5" />
+    <Property Name="CLComment" Type="nchar" MaxLength="5" />
+    <Property Name="OtherFindingComment" Type="nchar" MaxLength="5" />
+  </EntityType>
+  <EntityType Name="dent_screen2">
+    <Key>
+      <PropertyRef Name="pk_dent_Screen2" />
+    </Key>
+    <Property Name="pk_dent_Screen2" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="fk_doctor" Type="int" />
+    <Property Name="FirstScreenDate" Type="nchar" MaxLength="10" />
+    <Property Name="fk_vst" Type="int" />
+    <Property Name="fk_vdfamily" Type="int" />
+    <Property Name="DentalSurgeryComment" Type="nvarchar" MaxLength="150" />
+    <Property Name="RestorativeTxComment" Type="nvarchar" MaxLength="150" />
+    <Property Name="RCTComment" Type="nvarchar" MaxLength="150" />
+    <Property Name="PaComment" Type="nvarchar" MaxLength="150" />
+    <Property Name="OtherRadioGraphyComment" Type="nvarchar" MaxLength="150" />
+    <Property Name="OCCLComment" Type="nvarchar" MaxLength="150" />
+    <Property Name="EmergenyTxComment" Type="nvarchar" MaxLength="150" />
+    <Property Name="OrupPathoComment" Type="nvarchar" MaxLength="150" />
+    <Property Name="OtherFindingComment" Type="nvarchar" MaxLength="150" />
+    <Property Name="cheifcomplain" Type="nvarchar" MaxLength="150" />
+    <Property Name="CurettageComment" Type="nvarchar" MaxLength="150" />
+    <Property Name="PerioSxComment" Type="nvarchar" MaxLength="150" />
+    <Property Name="ClComment" Type="nvarchar" MaxLength="150" />
+    <Property Name="TPCom" Type="varchar" MaxLength="250" />
+    <Property Name="RctCom" Type="varchar" MaxLength="250" />
+    <Property Name="NGCom" Type="varchar" MaxLength="250" />
+    <Property Name="OtherCom" Type="varchar" MaxLength="250" />
+    <Property Name="ExtractionComment" Type="nvarchar" MaxLength="150" />
+  </EntityType>
+  <EntityType Name="Dent_Tooth">
+    <Key>
+      <PropertyRef Name="ToothID" />
+    </Key>
+    <Property Name="ToothID" Type="tinyint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ToothName" Type="nvarchar" MaxLength="5" />
+    <Property Name="ToothImage" Type="image" />
+    <Property Name="ToothID2" Type="tinyint" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'dentistry.dbo.DentistXml9306' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="DentistXml9306">
+          <Property Name="F1" Type="nvarchar" MaxLength="255" />
+          <Property Name="F3" Type="float" />
+          <Property Name="F5" Type="float" />
+          <Property Name="F7" Type="float" />
+          <Property Name="F12" Type="nvarchar" MaxLength="255" />
+          <Property Name="F17" Type="float" />
+          <Property Name="F24" Type="float" />
+          <Property Name="F26" Type="float" />
+          <Property Name="F29" Type="float" />
+          <Property Name="month" Type="int" />
+        </EntityType>-->
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'dentistry.dbo.DGS_ClinicType' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="DGS_ClinicType">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="PK_DGSclinicType" Type="int" />
+    <Property Name="ClinicTypeDesc" Type="varchar" MaxLength="30" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'dentistry.dbo.DGS_Default' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="DGS_Default">
+    <Key>
+      <PropertyRef Name="Pk_DGSDefault" />
+    </Key>
+    <Property Name="Pk_DGSDefault" Type="int" Nullable="false" />
+    <Property Name="Relation" Type="int" />
+    <Property Name="ValidCenter" Type="int" />
+    <Property Name="VisitDate" Type="int" />
+    <Property Name="Shift" Type="tinyint" />
+    <Property Name="MedicalService" Type="int" />
+    <Property Name="Payment" Type="int" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'dentistry.dbo.DGS_xml' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="DGS_xml">
+    <Key>
+      <PropertyRef Name="Pk_DGSXml" />
+    </Key>
+    <Property Name="Pk_DGSXml" Type="int" Nullable="false" />
+    <Property Name="Fk_vdfamily" Type="int" />
+    <Property Name="PersonalNo" Type="int" />
+    <Property Name="Relation" Type="int" />
+    <Property Name="ValidCenter" Type="int" />
+    <Property Name="VisitDate" Type="char" MaxLength="10" />
+    <Property Name="Shift" Type="tinyint" />
+    <Property Name="MedicalService" Type="int" />
+    <Property Name="Payment" Type="int" />
+    <Property Name="DocNo" Type="char" MaxLength="10" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'dentistry.dbo.DGS_xml2' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="DGS_xml2">
+    <Key>
+      <PropertyRef Name="Pk_DGSXml" />
+    </Key>
+    <Property Name="Pk_DGSXml" Type="int" Nullable="false" />
+    <Property Name="Fk_vdfamily" Type="int" />
+    <Property Name="PersonalNo" Type="int" />
+    <Property Name="Relation" Type="int" />
+    <Property Name="ValidCenter" Type="int" />
+    <Property Name="VisitDate" Type="char" MaxLength="10" />
+    <Property Name="Shift" Type="tinyint" />
+    <Property Name="MedicalService" Type="int" />
+    <Property Name="Payment" Type="int" />
+    <Property Name="DocNo" Type="char" MaxLength="10" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'dentistry.dbo.DGS_XMLHis' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="DGS_XMLHis">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Pk_DGSXmlHis" Type="int" />
+    <Property Name="Fk_vdfamily" Type="int" />
+    <Property Name="PersonalNo" Type="int" />
+    <Property Name="Relation" Type="int" />
+    <Property Name="ValidCenter" Type="int" />
+    <Property Name="Visitdate" Type="char" MaxLength="10" />
+    <Property Name="Shift" Type="tinyint" />
+    <Property Name="MedicalService" Type="int" />
+    <Property Name="Payment" Type="int" />
+    <Property Name="DocNo" Type="char" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="doctorsService">
+    <Key>
+      <PropertyRef Name="doctorsServiceCode" />
+    </Key>
+    <Property Name="doctorsServiceCode" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Idperson" Type="nvarchar" MaxLength="50" />
+    <Property Name="Persno" Type="int" />
+    <Property Name="Fkvdfamily" Type="int" />
+    <Property Name="Servicescode" Type="int" />
+    <Property Name="ToothID" Type="tinyint" />
+    <Property Name="Doctorscode" Type="int" />
+    <Property Name="Planvst" Type="int" />
+    <Property Name="Recipeturn" Type="int" />
+    <Property Name="recipeID" Type="int" />
+    <Property Name="Status" Type="tinyint" />
+    <Property Name="Usercode" Type="int" />
+    <Property Name="Insertdate" Type="nvarchar" MaxLength="10" />
+    <Property Name="Inserttime" Type="time" Precision="7" />
+    <Property Name="deleted" Type="bit" />
+    <Property Name="Ipadress" Type="nvarchar" MaxLength="50" />
+    <Property Name="relationorderno" Type="int" />
+    <Property Name="ToothID_old" Type="int" />
+  </EntityType>
+  <EntityType Name="DoctorsWorkTime">
+    <Key>
+      <PropertyRef Name="DoctorsWorkTimeCode" />
+    </Key>
+    <Property Name="DoctorsWorkTimeCode" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Doctorscode" Type="int" />
+    <Property Name="Workdate" Type="nvarchar" MaxLength="10" />
+    <Property Name="Workdate_eng" Type="datetime" />
+    <Property Name="Workshift" Type="tinyint" />
+    <Property Name="timeFrom" Type="time" Precision="7" />
+    <Property Name="timeTo" Type="time" Precision="7" />
+    <Property Name="Kind" Type="nvarchar" MaxLength="10" />
+    <Property Name="Usercode" Type="int" />
+  </EntityType>
+  <EntityType Name="EmployeeInfo">
+    <Key>
+      <PropertyRef Name="IDPerson" />
+    </Key>
+    <Property Name="IDPerson" Type="int" Nullable="false" />
+    <Property Name="IDValidCenterZone2" Type="tinyint" Nullable="false" />
+    <Property Name="IDValidCenter2" Type="smallint" Nullable="false" />
+    <Property Name="ShiftStatus" Type="tinyint" Nullable="false" />
+    <Property Name="IDEmployeeType" Type="tinyint" Nullable="false" />
+    <Property Name="IDGrade" Type="tinyint" Nullable="false" />
+    <Property Name="IDWorkType" Type="tinyint" Nullable="false" />
+    <Property Name="Job" Type="nvarchar" MaxLength="40" Nullable="false" />
+    <Property Name="Unit" Type="nvarchar" MaxLength="70" Nullable="false" />
+    <Property Name="Persno" Type="int" />
+  </EntityType>
+  <EntityType Name="EmployeeInfoTbl">
+    <Key>
+      <PropertyRef Name="number" />
+    </Key>
+    <Property Name="IDPerson" Type="uniqueidentifier" />
+    <Property Name="Fk_Company" Type="int" />
+    <Property Name="Fk_Management" Type="int" />
+    <Property Name="Fk_subCompany" Type="int" />
+    <Property Name="IdEmployeeType" Type="int" />
+    <Property Name="Fk_EmployeeStatus" Type="int" />
+    <Property Name="mobile" Type="nvarchar" MaxLength="15" />
+    <Property Name="Persno" Type="int" />
+    <Property Name="number" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="EventsDescription">
+    <Key>
+      <PropertyRef Name="LogCode" />
+    </Key>
+    <Property Name="LogCode" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Description" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="EventsLog">
+    <Key>
+      <PropertyRef Name="EventsLogCode" />
+    </Key>
+    <Property Name="EventsLogCode" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="usercode" Type="nvarchar" MaxLength="10" />
+    <Property Name="logdate" Type="nvarchar" MaxLength="10" />
+    <Property Name="logtime" Type="nvarchar" MaxLength="10" />
+    <Property Name="LogCode" Type="int" />
+    <Property Name="Ipadress" Type="nvarchar" MaxLength="15" />
+    <Property Name="changecode" Type="int" />
+  </EntityType>
+  <EntityType Name="Introduction_Comment">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Comment" Type="nvarchar(max)" />
+    <Property Name="status" Type="bit" />
+  </EntityType>
+  <EntityType Name="Introduction_Detail">
+    <Key>
+      <PropertyRef Name="IntroductionDetailCode" />
+    </Key>
+    <Property Name="IntroductionDetailCode" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IntroductionHeadCode" Type="bigint" />
+    <Property Name="Servicescode" Type="int" />
+    <Property Name="ToothID1" Type="tinyint" />
+    <Property Name="ToothID2" Type="tinyint" />
+    <Property Name="ToothID3" Type="tinyint" />
+    <Property Name="ToothID4" Type="tinyint" />
+    <Property Name="ToothID5" Type="tinyint" />
+    <Property Name="Deleted" Type="bit" />
+    <Property Name="ToothID1_old" Type="tinyint" />
+  </EntityType>
+  <EntityType Name="introduction_Head">
+    <Key>
+      <PropertyRef Name="introductionCode" />
+    </Key>
+    <Property Name="introductionCode" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Idperson" Type="nvarchar" MaxLength="50" />
+    <Property Name="Persno" Type="int" />
+    <Property Name="Fkvdfamily" Type="int" />
+    <Property Name="Personalcode" Type="nvarchar" MaxLength="15" />
+    <Property Name="Outcentercode" Type="int" />
+    <Property Name="introductionDate" Type="nvarchar" MaxLength="10" />
+    <Property Name="introductionTime" Type="time" Precision="7" />
+    <Property Name="Doctorscode" Type="int" />
+    <Property Name="introductionkind" Type="int" />
+    <Property Name="usercode" Type="int" />
+    <Property Name="TurnId" Type="bigint" />
+    <Property Name="ipadress" Type="nvarchar" MaxLength="50" />
+    <Property Name="deleted" Type="bit" />
+    <Property Name="relationorderno" Type="int" />
+  </EntityType>
+  <EntityType Name="IntroductionComment">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Introductioncode" Type="bigint" />
+    <Property Name="CommentCode" Type="int" />
+    <Property Name="deleted" Type="bit" />
+  </EntityType>
+  <EntityType Name="IntroductionKind">
+    <Key>
+      <PropertyRef Name="IntroductionkindCode" />
+    </Key>
+    <Property Name="IntroductionkindCode" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IntroductionKind" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Medicalrest">
+    <Key>
+      <PropertyRef Name="MedicalrestCode" />
+    </Key>
+    <Property Name="MedicalrestCode" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Idperson" Type="nvarchar" MaxLength="50" />
+    <Property Name="Persno" Type="int" />
+    <Property Name="Fkvdfamily" Type="int" />
+    <Property Name="currentdate" Type="nvarchar" MaxLength="10" />
+    <Property Name="Currenttime" Type="nvarchar" MaxLength="10" />
+    <Property Name="Firstrestdate" Type="nvarchar" MaxLength="10" />
+    <Property Name="Endrestdate" Type="nvarchar" MaxLength="10" />
+    <Property Name="Returnworkdate" Type="nvarchar" MaxLength="10" />
+    <Property Name="Icd10code" Type="int" />
+    <Property Name="Countofrest" Type="tinyint" />
+    <Property Name="Doctorscode" Type="int" />
+    <Property Name="usercode" Type="int" />
+    <Property Name="comment" Type="nvarchar" MaxLength="250" />
+  </EntityType>
+  <EntityType Name="outcenter">
+    <Key>
+      <PropertyRef Name="outcenterCode" />
+    </Key>
+    <Property Name="outcenterCode" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="outcenterName" Type="nvarchar" MaxLength="100" />
+    <Property Name="outcenterKind" Type="tinyint" />
+    <Property Name="Status" Type="bit" />
+    <Property Name="OutCenterdepartment" Type="tinyint" />
+    <Property Name="beginDate" Type="nvarchar" MaxLength="10" />
+    <Property Name="beginDate_Eng" Type="datetime" />
+    <Property Name="Enddate" Type="nvarchar" MaxLength="10" />
+    <Property Name="Enddate_Eng" Type="datetime" />
+    <Property Name="usercode" Type="int" />
+    <Property Name="adress" Type="nvarchar" MaxLength="300" />
+    <Property Name="phone" Type="nvarchar" MaxLength="30" />
+    <Property Name="Comment" Type="nvarchar" MaxLength="250" />
+    <Property Name="outcenternamePrint" Type="nvarchar" MaxLength="150" />
+  </EntityType>
+  <EntityType Name="OutCenterdepartment">
+    <Key>
+      <PropertyRef Name="OutCenterDepartmentCode" />
+    </Key>
+    <Property Name="OutCenterDepartmentCode" Type="tinyint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="departmentDesc" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="outcenterKind">
+    <Key>
+      <PropertyRef Name="outcenterKindCode" />
+    </Key>
+    <Property Name="outcenterKindCode" Type="tinyint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="kindDesc" Type="nvarchar" MaxLength="100" />
+    <Property Name="PrintDesc" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="PaientStatus">
+    <Key>
+      <PropertyRef Name="PaientStatuscode" />
+    </Key>
+    <Property Name="PaientStatuscode" Type="tinyint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PaientStatusName" Type="nvarchar" MaxLength="25" />
+  </EntityType>
+  <EntityType Name="PaientType">
+    <Key>
+      <PropertyRef Name="PaientTypeCode" />
+    </Key>
+    <Property Name="PaientTypeCode" Type="tinyint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PaientTypeName" Type="nvarchar" MaxLength="25" />
+  </EntityType>
+  <EntityType Name="PersonInfo">
+    <Key>
+      <PropertyRef Name="Pk_personinfo" />
+    </Key>
+    <Property Name="Pk_personinfo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="persno" Type="int" />
+    <Property Name="telephon" Type="varchar" MaxLength="40" />
+    <Property Name="WorkPhone" Type="varchar" MaxLength="15" />
+    <Property Name="HomePhone" Type="varchar" MaxLength="40" />
+    <Property Name="AddressHome1" Type="nvarchar" MaxLength="400" />
+    <Property Name="AddressHome2" Type="nvarchar" MaxLength="400" />
+    <Property Name="AddressWork" Type="nvarchar" MaxLength="400" />
+    <Property Name="fk_RelationFamily" Type="tinyint" />
+    <Property Name="Fk_Job" Type="int" />
+    <Property Name="WifePhone" Type="varchar" MaxLength="15" />
+    <Property Name="mobile" Type="char" MaxLength="40" />
+    <Property Name="IdEmployeeType" Type="int" />
+    <Property Name="DateTime" Type="datetime" />
+    <Property Name="IsSuspended" Type="bit" />
+    <Property Name="Guid" Type="uniqueidentifier" />
+  </EntityType>
+  <EntityType Name="PersonTbl">
+    <Key>
+      <PropertyRef Name="Pk_vdfamily" />
+    </Key>
+    <Property Name="PersNo" Type="int" />
+    <Property Name="RelationOrderNo" Type="int" />
+    <Property Name="Fk_Nesbat" Type="tinyint" />
+    <Property Name="NationalCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="LName" Type="nvarchar" MaxLength="50" />
+    <Property Name="FName" Type="nvarchar" MaxLength="50" />
+    <Property Name="FatherName" Type="nvarchar" MaxLength="50" />
+    <Property Name="Gender" Type="int" />
+    <Property Name="BirthDate" Type="nchar" MaxLength="10" />
+    <Property Name="Fk_validCenterZone" Type="int" />
+    <Property Name="Fk_validCenter" Type="int" />
+    <Property Name="IdPersno" Type="uniqueidentifier" />
+    <Property Name="Deleted" Type="bit" />
+    <Property Name="IDEduDegree" Type="tinyint" />
+    <Property Name="Pk_vdfamily" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdEmployeeType" Type="int" />
+    <Property Name="ActualDeleted" Type="bit" />
+    <Property Name="Brs" Type="float" />
+    <Property Name="DelBeforeUPdate" Type="bit" />
+    <Property Name="Deleted10" Type="bit" />
+    <Property Name="ActDel" Type="bit" />
+  </EntityType>
+  <EntityType Name="PersonTbl_old">
+    <Key>
+      <PropertyRef Name="Pk_vdfamily" />
+    </Key>
+    <Property Name="PersNo" Type="int" />
+    <Property Name="RelationOrderNo" Type="int" />
+    <Property Name="Fk_Nesbat" Type="tinyint" />
+    <Property Name="NationalCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="LName" Type="nvarchar" MaxLength="50" />
+    <Property Name="FName" Type="nvarchar" MaxLength="50" />
+    <Property Name="FatherName" Type="nvarchar" MaxLength="50" />
+    <Property Name="Gender" Type="int" />
+    <Property Name="BirthDate" Type="nchar" MaxLength="10" />
+    <Property Name="Fk_validCenterZone" Type="int" />
+    <Property Name="Fk_validCenter" Type="int" />
+    <Property Name="IdPersno" Type="uniqueidentifier" />
+    <Property Name="Deleted" Type="bit" />
+    <Property Name="IDEduDegree" Type="tinyint" />
+    <Property Name="Pk_vdfamily" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdEmployeeType" Type="int" />
+    <Property Name="ActualDeleted" Type="bit" />
+    <Property Name="Brs" Type="float" />
+    <Property Name="DelBeforeUPdate" Type="bit" />
+    <Property Name="Deleted10" Type="bit" />
+    <Property Name="ActDel" Type="bit" />
+  </EntityType>
+  <EntityType Name="PlanVisit">
+    <Key>
+      <PropertyRef Name="planvisit_Code" />
+    </Key>
+    <Property Name="planvisit_Code" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Doctorscode" Type="int" />
+    <Property Name="Cliniccode" Type="tinyint" />
+    <Property Name="Capacity" Type="tinyint" />
+    <Property Name="Fromdate" Type="nvarchar" MaxLength="10" />
+    <Property Name="todate" Type="nvarchar" MaxLength="10" />
+    <Property Name="Shiftcode" Type="tinyint" />
+    <Property Name="Fromtime" Type="time" Precision="7" />
+    <Property Name="totime" Type="time" Precision="7" />
+    <Property Name="intervaltime" Type="tinyint" />
+    <Property Name="usercode" Type="int" />
+    <Property Name="insertdate" Type="date" />
+    <Property Name="inserttime" Type="time" Precision="7" />
+    <Property Name="status" Type="bit" />
+    <Property Name="kind" Type="tinyint" />
+    <Property Name="InternetCapacity" Type="tinyint" />
+  </EntityType>
+  <EntityType Name="Recipe">
+    <Key>
+      <PropertyRef Name="Turnid" />
+    </Key>
+    <Property Name="Turnid" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IDPerson" Type="nvarchar" MaxLength="50" />
+    <Property Name="persno" Type="int" />
+    <Property Name="Personelcode" Type="nvarchar" MaxLength="10" />
+    <Property Name="Fkvdfamily" Type="int" />
+    <Property Name="Currentdate" Type="nvarchar" MaxLength="10" />
+    <Property Name="currentTime" Type="nvarchar" MaxLength="10" />
+    <Property Name="Turndate" Type="nvarchar" MaxLength="10" />
+    <Property Name="Turntime" Type="nvarchar" MaxLength="10" />
+    <Property Name="turnNo" Type="tinyint" />
+    <Property Name="DoctorsCode" Type="int" />
+    <Property Name="Planvisit_code" Type="int" />
+    <Property Name="Servicescode" Type="tinyint" />
+    <Property Name="TurnStatus" Type="tinyint" />
+    <Property Name="Shiftcode" Type="tinyint" />
+    <Property Name="ToothID_old" Type="tinyint" />
+    <Property Name="PaientType" Type="tinyint" />
+    <Property Name="PaientStatus" Type="tinyint" />
+    <Property Name="Usercode" Type="int" />
+    <Property Name="recipekind" Type="tinyint" />
+    <Property Name="ipadress" Type="nvarchar" MaxLength="50" />
+    <Property Name="validcenterzone" Type="int" />
+    <Property Name="validcenter" Type="int" />
+    <Property Name="TOOTHID" Type="tinyint" />
+    <Property Name="relationorderno" Type="int" />
+    <Property Name="turnstatusold" Type="tinyint" />
+    <Property Name="specialityKindCode" Type="int" />
+    <Property Name="age" Type="int" />
+  </EntityType>
+  <EntityType Name="Recipe_comment">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="tinyint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Comment" Type="nvarchar" MaxLength="250" />
+    <Property Name="status" Type="bit" />
+  </EntityType>
+  <EntityType Name="RecipeError">
+    <Key>
+      <PropertyRef Name="pk_RecipeError" />
+    </Key>
+    <Property Name="pk_RecipeError" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="oldfk_vdfamily1" Type="int" />
+    <Property Name="Error" Type="varchar" MaxLength="70" />
+    <Property Name="RecipeUser" Type="varchar" MaxLength="25" />
+    <Property Name="InsertDate" Type="char" MaxLength="10" />
+    <Property Name="EndDate" Type="char" MaxLength="10" />
+    <Property Name="fk_vdfamily" Type="int" />
+  </EntityType>
+  <EntityType Name="RecipeServices">
+    <Key>
+      <PropertyRef Name="RecipeServices_code" />
+    </Key>
+    <Property Name="RecipeServices_code" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Recipe_Desc" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Services_detail">
+    <Key>
+      <PropertyRef Name="Services_detail_Code" />
+    </Key>
+    <Property Name="Services_detail_Code" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Services_Head_code" Type="int" />
+    <Property Name="Services_detail_Name" Type="nvarchar" MaxLength="200" />
+    <Property Name="ServicesTime" Type="tinyint" />
+    <Property Name="K_NO" Type="float" />
+    <Property Name="Kkanoon_K_NO" Type="float" />
+    <Property Name="f16_K_NO" Type="float" />
+    <Property Name="ServiceTypeF16Code" Type="int" />
+    <Property Name="ServiceTypeKanoonCode" Type="int" />
+    <Property Name="TypeScreen_code" Type="int" />
+    <Property Name="Tarefe_code" Type="int" />
+    <Property Name="Kanal_NO" Type="tinyint" />
+    <Property Name="Pinaj_NO" Type="tinyint" />
+    <Property Name="Pinkanal_NO" Type="tinyint" />
+    <Property Name="Pinamalgam_NO" Type="tinyint" />
+    <Property Name="Pinkampozit_NO" Type="tinyint" />
+    <Property Name="ISValid" Type="bit" />
+  </EntityType>
+  <EntityType Name="Services_Head">
+    <Key>
+      <PropertyRef Name="Services_Head_code" />
+    </Key>
+    <Property Name="Services_Head_code" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Services_Head_name" Type="nvarchar" MaxLength="200" />
+    <Property Name="Comment" Type="nvarchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="ServiceTypeF16">
+    <Key>
+      <PropertyRef Name="ServiceTypeF16Code" />
+    </Key>
+    <Property Name="ServiceTypeF16Code" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ServiceTypeF16Name" Type="nvarchar" MaxLength="200" />
+    <Property Name="F16Code" Type="int" />
+    <Property Name="Comment" Type="nvarchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="ServiceTypeIntroduction">
+    <Key>
+      <PropertyRef Name="ServiceId" />
+    </Key>
+    <Property Name="ServiceId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Servicename" Type="nvarchar" MaxLength="150" />
+    <Property Name="Status" Type="bit" />
+  </EntityType>
+  <EntityType Name="ServiceTypeKanoon">
+    <Key>
+      <PropertyRef Name="ServiceTypeKanoonCode" />
+    </Key>
+    <Property Name="ServiceTypeKanoonCode" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ServiceTypeKanoonName" Type="nvarchar" MaxLength="200" />
+    <Property Name="Xmlcode" Type="int" />
+    <Property Name="Comment" Type="nvarchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="ServiceTypeScreen">
+    <Key>
+      <PropertyRef Name="ServiceTypeScreenCode" />
+    </Key>
+    <Property Name="ServiceTypeScreenCode" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ServiceTypeScreenName" Type="nvarchar" MaxLength="200" />
+    <Property Name="screenCode" Type="int" />
+    <Property Name="Comment" Type="nvarchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="Shifts">
+    <Key>
+      <PropertyRef Name="Shiftcode" />
+    </Key>
+    <Property Name="Shiftcode" Type="tinyint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Shiftname" Type="nvarchar" MaxLength="10" />
+    <Property Name="Fromtime" Type="time" Precision="7" />
+    <Property Name="totime" Type="time" Precision="7" />
+    <Property Name="XmlShiftCode" Type="int" />
+  </EntityType>
+  <EntityType Name="Speciality">
+    <Key>
+      <PropertyRef Name="specialityCode" />
+    </Key>
+    <Property Name="specialityCode" Type="tinyint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Speciality" Type="nvarchar" MaxLength="25" />
+    <Property Name="specialityXMLCode" Type="int" />
+  </EntityType>
+  <EntityType Name="specialityKind">
+    <Key>
+      <PropertyRef Name="specialityKindCode" />
+    </Key>
+    <Property Name="specialityKindCode" Type="tinyint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="specialityKind" Type="nvarchar" MaxLength="25" />
+    <Property Name="specialityKindXMLCode" Type="int" />
+  </EntityType>
+  <EntityType Name="Takekind_Recipe">
+    <Key>
+      <PropertyRef Name="Takekind_RecipeCode" />
+    </Key>
+    <Property Name="Takekind_RecipeCode" Type="tinyint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Takekind_RecipeName" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tariff">
+    <Key>
+      <PropertyRef Name="Tariffcode" />
+    </Key>
+    <Property Name="Tariffcode" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Tariffkind" Type="nvarchar" MaxLength="25" />
+    <Property Name="TariffBegindate" Type="nvarchar" MaxLength="10" />
+    <Property Name="TariffBegindate_Eng" Type="datetime" />
+    <Property Name="Tariffenddate" Type="nvarchar" MaxLength="10" />
+    <Property Name="Tariffenddate_Eng" Type="datetime" />
+    <Property Name="Zarib" Type="int" />
+    <Property Name="Kindpaient" Type="int" />
+    <Property Name="Kindjobpaient_managment" Type="int" />
+    <Property Name="Kindjobpaient_company" Type="int" />
+    <Property Name="year" Type="int" />
+    <Property Name="Tariffkind_int" Type="int" />
+  </EntityType>
+  <EntityType Name="Tbl_Company">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="Pk_Company" Type="smallint" Nullable="false" />
+    <Property Name="Fk_Management" Type="tinyint" Nullable="false" />
+    <Property Name="ManagementDesc" Type="varchar" MaxLength="80" />
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'dentistry.dbo.Tbl_Company2' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="Tbl_Company2">
+          <Property Name="Column 0" Type="nvarchar" MaxLength="50" />
+          <Property Name="Column 1" Type="nvarchar" MaxLength="50" />
+          <Property Name="Column 2" Type="nvarchar" MaxLength="50" />
+        </EntityType>-->
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'dentistry.dbo.Tbl_Employeetype' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Tbl_Employeetype">
+    <Key>
+      <PropertyRef Name="Pk_EmployeeType" />
+      <PropertyRef Name="EmployeeTypeDesc" />
+    </Key>
+    <Property Name="Pk_EmployeeType" Type="int" Nullable="false" />
+    <Property Name="EmployeeTypeDesc" Type="nvarchar" MaxLength="64" Nullable="false" />
+    <Property Name="Fk_Treaty" Type="int" />
+    <Property Name="Display" Type="bit" />
+    <Property Name="Number" Type="nvarchar" MaxLength="100" />
+    <Property Name="empdesc" Type="nchar" MaxLength="10" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'dentistry.dbo.Tbl_Management' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Tbl_Management">
+    <Key>
+      <PropertyRef Name="Pk_Management" />
+      <PropertyRef Name="ManagementDesc" />
+    </Key>
+    <Property Name="Pk_Management" Type="tinyint" Nullable="false" />
+    <Property Name="ManagementDesc" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'dentistry.dbo.Tbl_MaritalStatus' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Tbl_MaritalStatus">
+    <Key>
+      <PropertyRef Name="IDMaritalStatus" />
+      <PropertyRef Name="Name" />
+    </Key>
+    <Property Name="IDMaritalStatus" Type="tinyint" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="30" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'dentistry.dbo.Tbl_PersonType' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Tbl_PersonType">
+    <Key>
+      <PropertyRef Name="IDPersonType" />
+      <PropertyRef Name="Name" />
+    </Key>
+    <Property Name="IDPersonType" Type="tinyint" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="40" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'dentistry.dbo.Tbl_Relation' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Tbl_Relation">
+    <Key>
+      <PropertyRef Name="Pk_nesbat" />
+    </Key>
+    <Property Name="Pk_nesbat" Type="tinyint" Nullable="false" />
+    <Property Name="NesbatDesc" Type="varchar" MaxLength="20" />
+    <Property Name="Nesbatxml" Type="tinyint" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'dentistry.dbo.Tbl_SubCompany' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Tbl_SubCompany">
+    <Key>
+      <PropertyRef Name="Pk_SubCompany" />
+      <PropertyRef Name="Fk_Management" />
+      <PropertyRef Name="Fk_Company" />
+      <PropertyRef Name="SubCompanyName" />
+    </Key>
+    <Property Name="Pk_SubCompany" Type="smallint" Nullable="false" />
+    <Property Name="Fk_Management" Type="tinyint" Nullable="false" />
+    <Property Name="Fk_Company" Type="smallint" Nullable="false" />
+    <Property Name="SubCompanyName" Type="varchar" MaxLength="60" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'dentistry.dbo.Tbl_ValidCenter' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Tbl_ValidCenter">
+    <Key>
+      <PropertyRef Name="pk_ValidCenter" />
+      <PropertyRef Name="Fk_ValidCenter" />
+      <PropertyRef Name="ValidCenterDesc" />
+    </Key>
+    <Property Name="pk_ValidCenter" Type="smallint" Nullable="false" />
+    <Property Name="Fk_ValidCenter" Type="tinyint" Nullable="false" />
+    <Property Name="IdValidCenterType" Type="int" />
+    <Property Name="ValidCenterDesc" Type="varchar" MaxLength="70" Nullable="false" />
+    <Property Name="Deleted" Type="bit" />
+  </EntityType>
+  <EntityType Name="Tbl_ValidCenterCity">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="Pk_ValidCenterZone" Type="int" />
+    <Property Name="fk_ValidCenterZone" Type="int" />
+    <Property Name="ValidCenterZoneDesc" Type="nvarchar" MaxLength="700" />
+    <Property Name="deleted" Type="nchar" MaxLength="10" />
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'dentistry.dbo.Tbl_ValidCenterZone' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Tbl_ValidCenterZone">
+    <Key>
+      <PropertyRef Name="Pk_ValidCenterZone" />
+      <PropertyRef Name="ValidCenterZoneDesc" />
+      <PropertyRef Name="Deleted" />
+    </Key>
+    <Property Name="Pk_ValidCenterZone" Type="int" Nullable="false" />
+    <Property Name="ValidCenterZoneDesc" Type="nvarchar" MaxLength="70" Nullable="false" />
+    <Property Name="Deleted" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TblUsers">
+    <Key>
+      <PropertyRef Name="UserCode" />
+    </Key>
+    <Property Name="UserCode" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="personalNO" Type="int" />
+    <Property Name="Fname" Type="nvarchar" MaxLength="50" />
+    <Property Name="Lname" Type="nvarchar" MaxLength="50" />
+    <Property Name="SN" Type="nchar" MaxLength="10" />
+    <Property Name="GroupCode" Type="tinyint" />
+    <Property Name="DoctorNO" Type="nchar" MaxLength="10" />
+    <Property Name="specialityKindCode" Type="tinyint" />
+    <Property Name="specialityCode" Type="tinyint" />
+    <Property Name="Active" Type="bit" />
+    <Property Name="EnglishName" Type="varchar" MaxLength="100" />
+    <Property Name="title" Type="varchar" MaxLength="3" />
+    <Property Name="Image" Type="image" />
+    <Property Name="PersianTitle" Type="nvarchar" MaxLength="10" />
+    <Property Name="phone" Type="nvarchar" MaxLength="11" />
+    <Property Name="mobile" Type="nvarchar" MaxLength="11" />
+    <Property Name="comment" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tempturnno">
+    <Key>
+      <PropertyRef Name="turnno" />
+    </Key>
+    <Property Name="turnno" Type="tinyint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="temp" Type="tinyint" />
+  </EntityType>
+  <EntityType Name="TurnStatus">
+    <Key>
+      <PropertyRef Name="TurnStatuscode" />
+    </Key>
+    <Property Name="TurnStatuscode" Type="tinyint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TurnStatusName" Type="nvarchar" MaxLength="25" />
+  </EntityType>
+  <EntityType Name="userKind">
+    <Key>
+      <PropertyRef Name="GroupCode" />
+    </Key>
+    <Property Name="GroupCode" Type="tinyint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="GroupName" Type="nvarchar" MaxLength="25" />
+  </EntityType>
+  <EntityType Name="vacations">
+    <Key>
+      <PropertyRef Name="vacationsCode" />
+    </Key>
+    <Property Name="vacationsCode" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Doctorscode" Type="int" />
+    <Property Name="vacationType" Type="nvarchar" MaxLength="50" />
+    <Property Name="fromDate" Type="nvarchar" MaxLength="10" />
+    <Property Name="fromDate_Eng" Type="datetime" />
+    <Property Name="Todate" Type="nvarchar" MaxLength="10" />
+    <Property Name="Todate_Eng" Type="datetime" />
+    <Property Name="usercode" Type="int" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'dentistry.dbo.version' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="version">
+    <Key>
+      <PropertyRef Name="p_Key" />
+    </Key>
+    <Property Name="p_Key" Type="int" Nullable="false" />
+    <Property Name="Ver_dafater" Type="varchar" MaxLength="10" />
+    <Property Name="Ver_Screen" Type="varchar" MaxLength="10" />
+    <Property Name="ver_lcd" Type="varchar" MaxLength="10" />
+    <Property Name="ver_lab" Type="varchar" MaxLength="10" />
+    <Property Name="Ver_Dgs" Type="varchar" MaxLength="10" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'dentistry.dbo.Dent_Tooth2' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Dent_Tooth2">
+    <Key>
+      <PropertyRef Name="ToothID" />
+    </Key>
+    <Property Name="ToothID" Type="tinyint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ToothName" Type="nvarchar" MaxLength="5" />
+    <Property Name="ToothImage" Type="image" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'dentistry.dbo.Dent_Tooth3' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Dent_Tooth3">
+    <Key>
+      <PropertyRef Name="ToothID" />
+    </Key>
+    <Property Name="ToothID" Type="tinyint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ToothName" Type="nvarchar" MaxLength="5" />
+    <Property Name="ToothImage" Type="image" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'dentistry.dbo.Dent_Tooth4' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Dent_Tooth4">
+    <Key>
+      <PropertyRef Name="ToothID" />
+    </Key>
+    <Property Name="ToothID" Type="tinyint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ToothName" Type="nvarchar" MaxLength="5" />
+    <Property Name="ToothImage" Type="image" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'dentistry.dbo.Dent_Tooth5' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Dent_Tooth5">
+    <Key>
+      <PropertyRef Name="ToothID" />
+    </Key>
+    <Property Name="ToothID" Type="tinyint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ToothName" Type="nvarchar" MaxLength="5" />
+    <Property Name="ToothImage" Type="image" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'dentistry.dbo.full_niocperson' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="full_niocperson">
+    <Key>
+      <PropertyRef Name="Pk_vdfamily" />
+    </Key>
+    <Property Name="PersNo" Type="int" />
+    <Property Name="fullname" Type="nvarchar" MaxLength="102" />
+    <Property Name="fullname2" Type="nvarchar" MaxLength="135" />
+    <Property Name="NesbatDesc" Type="varchar" MaxLength="20" />
+    <Property Name="companyname" Type="varchar" MaxLength="80" />
+    <Property Name="Managementname" Type="varchar" MaxLength="50" />
+    <Property Name="BirthDate" Type="nchar" MaxLength="10" />
+    <Property Name="ValidCenterZoneDesc" Type="nvarchar" MaxLength="70" />
+    <Property Name="ValidCenterDesc" Type="varchar" MaxLength="70" />
+    <Property Name="IdEmployeeType" Type="int" />
+    <Property Name="Fk_Management" Type="int" />
+    <Property Name="IDPerson" Type="uniqueidentifier" />
+    <Property Name="RelationOrderNo" Type="int" />
+    <Property Name="Pk_vdfamily" Type="int" Nullable="false" />
+    <Property Name="Fk_Nesbat" Type="tinyint" />
+    <Property Name="ID" Type="int" />
+    <Property Name="Pk_ValidCenterZone" Type="int" />
+    <Property Name="telephon" Type="varchar" MaxLength="40" />
+    <Property Name="Fk_validCenter" Type="int" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'dentistry.dbo.JobLocations' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="JobLocations">
+    <Key>
+      <PropertyRef Name="Pk_Company" />
+      <PropertyRef Name="Fk_Management" />
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="Pk_Company" Type="smallint" Nullable="false" />
+    <Property Name="Fk_Management" Type="tinyint" Nullable="false" />
+    <Property Name="companyname" Type="nvarchar" MaxLength="80" />
+    <Property Name="Managementname" Type="nvarchar" MaxLength="50" />
+    <Property Name="ID" Type="int" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'dentistry.dbo.NiocPerson' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="NiocPerson">
+    <Key>
+      <PropertyRef Name="oldPk_vdfamily" />
+      <PropertyRef Name="Pk_vdfamily" />
+    </Key>
+    <Property Name="IDPerson" Type="uniqueidentifier" />
+    <Property Name="IDPersonold" Type="uniqueidentifier" />
+    <Property Name="PersNo" Type="int" />
+    <Property Name="RelationOrderNo" Type="int" />
+    <Property Name="Fk_Nesbat" Type="tinyint" />
+    <Property Name="LName" Type="nvarchar" MaxLength="50" />
+    <Property Name="FName" Type="nvarchar" MaxLength="50" />
+    <Property Name="FatherName" Type="nvarchar" MaxLength="50" />
+    <Property Name="Gender" Type="int" />
+    <Property Name="Fk_validCenterZone" Type="int" />
+    <Property Name="Fk_validCenter" Type="int" />
+    <Property Name="EntryDate" Type="int" />
+    <Property Name="ExpDate" Type="int" />
+    <Property Name="IDEduDegree" Type="tinyint" />
+    <Property Name="Deleted" Type="bit" />
+    <Property Name="IdEmployeeType" Type="int" />
+    <Property Name="oldPk_vdfamily" Type="int" Nullable="false" />
+    <Property Name="CancelDate" Type="nchar" MaxLength="10" />
+    <Property Name="BirthDate" Type="nchar" MaxLength="10" />
+    <Property Name="Fk_Management" Type="int" />
+    <Property Name="Fk_Company" Type="int" />
+    <Property Name="Fk_subCompany" Type="int" />
+    <Property Name="IdMaritalStatus" Type="nchar" MaxLength="10" />
+    <Property Name="mobile" Type="nvarchar" MaxLength="15" />
+    <Property Name="Pk_vdfamily" Type="int" Nullable="false" />
+    <Property Name="NationalCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="Fk_EmployeeStatus" Type="int" />
+    <Property Name="NesbatDesc" Type="varchar" MaxLength="20" />
+    <Property Name="Nesbatxml" Type="tinyint" />
+    <Property Name="telephon" Type="varchar" MaxLength="40" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'dentistry.dbo.planvisit_view' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="planvisit_view">
+          <Property Name="ClinicName" Type="nvarchar" MaxLength="20" />
+          <Property Name="Capacity" Type="tinyint" />
+          <Property Name="Fromdate" Type="nvarchar" MaxLength="10" />
+          <Property Name="Shiftcode" Type="tinyint" />
+          <Property Name="Fromtime" Type="time" Precision="7" />
+          <Property Name="totime" Type="time" Precision="7" />
+          <Property Name="intervaltime" Type="tinyint" />
+          <Property Name="Fname" Type="nvarchar" MaxLength="50" />
+          <Property Name="Lname" Type="nvarchar" MaxLength="50" />
+          <Property Name="EnglishName" Type="varchar" MaxLength="100" />
+          <Property Name="title" Type="varchar" MaxLength="3" />
+          <Property Name="Shiftname" Type="nvarchar" MaxLength="10" />
+          <Property Name="Expr1" Type="nvarchar" MaxLength="10" />
+        </EntityType>-->
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'dentistry.dbo.screen_View_2' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="screen_View_2">
+    <Key>
+      <PropertyRef Name="pk_dent_Screen2" />
+    </Key>
+    <Property Name="pk_dent_Screen2" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="fk_doctor" Type="int" />
+    <Property Name="FirstScreenDate" Type="nchar" MaxLength="10" />
+    <Property Name="fk_vst" Type="int" />
+    <Property Name="fk_vdfamily" Type="int" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'dentistry.dbo.TblUsers_view' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="TblUsers_view">
+    <Key>
+      <PropertyRef Name="UserCode" />
+    </Key>
+    <Property Name="UserCode" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Lname" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'dentistry.dbo.ValidCenter' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="ValidCenter">
+    <Key>
+      <PropertyRef Name="Pk_ValidCenterZone" />
+      <PropertyRef Name="ValidCenterZoneDesc" />
+      <PropertyRef Name="Deleted" />
+      <PropertyRef Name="ValidCenterDesc" />
+      <PropertyRef Name="pk_ValidCenter" />
+    </Key>
+    <Property Name="Pk_ValidCenterZone" Type="int" Nullable="false" />
+    <Property Name="ValidCenterZoneDesc" Type="nvarchar" MaxLength="70" Nullable="false" />
+    <Property Name="Deleted" Type="bit" Nullable="false" />
+    <Property Name="ValidCenterDesc" Type="nvarchar" MaxLength="70" Nullable="false" />
+    <Property Name="pk_ValidCenter" Type="smallint" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'dentistry.dbo.View_1' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="View_1">
+          <Property Name="number" Type="int" />
+          <Property Name="Planvisit_code" Type="int" />
+          <Property Name="TurnStatus" Type="tinyint" />
+        </EntityType>-->
+  <Association Name="FK_AcessLevel_AcessLevel">
+    <End Role="TblUsers" Type="Self.TblUsers" Multiplicity="0..1" />
+    <End Role="AcessLevel" Type="Self.AcessLevel" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TblUsers">
+        <PropertyRef Name="UserCode" />
+      </Principal>
+      <Dependent Role="AcessLevel">
+        <PropertyRef Name="UserCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Clinics_ClinicType">
+    <End Role="ClinicType" Type="Self.ClinicType" Multiplicity="0..1" />
+    <End Role="Clinics" Type="Self.Clinics" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ClinicType">
+        <PropertyRef Name="ClinicTypecode" />
+      </Principal>
+      <Dependent Role="Clinics">
+        <PropertyRef Name="ClinicType" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_consult_RecipeServices">
+    <End Role="RecipeServices" Type="Self.RecipeServices" Multiplicity="0..1" />
+    <End Role="consult" Type="Self.consult" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RecipeServices">
+        <PropertyRef Name="RecipeServices_code" />
+      </Principal>
+      <Dependent Role="consult">
+        <PropertyRef Name="Servicescode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_consult_TblUsers">
+    <End Role="TblUsers" Type="Self.TblUsers" Multiplicity="0..1" />
+    <End Role="consult" Type="Self.consult" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TblUsers">
+        <PropertyRef Name="UserCode" />
+      </Principal>
+      <Dependent Role="consult">
+        <PropertyRef Name="ConsultDoctors" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_costconfirm_Detail_costconfirm_head">
+    <End Role="costconfirm_head" Type="Self.costconfirm_head" Multiplicity="0..1" />
+    <End Role="costconfirm_Detail" Type="Self.costconfirm_Detail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="costconfirm_head">
+        <PropertyRef Name="costconfirmCode" />
+      </Principal>
+      <Dependent Role="costconfirm_Detail">
+        <PropertyRef Name="costconfirmHeadCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_costconfirm_TblUsers">
+    <End Role="TblUsers" Type="Self.TblUsers" Multiplicity="0..1" />
+    <End Role="costconfirm_head" Type="Self.costconfirm_head" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TblUsers">
+        <PropertyRef Name="UserCode" />
+      </Principal>
+      <Dependent Role="costconfirm_head">
+        <PropertyRef Name="Doctorscode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EventsLog_EventsDescription">
+    <End Role="EventsDescription" Type="Self.EventsDescription" Multiplicity="0..1" />
+    <End Role="EventsLog" Type="Self.EventsLog" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EventsDescription">
+        <PropertyRef Name="LogCode" />
+      </Principal>
+      <Dependent Role="EventsLog">
+        <PropertyRef Name="LogCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_outcenter_OutCenterdepartment">
+    <End Role="OutCenterdepartment" Type="Self.OutCenterdepartment" Multiplicity="0..1" />
+    <End Role="outcenter" Type="Self.outcenter" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="OutCenterdepartment">
+        <PropertyRef Name="OutCenterDepartmentCode" />
+      </Principal>
+      <Dependent Role="outcenter">
+        <PropertyRef Name="OutCenterdepartment" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_outcenter_outcenterKind">
+    <End Role="outcenterKind" Type="Self.outcenterKind" Multiplicity="0..1" />
+    <End Role="outcenter" Type="Self.outcenter" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="outcenterKind">
+        <PropertyRef Name="outcenterKindCode" />
+      </Principal>
+      <Dependent Role="outcenter">
+        <PropertyRef Name="outcenterKind" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PlanVisit_Clinics">
+    <End Role="Clinics" Type="Self.Clinics" Multiplicity="0..1" />
+    <End Role="PlanVisit" Type="Self.PlanVisit" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Clinics">
+        <PropertyRef Name="ClinicCode" />
+      </Principal>
+      <Dependent Role="PlanVisit">
+        <PropertyRef Name="Cliniccode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PlanVisit_TblUsers">
+    <End Role="TblUsers" Type="Self.TblUsers" Multiplicity="0..1" />
+    <End Role="PlanVisit" Type="Self.PlanVisit" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TblUsers">
+        <PropertyRef Name="UserCode" />
+      </Principal>
+      <Dependent Role="PlanVisit">
+        <PropertyRef Name="Doctorscode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Recipe_PaientStatus">
+    <End Role="PaientStatus" Type="Self.PaientStatus" Multiplicity="0..1" />
+    <End Role="Recipe" Type="Self.Recipe" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PaientStatus">
+        <PropertyRef Name="PaientStatuscode" />
+      </Principal>
+      <Dependent Role="Recipe">
+        <PropertyRef Name="PaientStatus" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Recipe_PaientType">
+    <End Role="PaientType" Type="Self.PaientType" Multiplicity="0..1" />
+    <End Role="Recipe" Type="Self.Recipe" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PaientType">
+        <PropertyRef Name="PaientTypeCode" />
+      </Principal>
+      <Dependent Role="Recipe">
+        <PropertyRef Name="PaientType" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Recipe_Shifts">
+    <End Role="Shifts" Type="Self.Shifts" Multiplicity="0..1" />
+    <End Role="Recipe" Type="Self.Recipe" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Shifts">
+        <PropertyRef Name="Shiftcode" />
+      </Principal>
+      <Dependent Role="Recipe">
+        <PropertyRef Name="Shiftcode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Recipe_TurnStatus">
+    <End Role="TurnStatus" Type="Self.TurnStatus" Multiplicity="0..1" />
+    <End Role="Recipe" Type="Self.Recipe" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TurnStatus">
+        <PropertyRef Name="TurnStatuscode" />
+      </Principal>
+      <Dependent Role="Recipe">
+        <PropertyRef Name="TurnStatus" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Services_detail_Services_Head">
+    <End Role="Services_Head" Type="Self.Services_Head" Multiplicity="0..1" />
+    <End Role="Services_detail" Type="Self.Services_detail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Services_Head">
+        <PropertyRef Name="Services_Head_code" />
+      </Principal>
+      <Dependent Role="Services_detail">
+        <PropertyRef Name="Services_Head_code" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TblUsers_Speciality">
+    <End Role="Speciality" Type="Self.Speciality" Multiplicity="0..1" />
+    <End Role="TblUsers" Type="Self.TblUsers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Speciality">
+        <PropertyRef Name="specialityCode" />
+      </Principal>
+      <Dependent Role="TblUsers">
+        <PropertyRef Name="specialityCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TblUsers_specialityKind">
+    <End Role="specialityKind" Type="Self.specialityKind" Multiplicity="0..1" />
+    <End Role="TblUsers" Type="Self.TblUsers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="specialityKind">
+        <PropertyRef Name="specialityKindCode" />
+      </Principal>
+      <Dependent Role="TblUsers">
+        <PropertyRef Name="specialityKindCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TblUsers_userKind">
+    <End Role="userKind" Type="Self.userKind" Multiplicity="0..1" />
+    <End Role="TblUsers" Type="Self.TblUsers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="userKind">
+        <PropertyRef Name="GroupCode" />
+      </Principal>
+      <Dependent Role="TblUsers">
+        <PropertyRef Name="GroupCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_vacations_TblUsers">
+    <End Role="TblUsers" Type="Self.TblUsers" Multiplicity="0..1" />
+    <End Role="vacations" Type="Self.vacations" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TblUsers">
+        <PropertyRef Name="UserCode" />
+      </Principal>
+      <Dependent Role="vacations">
+        <PropertyRef Name="Doctorscode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="dentistryModelStoreContainer">
+    <EntitySet Name="AcessLevel" EntityType="Self.AcessLevel" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Clinics" EntityType="Self.Clinics" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ClinicType" EntityType="Self.ClinicType" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="consult" EntityType="Self.consult" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="costconfirm_Detail" EntityType="Self.costconfirm_Detail" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="costconfirm_head" EntityType="Self.costconfirm_head" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="dent_neededservice" EntityType="Self.dent_neededservice" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="dent_screen1" EntityType="Self.dent_screen1" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="dent_screen2" EntityType="Self.dent_screen2" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Dent_Tooth" EntityType="Self.Dent_Tooth" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="doctorsService" EntityType="Self.doctorsService" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DoctorsWorkTime" EntityType="Self.DoctorsWorkTime" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EmployeeInfo" EntityType="Self.EmployeeInfo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EmployeeInfoTbl" EntityType="Self.EmployeeInfoTbl" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EventsDescription" EntityType="Self.EventsDescription" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EventsLog" EntityType="Self.EventsLog" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Introduction_Comment" EntityType="Self.Introduction_Comment" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Introduction_Detail" EntityType="Self.Introduction_Detail" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="introduction_Head" EntityType="Self.introduction_Head" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="IntroductionComment" EntityType="Self.IntroductionComment" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="IntroductionKind" EntityType="Self.IntroductionKind" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Medicalrest" EntityType="Self.Medicalrest" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="outcenter" EntityType="Self.outcenter" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="OutCenterdepartment" EntityType="Self.OutCenterdepartment" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="outcenterKind" EntityType="Self.outcenterKind" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PaientStatus" EntityType="Self.PaientStatus" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PaientType" EntityType="Self.PaientType" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PersonInfo" EntityType="Self.PersonInfo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PersonTbl" EntityType="Self.PersonTbl" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PersonTbl_old" EntityType="Self.PersonTbl_old" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PlanVisit" EntityType="Self.PlanVisit" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Recipe" EntityType="Self.Recipe" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Recipe_comment" EntityType="Self.Recipe_comment" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RecipeError" EntityType="Self.RecipeError" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RecipeServices" EntityType="Self.RecipeServices" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Services_detail" EntityType="Self.Services_detail" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Services_Head" EntityType="Self.Services_Head" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ServiceTypeF16" EntityType="Self.ServiceTypeF16" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ServiceTypeIntroduction" EntityType="Self.ServiceTypeIntroduction" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ServiceTypeKanoon" EntityType="Self.ServiceTypeKanoon" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ServiceTypeScreen" EntityType="Self.ServiceTypeScreen" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Shifts" EntityType="Self.Shifts" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Speciality" EntityType="Self.Speciality" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="specialityKind" EntityType="Self.specialityKind" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Takekind_Recipe" EntityType="Self.Takekind_Recipe" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tariff" EntityType="Self.tariff" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tbl_Company" EntityType="Self.Tbl_Company" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tbl_ValidCenterCity" EntityType="Self.Tbl_ValidCenterCity" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TblUsers" EntityType="Self.TblUsers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tempturnno" EntityType="Self.tempturnno" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TurnStatus" EntityType="Self.TurnStatus" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="userKind" EntityType="Self.userKind" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="vacations" EntityType="Self.vacations" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DGS_ClinicType" EntityType="Self.DGS_ClinicType" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[DGS_ClinicType].[ID] AS [ID], 
+[DGS_ClinicType].[PK_DGSclinicType] AS [PK_DGSclinicType], 
+[DGS_ClinicType].[ClinicTypeDesc] AS [ClinicTypeDesc]
+FROM [dbo].[DGS_ClinicType] AS [DGS_ClinicType]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="DGS_Default" EntityType="Self.DGS_Default" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[DGS_Default].[Pk_DGSDefault] AS [Pk_DGSDefault], 
+[DGS_Default].[Relation] AS [Relation], 
+[DGS_Default].[ValidCenter] AS [ValidCenter], 
+[DGS_Default].[VisitDate] AS [VisitDate], 
+[DGS_Default].[Shift] AS [Shift], 
+[DGS_Default].[MedicalService] AS [MedicalService], 
+[DGS_Default].[Payment] AS [Payment]
+FROM [dbo].[DGS_Default] AS [DGS_Default]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="DGS_xml" EntityType="Self.DGS_xml" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[DGS_xml].[Pk_DGSXml] AS [Pk_DGSXml], 
+[DGS_xml].[Fk_vdfamily] AS [Fk_vdfamily], 
+[DGS_xml].[PersonalNo] AS [PersonalNo], 
+[DGS_xml].[Relation] AS [Relation], 
+[DGS_xml].[ValidCenter] AS [ValidCenter], 
+[DGS_xml].[VisitDate] AS [VisitDate], 
+[DGS_xml].[Shift] AS [Shift], 
+[DGS_xml].[MedicalService] AS [MedicalService], 
+[DGS_xml].[Payment] AS [Payment], 
+[DGS_xml].[DocNo] AS [DocNo]
+FROM [dbo].[DGS_xml] AS [DGS_xml]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="DGS_xml2" EntityType="Self.DGS_xml2" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[DGS_xml2].[Pk_DGSXml] AS [Pk_DGSXml], 
+[DGS_xml2].[Fk_vdfamily] AS [Fk_vdfamily], 
+[DGS_xml2].[PersonalNo] AS [PersonalNo], 
+[DGS_xml2].[Relation] AS [Relation], 
+[DGS_xml2].[ValidCenter] AS [ValidCenter], 
+[DGS_xml2].[VisitDate] AS [VisitDate], 
+[DGS_xml2].[Shift] AS [Shift], 
+[DGS_xml2].[MedicalService] AS [MedicalService], 
+[DGS_xml2].[Payment] AS [Payment], 
+[DGS_xml2].[DocNo] AS [DocNo]
+FROM [dbo].[DGS_xml2] AS [DGS_xml2]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="DGS_XMLHis" EntityType="Self.DGS_XMLHis" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[DGS_XMLHis].[Id] AS [Id], 
+[DGS_XMLHis].[Pk_DGSXmlHis] AS [Pk_DGSXmlHis], 
+[DGS_XMLHis].[Fk_vdfamily] AS [Fk_vdfamily], 
+[DGS_XMLHis].[PersonalNo] AS [PersonalNo], 
+[DGS_XMLHis].[Relation] AS [Relation], 
+[DGS_XMLHis].[ValidCenter] AS [ValidCenter], 
+[DGS_XMLHis].[Visitdate] AS [Visitdate], 
+[DGS_XMLHis].[Shift] AS [Shift], 
+[DGS_XMLHis].[MedicalService] AS [MedicalService], 
+[DGS_XMLHis].[Payment] AS [Payment], 
+[DGS_XMLHis].[DocNo] AS [DocNo]
+FROM [dbo].[DGS_XMLHis] AS [DGS_XMLHis]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Tbl_Employeetype" EntityType="Self.Tbl_Employeetype" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[Tbl_Employeetype].[Pk_EmployeeType] AS [Pk_EmployeeType], 
+[Tbl_Employeetype].[EmployeeTypeDesc] AS [EmployeeTypeDesc], 
+[Tbl_Employeetype].[Fk_Treaty] AS [Fk_Treaty], 
+[Tbl_Employeetype].[Display] AS [Display], 
+[Tbl_Employeetype].[Number] AS [Number], 
+[Tbl_Employeetype].[empdesc] AS [empdesc]
+FROM [dbo].[Tbl_Employeetype] AS [Tbl_Employeetype]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Tbl_Management" EntityType="Self.Tbl_Management" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[Tbl_Management].[Pk_Management] AS [Pk_Management], 
+[Tbl_Management].[ManagementDesc] AS [ManagementDesc]
+FROM [dbo].[Tbl_Management] AS [Tbl_Management]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Tbl_MaritalStatus" EntityType="Self.Tbl_MaritalStatus" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[Tbl_MaritalStatus].[IDMaritalStatus] AS [IDMaritalStatus], 
+[Tbl_MaritalStatus].[Name] AS [Name]
+FROM [dbo].[Tbl_MaritalStatus] AS [Tbl_MaritalStatus]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Tbl_PersonType" EntityType="Self.Tbl_PersonType" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[Tbl_PersonType].[IDPersonType] AS [IDPersonType], 
+[Tbl_PersonType].[Name] AS [Name]
+FROM [dbo].[Tbl_PersonType] AS [Tbl_PersonType]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Tbl_Relation" EntityType="Self.Tbl_Relation" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[Tbl_Relation].[Pk_nesbat] AS [Pk_nesbat], 
+[Tbl_Relation].[NesbatDesc] AS [NesbatDesc], 
+[Tbl_Relation].[Nesbatxml] AS [Nesbatxml]
+FROM [dbo].[Tbl_Relation] AS [Tbl_Relation]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Tbl_SubCompany" EntityType="Self.Tbl_SubCompany" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[Tbl_SubCompany].[Pk_SubCompany] AS [Pk_SubCompany], 
+[Tbl_SubCompany].[Fk_Management] AS [Fk_Management], 
+[Tbl_SubCompany].[Fk_Company] AS [Fk_Company], 
+[Tbl_SubCompany].[SubCompanyName] AS [SubCompanyName]
+FROM [dbo].[Tbl_SubCompany] AS [Tbl_SubCompany]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Tbl_ValidCenter" EntityType="Self.Tbl_ValidCenter" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[Tbl_ValidCenter].[pk_ValidCenter] AS [pk_ValidCenter], 
+[Tbl_ValidCenter].[Fk_ValidCenter] AS [Fk_ValidCenter], 
+[Tbl_ValidCenter].[IdValidCenterType] AS [IdValidCenterType], 
+[Tbl_ValidCenter].[ValidCenterDesc] AS [ValidCenterDesc], 
+[Tbl_ValidCenter].[Deleted] AS [Deleted]
+FROM [dbo].[Tbl_ValidCenter] AS [Tbl_ValidCenter]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Tbl_ValidCenterZone" EntityType="Self.Tbl_ValidCenterZone" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[Tbl_ValidCenterZone].[Pk_ValidCenterZone] AS [Pk_ValidCenterZone], 
+[Tbl_ValidCenterZone].[ValidCenterZoneDesc] AS [ValidCenterZoneDesc], 
+[Tbl_ValidCenterZone].[Deleted] AS [Deleted]
+FROM [dbo].[Tbl_ValidCenterZone] AS [Tbl_ValidCenterZone]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="version" EntityType="Self.version" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[version].[p_Key] AS [p_Key], 
+[version].[Ver_dafater] AS [Ver_dafater], 
+[version].[Ver_Screen] AS [Ver_Screen], 
+[version].[ver_lcd] AS [ver_lcd], 
+[version].[ver_lab] AS [ver_lab], 
+[version].[Ver_Dgs] AS [Ver_Dgs]
+FROM [dbo].[version] AS [version]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Dent_Tooth2" EntityType="Self.Dent_Tooth2" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[Dent_Tooth2].[ToothID] AS [ToothID], 
+[Dent_Tooth2].[ToothName] AS [ToothName], 
+[Dent_Tooth2].[ToothImage] AS [ToothImage]
+FROM [dbo].[Dent_Tooth2] AS [Dent_Tooth2]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Dent_Tooth3" EntityType="Self.Dent_Tooth3" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[Dent_Tooth3].[ToothID] AS [ToothID], 
+[Dent_Tooth3].[ToothName] AS [ToothName], 
+[Dent_Tooth3].[ToothImage] AS [ToothImage]
+FROM [dbo].[Dent_Tooth3] AS [Dent_Tooth3]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Dent_Tooth4" EntityType="Self.Dent_Tooth4" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[Dent_Tooth4].[ToothID] AS [ToothID], 
+[Dent_Tooth4].[ToothName] AS [ToothName], 
+[Dent_Tooth4].[ToothImage] AS [ToothImage]
+FROM [dbo].[Dent_Tooth4] AS [Dent_Tooth4]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Dent_Tooth5" EntityType="Self.Dent_Tooth5" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[Dent_Tooth5].[ToothID] AS [ToothID], 
+[Dent_Tooth5].[ToothName] AS [ToothName], 
+[Dent_Tooth5].[ToothImage] AS [ToothImage]
+FROM [dbo].[Dent_Tooth5] AS [Dent_Tooth5]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="full_niocperson" EntityType="Self.full_niocperson" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[full_niocperson].[PersNo] AS [PersNo], 
+[full_niocperson].[fullname] AS [fullname], 
+[full_niocperson].[fullname2] AS [fullname2], 
+[full_niocperson].[NesbatDesc] AS [NesbatDesc], 
+[full_niocperson].[companyname] AS [companyname], 
+[full_niocperson].[Managementname] AS [Managementname], 
+[full_niocperson].[BirthDate] AS [BirthDate], 
+[full_niocperson].[ValidCenterZoneDesc] AS [ValidCenterZoneDesc], 
+[full_niocperson].[ValidCenterDesc] AS [ValidCenterDesc], 
+[full_niocperson].[IdEmployeeType] AS [IdEmployeeType], 
+[full_niocperson].[Fk_Management] AS [Fk_Management], 
+[full_niocperson].[IDPerson] AS [IDPerson], 
+[full_niocperson].[RelationOrderNo] AS [RelationOrderNo], 
+[full_niocperson].[Pk_vdfamily] AS [Pk_vdfamily], 
+[full_niocperson].[Fk_Nesbat] AS [Fk_Nesbat], 
+[full_niocperson].[ID] AS [ID], 
+[full_niocperson].[Pk_ValidCenterZone] AS [Pk_ValidCenterZone], 
+[full_niocperson].[telephon] AS [telephon], 
+[full_niocperson].[Fk_validCenter] AS [Fk_validCenter]
+FROM [dbo].[full_niocperson] AS [full_niocperson]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="JobLocations" EntityType="Self.JobLocations" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[JobLocations].[Pk_Company] AS [Pk_Company], 
+[JobLocations].[Fk_Management] AS [Fk_Management], 
+[JobLocations].[companyname] AS [companyname], 
+[JobLocations].[Managementname] AS [Managementname], 
+[JobLocations].[ID] AS [ID]
+FROM [dbo].[JobLocations] AS [JobLocations]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="NiocPerson" EntityType="Self.NiocPerson" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[NiocPerson].[IDPerson] AS [IDPerson], 
+[NiocPerson].[IDPersonold] AS [IDPersonold], 
+[NiocPerson].[PersNo] AS [PersNo], 
+[NiocPerson].[RelationOrderNo] AS [RelationOrderNo], 
+[NiocPerson].[Fk_Nesbat] AS [Fk_Nesbat], 
+[NiocPerson].[LName] AS [LName], 
+[NiocPerson].[FName] AS [FName], 
+[NiocPerson].[FatherName] AS [FatherName], 
+[NiocPerson].[Gender] AS [Gender], 
+[NiocPerson].[Fk_validCenterZone] AS [Fk_validCenterZone], 
+[NiocPerson].[Fk_validCenter] AS [Fk_validCenter], 
+[NiocPerson].[EntryDate] AS [EntryDate], 
+[NiocPerson].[ExpDate] AS [ExpDate], 
+[NiocPerson].[IDEduDegree] AS [IDEduDegree], 
+[NiocPerson].[Deleted] AS [Deleted], 
+[NiocPerson].[IdEmployeeType] AS [IdEmployeeType], 
+[NiocPerson].[oldPk_vdfamily] AS [oldPk_vdfamily], 
+[NiocPerson].[CancelDate] AS [CancelDate], 
+[NiocPerson].[BirthDate] AS [BirthDate], 
+[NiocPerson].[Fk_Management] AS [Fk_Management], 
+[NiocPerson].[Fk_Company] AS [Fk_Company], 
+[NiocPerson].[Fk_subCompany] AS [Fk_subCompany], 
+[NiocPerson].[IdMaritalStatus] AS [IdMaritalStatus], 
+[NiocPerson].[mobile] AS [mobile], 
+[NiocPerson].[Pk_vdfamily] AS [Pk_vdfamily], 
+[NiocPerson].[NationalCode] AS [NationalCode], 
+[NiocPerson].[Fk_EmployeeStatus] AS [Fk_EmployeeStatus], 
+[NiocPerson].[NesbatDesc] AS [NesbatDesc], 
+[NiocPerson].[Nesbatxml] AS [Nesbatxml], 
+[NiocPerson].[telephon] AS [telephon]
+FROM [dbo].[NiocPerson] AS [NiocPerson]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="screen_View_2" EntityType="Self.screen_View_2" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[screen_View_2].[pk_dent_Screen2] AS [pk_dent_Screen2], 
+[screen_View_2].[fk_doctor] AS [fk_doctor], 
+[screen_View_2].[FirstScreenDate] AS [FirstScreenDate], 
+[screen_View_2].[fk_vst] AS [fk_vst], 
+[screen_View_2].[fk_vdfamily] AS [fk_vdfamily]
+FROM [dbo].[screen_View_2] AS [screen_View_2]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="TblUsers_view" EntityType="Self.TblUsers_view" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[TblUsers_view].[UserCode] AS [UserCode], 
+[TblUsers_view].[Lname] AS [Lname]
+FROM [dbo].[TblUsers_view] AS [TblUsers_view]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="ValidCenter" EntityType="Self.ValidCenter" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[ValidCenter].[Pk_ValidCenterZone] AS [Pk_ValidCenterZone], 
+[ValidCenter].[ValidCenterZoneDesc] AS [ValidCenterZoneDesc], 
+[ValidCenter].[Deleted] AS [Deleted], 
+[ValidCenter].[ValidCenterDesc] AS [ValidCenterDesc], 
+[ValidCenter].[pk_ValidCenter] AS [pk_ValidCenter]
+FROM [dbo].[ValidCenter] AS [ValidCenter]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK_AcessLevel_AcessLevel" Association="Self.FK_AcessLevel_AcessLevel">
+      <End Role="TblUsers" EntitySet="TblUsers" />
+      <End Role="AcessLevel" EntitySet="AcessLevel" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Clinics_ClinicType" Association="Self.FK_Clinics_ClinicType">
+      <End Role="ClinicType" EntitySet="ClinicType" />
+      <End Role="Clinics" EntitySet="Clinics" />
+    </AssociationSet>
+    <AssociationSet Name="FK_consult_RecipeServices" Association="Self.FK_consult_RecipeServices">
+      <End Role="RecipeServices" EntitySet="RecipeServices" />
+      <End Role="consult" EntitySet="consult" />
+    </AssociationSet>
+    <AssociationSet Name="FK_consult_TblUsers" Association="Self.FK_consult_TblUsers">
+      <End Role="TblUsers" EntitySet="TblUsers" />
+      <End Role="consult" EntitySet="consult" />
+    </AssociationSet>
+    <AssociationSet Name="FK_costconfirm_Detail_costconfirm_head" Association="Self.FK_costconfirm_Detail_costconfirm_head">
+      <End Role="costconfirm_head" EntitySet="costconfirm_head" />
+      <End Role="costconfirm_Detail" EntitySet="costconfirm_Detail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_costconfirm_TblUsers" Association="Self.FK_costconfirm_TblUsers">
+      <End Role="TblUsers" EntitySet="TblUsers" />
+      <End Role="costconfirm_head" EntitySet="costconfirm_head" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EventsLog_EventsDescription" Association="Self.FK_EventsLog_EventsDescription">
+      <End Role="EventsDescription" EntitySet="EventsDescription" />
+      <End Role="EventsLog" EntitySet="EventsLog" />
+    </AssociationSet>
+    <AssociationSet Name="FK_outcenter_OutCenterdepartment" Association="Self.FK_outcenter_OutCenterdepartment">
+      <End Role="OutCenterdepartment" EntitySet="OutCenterdepartment" />
+      <End Role="outcenter" EntitySet="outcenter" />
+    </AssociationSet>
+    <AssociationSet Name="FK_outcenter_outcenterKind" Association="Self.FK_outcenter_outcenterKind">
+      <End Role="outcenterKind" EntitySet="outcenterKind" />
+      <End Role="outcenter" EntitySet="outcenter" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PlanVisit_Clinics" Association="Self.FK_PlanVisit_Clinics">
+      <End Role="Clinics" EntitySet="Clinics" />
+      <End Role="PlanVisit" EntitySet="PlanVisit" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PlanVisit_TblUsers" Association="Self.FK_PlanVisit_TblUsers">
+      <End Role="TblUsers" EntitySet="TblUsers" />
+      <End Role="PlanVisit" EntitySet="PlanVisit" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Recipe_PaientStatus" Association="Self.FK_Recipe_PaientStatus">
+      <End Role="PaientStatus" EntitySet="PaientStatus" />
+      <End Role="Recipe" EntitySet="Recipe" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Recipe_PaientType" Association="Self.FK_Recipe_PaientType">
+      <End Role="PaientType" EntitySet="PaientType" />
+      <End Role="Recipe" EntitySet="Recipe" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Recipe_Shifts" Association="Self.FK_Recipe_Shifts">
+      <End Role="Shifts" EntitySet="Shifts" />
+      <End Role="Recipe" EntitySet="Recipe" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Recipe_TurnStatus" Association="Self.FK_Recipe_TurnStatus">
+      <End Role="TurnStatus" EntitySet="TurnStatus" />
+      <End Role="Recipe" EntitySet="Recipe" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Services_detail_Services_Head" Association="Self.FK_Services_detail_Services_Head">
+      <End Role="Services_Head" EntitySet="Services_Head" />
+      <End Role="Services_detail" EntitySet="Services_detail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TblUsers_Speciality" Association="Self.FK_TblUsers_Speciality">
+      <End Role="Speciality" EntitySet="Speciality" />
+      <End Role="TblUsers" EntitySet="TblUsers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TblUsers_specialityKind" Association="Self.FK_TblUsers_specialityKind">
+      <End Role="specialityKind" EntitySet="specialityKind" />
+      <End Role="TblUsers" EntitySet="TblUsers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TblUsers_userKind" Association="Self.FK_TblUsers_userKind">
+      <End Role="userKind" EntitySet="userKind" />
+      <End Role="TblUsers" EntitySet="TblUsers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_vacations_TblUsers" Association="Self.FK_vacations_TblUsers">
+      <End Role="TblUsers" EntitySet="TblUsers" />
+      <End Role="vacations" EntitySet="vacations" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
